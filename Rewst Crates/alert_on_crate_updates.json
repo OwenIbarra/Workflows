@@ -1,1 +1,618 @@
-{"version":2,"exportedAt":"2025-03-28T18:48:03.079655+00:00","signing":{"cert":"-----BEGIN CERTIFICATE-----\nMIICazCCAfGgAwIBAgIUFJtHAR8D+ZfChHcAXHemH7s8zRowCgYIKoZIzj0EAwIwfDELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAkZMMQ4wDAYDVQQHEwVUYW1wYTEOMAwGA1UEChMFUmV3c3QxEzARBgNVBAsTClJld3N0IERldnMxKzApBgNVBAMTImxvY2FsIFJld3N0IEltcG9ydC9FeHBvcnQgQ0EyIHYxLjEwHhcNMjIwNjAzMTkwMDU1WhcNMjUwNTIzMTkwMTI1WjBDMQswCQYDVQQGEwJVUzELMAkGA1UECBMCRkwxDjAMBgNVBAcTBVRhbXBhMRcwFQYDVQQDEw5sb2NhbC5yZXdzdC5pbzB2MBAGByqGSM49AgEGBSuBBAAiA2IABMcTJzyLIvX1+3545EJbFeNVjahxVq6TFQ7n/IYZs4yEMQzDWZjAyHhJPZk3Dxq/wFzesXMYJu41rhxfz7AZh15LtFGfy9V2B4X5KH7sGJWqOan0mabuF83llruTLA/NQaNtMGswDgYDVR0PAQH/BAQDAgeAMB0GA1UdDgQWBBTDePOSC6hckrg6usrK2giZv9GxpjAfBgNVHSMEGDAWgBTojdemsJqfnB19iyMxmIi3OGYw6TAZBgNVHREEEjAQgg5sb2NhbC5yZXdzdC5pbzAKBggqhkjOPQQDAgNoADBlAjEA8NsLnuGhfTPC7dB0ojWf5WmH64qFZuPFD6Q0RwGYO0D1Tn2x5+/37kW3HFcGHV0wAjBM7LSidsc7E9+fmcesnN5hM34eGMP+YWCoEeFIPPANXQKemAgUVf35iXyU64sVEC4=\n-----END CERTIFICATE-----","hash":"sha512","signature":"MGQCMB29slArt9HkGguMMvOe+3od7JY+Nn1Zx1iumbZ5+b3sInjzF49B/mTroz0NPhqMzAIwdPmnq748MFs1YR93rOuVB15eL4Tu/qP3FvJcYWwedBtdOko0v9Gt2/St2SvXxVAK"},"objects":{"workflow_task_id:J1EqGCnGUqrU88b4Xu3uFEtupw9WKkd3v7Hj4xTWfyQH":{"type":"workflow_task_id","content_hash":"oyhH1ii8NdTJDzTr8svUer2jLpKbMWaFT7krbKThKrZ","hash":"DmNfMtiqRcQsNfp4igs7QEBYSquhhmH4Z7JYvquvTYCk","fields":{"id":"0195de0f9b077c858608003c03ea925d"}},"transition_id:DTgwvYx3fJd1ztJsk1j7Q8iVHxv74XLYi6BP2iyRKiba":{"type":"transition_id","content_hash":"8UWkSCHHySApagupcpUhH128kttnDDTD3M5N37Z9wP9t","hash":"Cuxi8p7fxnDshP3mfdSUgtivXYo6FTLY1mpVSKRDttt4","fields":{"id":"0195de0f-9b07-7c85-8608-00407e7f0e05"}},"transition_id:GGb3C9NBFnogaAjan6DYNugzHt2QEisQXjeukuhiHMts":{"type":"transition_id","content_hash":"2FTTHqzfbLLntCZ57VBv8nbU9R5s6TDHF9EGbtDZLZzA","hash":"9PJA9HsbEVof4G3CR4PVRFX11mKhGe3TUnSSGJGy6wnM","fields":{"id":"0195de0f-9b07-7c85-8608-003f6132f58a"}},"action:2WXe3Pah64ru5dpAnSw9YEHHVCsCmhm3rJkgWGXUyTi5":{"type":"action","content_hash":"Aj7g63oBpFTyTLgcv25UHmfMB5WmghbjNdHZYGy7KxYN","hash":"JAbYYJfYDMeHf1dt791VFAinW1gZoCwsGcGznS61qhTC","fields":{"ref":"transforms.set_variable"}},"transition_id:4GFxrNzUuht82PnHiSTKGUU6sVyoTUzrDoyyZBocV8pa":{"type":"transition_id","content_hash":"DJ1DoQBs8ZorcZqnjpDStz83QGJpoApMd1Gsv5pvs766","hash":"H4WDP5i3kFtugQzrTS1vfWEyyVG3rw6L7cBWYXjaK4Kh","fields":{"id":"0195de0f-9b07-7c85-8608-004148f1d856"}},"transition_id:HD5g7jg6e8NwhgXa9RFYUEJK3n69nCQhQLQ5d8QdaBpf":{"type":"transition_id","content_hash":"ERivnBTLntY8Ki6upbeLBR5EbJPTYfRWg7f9q4Ktveeb","hash":"8BPDe2PCRzcdjG6qVQH2dWcr69QRLqv79vwXv923LJMw","fields":{"id":"0195de0f-9b07-7c85-8608-00437b1b7e4a"}},"action:7kRhZZJ52dhUDoGVk67zjA794cUiKg9j9GZbhdmjQH9d":{"type":"action","content_hash":"HSEfWa6r3EymMKgxqapS8QUC5BpJHNUqJqWhJoseRQgm","hash":"8Fa4fauKavebkeFPnqBrXrLf77hQx7Xt8bKw7jFmZzp5","fields":{"ref":"rewst.list_workflows"}},"workflow_task_id:5bNZFekFkvGT9vRx4kWBHUpdBVoiCAU2qYLCCasSs5oN":{"type":"workflow_task_id","content_hash":"7BXwDcn6nHX49B8Y9K7ixjhjRr8T1RcnE5Z9vu65N7y2","hash":"F2h2Fjbr7pWhhxMgfhj6nEWpYbSejM8PrzJBC5xZyoLV","fields":{"id":"0195de0f9b077c858608003d3e7d9051"}},"action:8YDZHfz437v3Vec6B3kQ5iPUBo6VmYsy5og1rgmABejU":{"type":"action","content_hash":"FMu3hsNV7SdbaFHCpQXe4YsxtfRZHq3LfQ8Ej6uv322w","hash":"CDXNu8XJkn4bBRzcx18z5UYnjXiUM2WB6hTMAwGhMQ4K","fields":{"ref":"core.http_request"}},"workflow_task_id:5QKDyreG6JqBTe8s37gUPJZAAvj9FHRoTPAExGdWDjvg":{"type":"workflow_task_id","content_hash":"G2Zwe1MbKawqTjCYod5y3EwYoDdGAtRMCU4t8rWjg4EL","hash":"2rFVwqbYP9VRWDDtX5F1Leb6TagqKaURjZvA5utmYoru","fields":{"id":"0195de0f9b067dc69b1d19b7b8e31e19"}},"transition_id:Hm5qrxktBEtVjMdgpkrAZet2ML62hbHMRYNnR3tyUanD":{"type":"transition_id","content_hash":"5gyeyBv53BEVSgB3AKy8KbXZzHT1dKzfDGnCAcrZdY2b","hash":"74AW5QkfjBSfFcRs8exyyxM3NcBeDU5ozFQaCFWmENt2","fields":{"id":"e638f4b2-7c62-412e-a5b1-5915de7eea69"}},"transition_id:7BRv8DjUs1Pg1Ks8KWrWAsKZL4C3Ny4T2C6tSnr9G2hA":{"type":"transition_id","content_hash":"Ddy7pX5WTimhgQtN1MH6CEQffduwF1No9MzkLeHCWYwE","hash":"6QVUTb8K5BRQbeUvR27spjiVUarHfcdtsphgWbgHFnPo","fields":{"id":"0195de0f-9b07-7c85-8608-00424aaff341"}},"workflow_task_id:5xYQS64ysV9fDBMkLWXZCksZxzoiANs57EFL3YrRKjyj":{"type":"workflow_task_id","content_hash":"E3zmy8wuiXhXY6jVe5ZvbTEXjqXaHB5z79p5AdWTwFu8","hash":"7pC14moMfeTqSekv4bZELPJLNWsCN6SxLXtYTNeUsvoj","fields":{"id":"0195de0f9b067dc69b1d19b8fcf96201"}},"workflow_task_id:6VtqhGWkvVxMfe54BzZ26Z5AjtrSHeHWEFK5dQ8BSB2P":{"type":"workflow_task_id","content_hash":"FQo5827SHNFeiCTFAtqcMSagkmbnbevPtBuJjBNykeXB","hash":"AZPjqNVFHi33d5N1iqkJde4AVyRXEAHM1xo9uhqymb67","fields":{"id":"0195de0f9b077c858608003b051a99b4"}},"workflow_task_id:934ubS3uvB2UVsCuVYTSXJi8Uv7zkXYdzUi1TNKEo2j4":{"type":"workflow_task_id","content_hash":"5G7sWsHPHhSZu2HU6x5UDAeHiFRPnyH2cgwsBBiXgdaz","hash":"HTD9ePLQtMDTNjryxvDmV81yxBkMLqmdX29TPHThGJQn","fields":{"id":"8070d39356d14be4bd7704529ec0d27d"}},"workflow:AT8DkfU4PkWTzT1Qbw34pJSNFsJJeoPeY7gbWkQbXKHh":{"type":"workflow","content_hash":"7sStyPXfYPvkjge4G5iyBRrTu757ncqqEkognk36SQo","hash":"DEGvWn3K29ThVwCzPZq6XaUG6WPSkFEGqf4YsY85nAfA","fields":{"humanSecondsSaved":0,"notes":[],"output":[],"parameters":{},"tasks":[{"id":"@@@workflow_task_id_ref1@@@","action":{"id":"@@@action_ref1@@@"},"humanSecondsSaved":0,"input":{"url":"{{ CTX.webhook_url }}","body":null,"json":{"text":"{% if CTX.crate_names_and_date %}\r\n| Crate Name                         | Last Modified             |\r\n|------------------------------------|---------------------------|\r\n{% for crate in CTX.crate_names_and_date %}\r\n| [{{ crate.crate_name }}]({{ crate.workflows }}) | {{ crate.last_modified }} |\r\n{% endfor %}\r\n{% else %}\r\nNo crate updates found.\r\n{% endif %}"},"files":[],"method":"POST","params":null,"cookies":null,"headers":null,"timeout":5,"auth_password":null,"auth_username":null,"allow_redirects":true,"require_2xx_status":null},"isMocked":false,"join":0,"mockInput":{"mock_result":{}},"name":"post_alert","next":[{"do":[],"from":null,"id":"@@@transition_id_ref1@@@","publish":[],"to":null,"when":"{{ SUCCEEDED }}"}],"packOverrides":[],"publishResultAs":"","retry":null,"runAsOrgId":"","timeout":600,"transitionMode":"FOLLOW_ALL","with":null,"securitySchema":{"redact":{"input":["auth_password"],"result":[]}}},{"id":"@@@workflow_task_id_ref2@@@","action":{"id":"@@@action_ref2@@@"},"humanSecondsSaved":0,"input":{"run_as_user":null},"isMocked":false,"join":0,"mockInput":{"mock_result":{}},"name":"rewst_list_workflows","next":[{"do":["@@@workflow_task_id_ref5@@@"],"from":null,"id":"@@@transition_id_ref2@@@","publish":[],"to":null,"when":"{{ SUCCEEDED }}"}],"packOverrides":[],"publishResultAs":"","retry":null,"runAsOrgId":"","timeout":600,"transitionMode":"FOLLOW_ALL","with":null,"securitySchema":{"redact":{"input":[],"result":[]}}},{"id":"@@@workflow_task_id_ref3@@@","action":{"id":"@@@action_ref3@@@"},"humanSecondsSaved":0,"input":{"params":{"text":"{{\r\n    [\r\n        {\r\n            \"crate_name\": update.unpacked_from.name,\r\n            \"last_modified\": (update.updated_at | int // 1000) | convert_from_epoch | format_datetime('%Y-%m-%d %I:%M %p UTC'),\r\n            \"crate_workflow\": \"https://app.rewst.io/organizations/\" ~ update.organization.id ~ \"/workflows/\" ~ update.id,\r\n            \"workflows\": \"https://app.rewst.io/organizations/\" ~ update.organization.id ~ \"/workflows\"\r\n        }\r\n        for update in CTX.updates\r\n        if update.is_synchronized == true\r\n    ]\r\n    | unique(attribute='crate_name')\r\n    | sort(attribute='last_modified', reverse=True)\r\n}}"}},"isMocked":false,"join":0,"mockInput":{"mock_result":{}},"name":"set_crate_names_and_date","next":[{"do":["@@@workflow_task_id_ref1@@@"],"from":null,"id":"@@@transition_id_ref3@@@","publish":[],"to":null,"when":"{{ SUCCEEDED }}"}],"packOverrides":[],"publishResultAs":"crate_names_and_date","retry":null,"runAsOrgId":"","timeout":600,"transitionMode":"FOLLOW_ALL","with":null,"securitySchema":{"redact":{"input":[],"result":[]}}},{"id":"@@@workflow_task_id_ref4@@@","action":{"id":"@@@action_ref3@@@"},"humanSecondsSaved":0,"input":{"params":{"text":"{{ 900 }}"}},"isMocked":false,"join":0,"mockInput":{"mock_result":{}},"name":"set_time_frame","next":[{"do":["@@@workflow_task_id_ref2@@@"],"from":null,"id":"@@@transition_id_ref4@@@","publish":[],"to":null,"when":"{{ SUCCEEDED }}"}],"packOverrides":[],"publishResultAs":"time_frame","retry":null,"runAsOrgId":"","timeout":600,"transitionMode":"FOLLOW_ALL","with":null,"securitySchema":{"redact":{"input":[],"result":[]}}},{"id":"@@@workflow_task_id_ref5@@@","action":{"id":"@@@action_ref3@@@"},"humanSecondsSaved":0,"input":{"params":{"text":"{{\r\n    [\r\n        workflow\r\n        for workflow in TASKS.rewst_list_workflows.result.result\r\n        if workflow.is_synchronized == true and \r\n           ((now()) - (workflow.updated_at | int // 1000)) <= CTX.time_frame\r\n    ]\r\n}}\r\n"}},"isMocked":false,"join":0,"mockInput":{"mock_result":{}},"name":"set_updates","next":[{"do":["@@@workflow_task_id_ref3@@@"],"from":null,"id":"@@@transition_id_ref5@@@","publish":[],"to":null,"when":"{{ CTX.updates != [] }}"}],"packOverrides":[],"publishResultAs":"updates","retry":null,"runAsOrgId":"","timeout":600,"transitionMode":"FOLLOW_ALL","with":null,"securitySchema":{"redact":{"input":[],"result":[]}}},{"id":"@@@workflow_task_id_ref6@@@","action":{"id":"@@@action_ref3@@@"},"humanSecondsSaved":0,"input":{"params":{"text":"url_goes_here"}},"isMocked":false,"join":0,"mockInput":{"mock_result":{}},"name":"set_webhook_url","next":[{"do":["@@@workflow_task_id_ref4@@@"],"from":null,"id":"@@@transition_id_ref6@@@","publish":[],"to":null,"when":"{{ SUCCEEDED }}"}],"packOverrides":[],"publishResultAs":"webhook_url","retry":null,"runAsOrgId":"","timeout":600,"transitionMode":"FOLLOW_ALL","with":null,"securitySchema":{"redact":{"input":[],"result":[]}}}],"timeout":28800,"type":"STANDARD","varsSchema":{}},"nonfunctional_fields":{"description":"","name":"[DEMO] - Alert on Crate Updates","tasks[0].description":"Perform an HTTP request","tasks[0].metadata":{"x":407.99999999999994,"y":720},"tasks[0].next[0].label":"","tasks[1].description":"","tasks[1].metadata":{"x":399.5408511472758,"y":193.0084571677396},"tasks[1].next[0].label":"","tasks[2].description":"Set a variable as an action","tasks[2].metadata":{"x":408,"y":528},"tasks[2].next[0].label":"","tasks[3].description":"Timeframe in seconds","tasks[3].metadata":{"x":408,"y":24},"tasks[3].next[0].label":"","tasks[4].description":"Set a variable as an action","tasks[4].metadata":{"x":408,"y":360},"tasks[4].next[0].label":"Updates Found","tasks[5].description":"Set a variable as an action","tasks[5].metadata":{"x":408.00000000000006,"y":-143.99999999999994},"tasks[5].next[0].label":""},"references":{"workflow_task_id_ref6":{"kind":"string","type":"workflow_task_id","src_key_hash":"934ubS3uvB2UVsCuVYTSXJi8Uv7zkXYdzUi1TNKEo2j4","content_hash":"5G7sWsHPHhSZu2HU6x5UDAeHiFRPnyH2cgwsBBiXgdaz","locations":["tasks[5].id"]},"transition_id_ref1":{"kind":"string","type":"transition_id","src_key_hash":"4GFxrNzUuht82PnHiSTKGUU6sVyoTUzrDoyyZBocV8pa","content_hash":"DJ1DoQBs8ZorcZqnjpDStz83QGJpoApMd1Gsv5pvs766","locations":["tasks[0].next[0].id"]},"workflow_task_id_ref5":{"kind":"string","type":"workflow_task_id","src_key_hash":"5xYQS64ysV9fDBMkLWXZCksZxzoiANs57EFL3YrRKjyj","content_hash":"E3zmy8wuiXhXY6jVe5ZvbTEXjqXaHB5z79p5AdWTwFu8","locations":["tasks[4].id","tasks[1].next[0].do[0]"]},"action_ref3":{"kind":"string","type":"action","src_key_hash":"2WXe3Pah64ru5dpAnSw9YEHHVCsCmhm3rJkgWGXUyTi5","content_hash":"Aj7g63oBpFTyTLgcv25UHmfMB5WmghbjNdHZYGy7KxYN","locations":["tasks[2].action.id","tasks[3].action.id","tasks[4].action.id","tasks[5].action.id"]},"transition_id_ref4":{"kind":"string","type":"transition_id","src_key_hash":"HD5g7jg6e8NwhgXa9RFYUEJK3n69nCQhQLQ5d8QdaBpf","content_hash":"ERivnBTLntY8Ki6upbeLBR5EbJPTYfRWg7f9q4Ktveeb","locations":["tasks[3].next[0].id"]},"transition_id_ref3":{"kind":"string","type":"transition_id","src_key_hash":"7BRv8DjUs1Pg1Ks8KWrWAsKZL4C3Ny4T2C6tSnr9G2hA","content_hash":"Ddy7pX5WTimhgQtN1MH6CEQffduwF1No9MzkLeHCWYwE","locations":["tasks[2].next[0].id"]},"workflow_task_id_ref4":{"kind":"string","type":"workflow_task_id","src_key_hash":"5bNZFekFkvGT9vRx4kWBHUpdBVoiCAU2qYLCCasSs5oN","content_hash":"7BXwDcn6nHX49B8Y9K7ixjhjRr8T1RcnE5Z9vu65N7y2","locations":["tasks[3].id","tasks[5].next[0].do[0]"]},"transition_id_ref5":{"kind":"string","type":"transition_id","src_key_hash":"DTgwvYx3fJd1ztJsk1j7Q8iVHxv74XLYi6BP2iyRKiba","content_hash":"8UWkSCHHySApagupcpUhH128kttnDDTD3M5N37Z9wP9t","locations":["tasks[4].next[0].id"]},"transition_id_ref6":{"kind":"string","type":"transition_id","src_key_hash":"Hm5qrxktBEtVjMdgpkrAZet2ML62hbHMRYNnR3tyUanD","content_hash":"5gyeyBv53BEVSgB3AKy8KbXZzHT1dKzfDGnCAcrZdY2b","locations":["tasks[5].next[0].id"]},"action_ref1":{"kind":"string","type":"action","src_key_hash":"8YDZHfz437v3Vec6B3kQ5iPUBo6VmYsy5og1rgmABejU","content_hash":"FMu3hsNV7SdbaFHCpQXe4YsxtfRZHq3LfQ8Ej6uv322w","locations":["tasks[0].action.id"]},"action_ref2":{"kind":"string","type":"action","src_key_hash":"7kRhZZJ52dhUDoGVk67zjA794cUiKg9j9GZbhdmjQH9d","content_hash":"HSEfWa6r3EymMKgxqapS8QUC5BpJHNUqJqWhJoseRQgm","locations":["tasks[1].action.id"]},"workflow_task_id_ref1":{"kind":"string","type":"workflow_task_id","src_key_hash":"6VtqhGWkvVxMfe54BzZ26Z5AjtrSHeHWEFK5dQ8BSB2P","content_hash":"FQo5827SHNFeiCTFAtqcMSagkmbnbevPtBuJjBNykeXB","locations":["tasks[0].id","tasks[2].next[0].do[0]"]},"workflow_task_id_ref3":{"kind":"string","type":"workflow_task_id","src_key_hash":"J1EqGCnGUqrU88b4Xu3uFEtupw9WKkd3v7Hj4xTWfyQH","content_hash":"oyhH1ii8NdTJDzTr8svUer2jLpKbMWaFT7krbKThKrZ","locations":["tasks[2].id","tasks[4].next[0].do[0]"]},"workflow_task_id_ref2":{"kind":"string","type":"workflow_task_id","src_key_hash":"5QKDyreG6JqBTe8s37gUPJZAAvj9FHRoTPAExGdWDjvg","content_hash":"G2Zwe1MbKawqTjCYod5y3EwYoDdGAtRMCU4t8rWjg4EL","locations":["tasks[1].id","tasks[3].next[0].do[0]"]},"transition_id_ref2":{"kind":"string","type":"transition_id","src_key_hash":"GGb3C9NBFnogaAjan6DYNugzHt2QEisQXjeukuhiHMts","content_hash":"2FTTHqzfbLLntCZ57VBv8nbU9R5s6TDHF9EGbtDZLZzA","locations":["tasks[1].next[0].id"]}},"dependencies":["workflow_task_id:J1EqGCnGUqrU88b4Xu3uFEtupw9WKkd3v7Hj4xTWfyQH","transition_id:GGb3C9NBFnogaAjan6DYNugzHt2QEisQXjeukuhiHMts","workflow_task_id:6VtqhGWkvVxMfe54BzZ26Z5AjtrSHeHWEFK5dQ8BSB2P","action:2WXe3Pah64ru5dpAnSw9YEHHVCsCmhm3rJkgWGXUyTi5","transition_id:4GFxrNzUuht82PnHiSTKGUU6sVyoTUzrDoyyZBocV8pa","transition_id:HD5g7jg6e8NwhgXa9RFYUEJK3n69nCQhQLQ5d8QdaBpf","action:7kRhZZJ52dhUDoGVk67zjA794cUiKg9j9GZbhdmjQH9d","workflow_task_id:5bNZFekFkvGT9vRx4kWBHUpdBVoiCAU2qYLCCasSs5oN","action:8YDZHfz437v3Vec6B3kQ5iPUBo6VmYsy5og1rgmABejU","workflow_task_id:5QKDyreG6JqBTe8s37gUPJZAAvj9FHRoTPAExGdWDjvg","transition_id:Hm5qrxktBEtVjMdgpkrAZet2ML62hbHMRYNnR3tyUanD","transition_id:7BRv8DjUs1Pg1Ks8KWrWAsKZL4C3Ny4T2C6tSnr9G2hA","workflow_task_id:5xYQS64ysV9fDBMkLWXZCksZxzoiANs57EFL3YrRKjyj","transition_id:DTgwvYx3fJd1ztJsk1j7Q8iVHxv74XLYi6BP2iyRKiba","workflow_task_id:934ubS3uvB2UVsCuVYTSXJi8Uv7zkXYdzUi1TNKEo2j4"]}},"__typename":"ExportBundle"}
+{
+    "version": 2,
+    "exportedAt": "2025-03-28T19:42:07.585004+00:00",
+    "signing": {
+        "cert": "-----BEGIN CERTIFICATE-----\nMIICazCCAfGgAwIBAgIUFJtHAR8D+ZfChHcAXHemH7s8zRowCgYIKoZIzj0EAwIwfDELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAkZMMQ4wDAYDVQQHEwVUYW1wYTEOMAwGA1UEChMFUmV3c3QxEzARBgNVBAsTClJld3N0IERldnMxKzApBgNVBAMTImxvY2FsIFJld3N0IEltcG9ydC9FeHBvcnQgQ0EyIHYxLjEwHhcNMjIwNjAzMTkwMDU1WhcNMjUwNTIzMTkwMTI1WjBDMQswCQYDVQQGEwJVUzELMAkGA1UECBMCRkwxDjAMBgNVBAcTBVRhbXBhMRcwFQYDVQQDEw5sb2NhbC5yZXdzdC5pbzB2MBAGByqGSM49AgEGBSuBBAAiA2IABMcTJzyLIvX1+3545EJbFeNVjahxVq6TFQ7n/IYZs4yEMQzDWZjAyHhJPZk3Dxq/wFzesXMYJu41rhxfz7AZh15LtFGfy9V2B4X5KH7sGJWqOan0mabuF83llruTLA/NQaNtMGswDgYDVR0PAQH/BAQDAgeAMB0GA1UdDgQWBBTDePOSC6hckrg6usrK2giZv9GxpjAfBgNVHSMEGDAWgBTojdemsJqfnB19iyMxmIi3OGYw6TAZBgNVHREEEjAQgg5sb2NhbC5yZXdzdC5pbzAKBggqhkjOPQQDAgNoADBlAjEA8NsLnuGhfTPC7dB0ojWf5WmH64qFZuPFD6Q0RwGYO0D1Tn2x5+/37kW3HFcGHV0wAjBM7LSidsc7E9+fmcesnN5hM34eGMP+YWCoEeFIPPANXQKemAgUVf35iXyU64sVEC4=\n-----END CERTIFICATE-----",
+        "hash": "sha512",
+        "signature": "MGQCMGb9WEWE2rQJmMQg0UDK6w81LAkoIO2/O3C68ot/rJPLYKs13MrvcNnmRMo3u3QhYgIwRRT3+1raeLQMrcUx2Vm4Y6nHZiv6j2jyikSlDZSDV3HLyhlAjJr0QjWXm90rHNuy"
+    },
+    "objects": {
+        "transition_id:GBWjKkpaYjRxygZFZQPdVSRuBibgmA6PZfrFVQxvTaZH": {
+            "type": "transition_id",
+            "content_hash": "ERivnBTLntY8Ki6upbeLBR5EbJPTYfRWg7f9q4Ktveeb",
+            "hash": "8BPDe2PCRzcdjG6qVQH2dWcr69QRLqv79vwXv923LJMw",
+            "fields": {
+                "id": "0195de0f-9b07-7c85-8608-00437b1b7e4a"
+            }
+        },
+        "action:5dfdhrX4sMSTqU1PM7bLnqK2ZN8Cbq2AZLBfGeznAcgK": {
+            "type": "action",
+            "content_hash": "HSEfWa6r3EymMKgxqapS8QUC5BpJHNUqJqWhJoseRQgm",
+            "hash": "8Fa4fauKavebkeFPnqBrXrLf77hQx7Xt8bKw7jFmZzp5",
+            "fields": {
+                "ref": "rewst.list_workflows"
+            }
+        },
+        "action:H2vG56Yv3nsJWSxGYN5fwHvUVQJm4ekpMMCWXhYDyb3J": {
+            "type": "action",
+            "content_hash": "Aj7g63oBpFTyTLgcv25UHmfMB5WmghbjNdHZYGy7KxYN",
+            "hash": "JAbYYJfYDMeHf1dt791VFAinW1gZoCwsGcGznS61qhTC",
+            "fields": {
+                "ref": "transforms.set_variable"
+            }
+        },
+        "transition_id:6t9ucA4FvCUv87js2MojLri4Mqt26K4w6FJvEutJJgnR": {
+            "type": "transition_id",
+            "content_hash": "5gyeyBv53BEVSgB3AKy8KbXZzHT1dKzfDGnCAcrZdY2b",
+            "hash": "74AW5QkfjBSfFcRs8exyyxM3NcBeDU5ozFQaCFWmENt2",
+            "fields": {
+                "id": "e638f4b2-7c62-412e-a5b1-5915de7eea69"
+            }
+        },
+        "workflow_task_id:8Xjq1hG1x4eiQnhPUVvCxk1yiRB8Cb9q4aSes8h9KZEY": {
+            "type": "workflow_task_id",
+            "content_hash": "oyhH1ii8NdTJDzTr8svUer2jLpKbMWaFT7krbKThKrZ",
+            "hash": "DmNfMtiqRcQsNfp4igs7QEBYSquhhmH4Z7JYvquvTYCk",
+            "fields": {
+                "id": "0195de0f9b077c858608003c03ea925d"
+            }
+        },
+        "transition_id:EJykYmWPAejuatDJxsZYfDBaST9yyZoLsxmoaF5ph1Y3": {
+            "type": "transition_id",
+            "content_hash": "2FTTHqzfbLLntCZ57VBv8nbU9R5s6TDHF9EGbtDZLZzA",
+            "hash": "9PJA9HsbEVof4G3CR4PVRFX11mKhGe3TUnSSGJGy6wnM",
+            "fields": {
+                "id": "0195de0f-9b07-7c85-8608-003f6132f58a"
+            }
+        },
+        "workflow_task_id:7MVoWT4k31J4yGy8Q8wEV6BZCya5pRF1meJPbKMWTc5V": {
+            "type": "workflow_task_id",
+            "content_hash": "FQo5827SHNFeiCTFAtqcMSagkmbnbevPtBuJjBNykeXB",
+            "hash": "AZPjqNVFHi33d5N1iqkJde4AVyRXEAHM1xo9uhqymb67",
+            "fields": {
+                "id": "0195de0f9b077c858608003b051a99b4"
+            }
+        },
+        "workflow_task_id:8o3AFST5tFxFmycmdsoFEFnXALAKC96geZov97HYy35f": {
+            "type": "workflow_task_id",
+            "content_hash": "E3zmy8wuiXhXY6jVe5ZvbTEXjqXaHB5z79p5AdWTwFu8",
+            "hash": "7pC14moMfeTqSekv4bZELPJLNWsCN6SxLXtYTNeUsvoj",
+            "fields": {
+                "id": "0195de0f9b067dc69b1d19b8fcf96201"
+            }
+        },
+        "transition_id:3yvSz4XMasox6J1GjEcSVDtR9dv9cxzrDJyBYUfetrya": {
+            "type": "transition_id",
+            "content_hash": "DJ1DoQBs8ZorcZqnjpDStz83QGJpoApMd1Gsv5pvs766",
+            "hash": "H4WDP5i3kFtugQzrTS1vfWEyyVG3rw6L7cBWYXjaK4Kh",
+            "fields": {
+                "id": "0195de0f-9b07-7c85-8608-004148f1d856"
+            }
+        },
+        "action:14Cgp7yWC5KnteK8gtBwTf5bLFjwt4kpGpKMn7vV5dvP": {
+            "type": "action",
+            "content_hash": "FMu3hsNV7SdbaFHCpQXe4YsxtfRZHq3LfQ8Ej6uv322w",
+            "hash": "CDXNu8XJkn4bBRzcx18z5UYnjXiUM2WB6hTMAwGhMQ4K",
+            "fields": {
+                "ref": "core.http_request"
+            }
+        },
+        "workflow_task_id:7os9kA7JBNeafjBfimPx7bR5iikcGhNuwH1jpuvcBTyq": {
+            "type": "workflow_task_id",
+            "content_hash": "G2Zwe1MbKawqTjCYod5y3EwYoDdGAtRMCU4t8rWjg4EL",
+            "hash": "2rFVwqbYP9VRWDDtX5F1Leb6TagqKaURjZvA5utmYoru",
+            "fields": {
+                "id": "0195de0f9b067dc69b1d19b7b8e31e19"
+            }
+        },
+        "transition_id:AqsWNXffqiXc9xQ2gj2QNE7D65eK8z2dC8u8b46qEatq": {
+            "type": "transition_id",
+            "content_hash": "Ddy7pX5WTimhgQtN1MH6CEQffduwF1No9MzkLeHCWYwE",
+            "hash": "6QVUTb8K5BRQbeUvR27spjiVUarHfcdtsphgWbgHFnPo",
+            "fields": {
+                "id": "0195de0f-9b07-7c85-8608-00424aaff341"
+            }
+        },
+        "workflow_task_id:BFHJ3TD9tW6VrJ1UJxVqJXswHCTXbttmZJg6zurd3iKF": {
+            "type": "workflow_task_id",
+            "content_hash": "5G7sWsHPHhSZu2HU6x5UDAeHiFRPnyH2cgwsBBiXgdaz",
+            "hash": "HTD9ePLQtMDTNjryxvDmV81yxBkMLqmdX29TPHThGJQn",
+            "fields": {
+                "id": "8070d39356d14be4bd7704529ec0d27d"
+            }
+        },
+        "workflow_task_id:HMYenJxyFvoRVh9vkjwjUzPhF4G7L4rvbynd7YQN7rVb": {
+            "type": "workflow_task_id",
+            "content_hash": "7BXwDcn6nHX49B8Y9K7ixjhjRr8T1RcnE5Z9vu65N7y2",
+            "hash": "F2h2Fjbr7pWhhxMgfhj6nEWpYbSejM8PrzJBC5xZyoLV",
+            "fields": {
+                "id": "0195de0f9b077c858608003d3e7d9051"
+            }
+        },
+        "transition_id:Hq4iypcRYaZdNoyZNqHkxigZGdshcoGMDkcwfdCBppff": {
+            "type": "transition_id",
+            "content_hash": "8UWkSCHHySApagupcpUhH128kttnDDTD3M5N37Z9wP9t",
+            "hash": "Cuxi8p7fxnDshP3mfdSUgtivXYo6FTLY1mpVSKRDttt4",
+            "fields": {
+                "id": "0195de0f-9b07-7c85-8608-00407e7f0e05"
+            }
+        },
+        "workflow:GZpG4gMGsBdAFiMgGHdVbvQ3PfnaAY4ZHcRo18sGNMBj": {
+            "type": "workflow",
+            "content_hash": "7sStyPXfYPvkjge4G5iyBRrTu757ncqqEkognk36SQo",
+            "hash": "DEGvWn3K29ThVwCzPZq6XaUG6WPSkFEGqf4YsY85nAfA",
+            "fields": {
+                "humanSecondsSaved": 0,
+                "notes": [],
+                "output": [],
+                "parameters": {},
+                "tasks": [
+                    {
+                        "id": "@@@workflow_task_id_ref1@@@",
+                        "action": {
+                            "id": "@@@action_ref1@@@"
+                        },
+                        "humanSecondsSaved": 0,
+                        "input": {
+                            "url": "{{ CTX.webhook_url }}",
+                            "body": null,
+                            "json": {
+                                "text": "{% if CTX.crate_names_and_date %}\r\n| Crate Name                         | Last Modified             |\r\n|------------------------------------|---------------------------|\r\n{% for crate in CTX.crate_names_and_date %}\r\n| [{{ crate.crate_name }}]({{ crate.workflows }}) | {{ crate.last_modified }} |\r\n{% endfor %}\r\n{% else %}\r\nNo crate updates found.\r\n{% endif %}"
+                            },
+                            "files": [],
+                            "method": "POST",
+                            "params": null,
+                            "cookies": null,
+                            "headers": null,
+                            "timeout": 5,
+                            "auth_password": null,
+                            "auth_username": null,
+                            "allow_redirects": true,
+                            "require_2xx_status": null
+                        },
+                        "isMocked": false,
+                        "join": 0,
+                        "mockInput": {
+                            "mock_result": {}
+                        },
+                        "name": "post_alert",
+                        "next": [
+                            {
+                                "do": [],
+                                "from": null,
+                                "id": "@@@transition_id_ref1@@@",
+                                "publish": [],
+                                "to": null,
+                                "when": "{{ SUCCEEDED }}"
+                            }
+                        ],
+                        "packOverrides": [],
+                        "publishResultAs": "",
+                        "retry": null,
+                        "runAsOrgId": "",
+                        "timeout": 600,
+                        "transitionMode": "FOLLOW_ALL",
+                        "with": null,
+                        "securitySchema": {
+                            "redact": {
+                                "input": [
+                                    "auth_password"
+                                ],
+                                "result": []
+                            }
+                        }
+                    },
+                    {
+                        "id": "@@@workflow_task_id_ref2@@@",
+                        "action": {
+                            "id": "@@@action_ref2@@@"
+                        },
+                        "humanSecondsSaved": 0,
+                        "input": {
+                            "run_as_user": null
+                        },
+                        "isMocked": false,
+                        "join": 0,
+                        "mockInput": {
+                            "mock_result": {}
+                        },
+                        "name": "rewst_list_workflows",
+                        "next": [
+                            {
+                                "do": [
+                                    "@@@workflow_task_id_ref5@@@"
+                                ],
+                                "from": null,
+                                "id": "@@@transition_id_ref2@@@",
+                                "publish": [],
+                                "to": null,
+                                "when": "{{ SUCCEEDED }}"
+                            }
+                        ],
+                        "packOverrides": [],
+                        "publishResultAs": "",
+                        "retry": null,
+                        "runAsOrgId": "",
+                        "timeout": 600,
+                        "transitionMode": "FOLLOW_ALL",
+                        "with": null,
+                        "securitySchema": {
+                            "redact": {
+                                "input": [],
+                                "result": []
+                            }
+                        }
+                    },
+                    {
+                        "id": "@@@workflow_task_id_ref3@@@",
+                        "action": {
+                            "id": "@@@action_ref3@@@"
+                        },
+                        "humanSecondsSaved": 0,
+                        "input": {
+                            "params": {
+                                "text": "{{\r\n    [\r\n        {\r\n            \"crate_name\": update.unpacked_from.name,\r\n            \"last_modified\": (update.updated_at | int // 1000) | convert_from_epoch | format_datetime('%Y-%m-%d %I:%M %p UTC'),\r\n            \"crate_workflow\": \"https://app.rewst.io/organizations/\" ~ update.organization.id ~ \"/workflows/\" ~ update.id,\r\n            \"workflows\": \"https://app.rewst.io/organizations/\" ~ update.organization.id ~ \"/workflows\"\r\n        }\r\n        for update in CTX.updates\r\n        if update.is_synchronized == true\r\n    ]\r\n    | unique(attribute='crate_name')\r\n    | sort(attribute='last_modified', reverse=True)\r\n}}"
+                            }
+                        },
+                        "isMocked": false,
+                        "join": 0,
+                        "mockInput": {
+                            "mock_result": {}
+                        },
+                        "name": "set_crate_names_and_date",
+                        "next": [
+                            {
+                                "do": [
+                                    "@@@workflow_task_id_ref1@@@"
+                                ],
+                                "from": null,
+                                "id": "@@@transition_id_ref3@@@",
+                                "publish": [],
+                                "to": null,
+                                "when": "{{ SUCCEEDED }}"
+                            }
+                        ],
+                        "packOverrides": [],
+                        "publishResultAs": "crate_names_and_date",
+                        "retry": null,
+                        "runAsOrgId": "",
+                        "timeout": 600,
+                        "transitionMode": "FOLLOW_ALL",
+                        "with": null,
+                        "securitySchema": {
+                            "redact": {
+                                "input": [],
+                                "result": []
+                            }
+                        }
+                    },
+                    {
+                        "id": "@@@workflow_task_id_ref4@@@",
+                        "action": {
+                            "id": "@@@action_ref3@@@"
+                        },
+                        "humanSecondsSaved": 0,
+                        "input": {
+                            "params": {
+                                "text": "{{ 900 }}"
+                            }
+                        },
+                        "isMocked": false,
+                        "join": 0,
+                        "mockInput": {
+                            "mock_result": {}
+                        },
+                        "name": "set_time_frame",
+                        "next": [
+                            {
+                                "do": [
+                                    "@@@workflow_task_id_ref2@@@"
+                                ],
+                                "from": null,
+                                "id": "@@@transition_id_ref4@@@",
+                                "publish": [],
+                                "to": null,
+                                "when": "{{ SUCCEEDED }}"
+                            }
+                        ],
+                        "packOverrides": [],
+                        "publishResultAs": "time_frame",
+                        "retry": null,
+                        "runAsOrgId": "",
+                        "timeout": 600,
+                        "transitionMode": "FOLLOW_ALL",
+                        "with": null,
+                        "securitySchema": {
+                            "redact": {
+                                "input": [],
+                                "result": []
+                            }
+                        }
+                    },
+                    {
+                        "id": "@@@workflow_task_id_ref5@@@",
+                        "action": {
+                            "id": "@@@action_ref3@@@"
+                        },
+                        "humanSecondsSaved": 0,
+                        "input": {
+                            "params": {
+                                "text": "{{\r\n    [\r\n        workflow\r\n        for workflow in TASKS.rewst_list_workflows.result.result\r\n        if workflow.is_synchronized == true and \r\n           ((now()) - (workflow.updated_at | int // 1000)) <= CTX.time_frame\r\n    ]\r\n}}\r\n"
+                            }
+                        },
+                        "isMocked": false,
+                        "join": 0,
+                        "mockInput": {
+                            "mock_result": {}
+                        },
+                        "name": "set_updates",
+                        "next": [
+                            {
+                                "do": [
+                                    "@@@workflow_task_id_ref3@@@"
+                                ],
+                                "from": null,
+                                "id": "@@@transition_id_ref5@@@",
+                                "publish": [],
+                                "to": null,
+                                "when": "{{ CTX.updates != [] }}"
+                            }
+                        ],
+                        "packOverrides": [],
+                        "publishResultAs": "updates",
+                        "retry": null,
+                        "runAsOrgId": "",
+                        "timeout": 600,
+                        "transitionMode": "FOLLOW_ALL",
+                        "with": null,
+                        "securitySchema": {
+                            "redact": {
+                                "input": [],
+                                "result": []
+                            }
+                        }
+                    },
+                    {
+                        "id": "@@@workflow_task_id_ref6@@@",
+                        "action": {
+                            "id": "@@@action_ref3@@@"
+                        },
+                        "humanSecondsSaved": 0,
+                        "input": {
+                            "params": {
+                                "text": "url_goes_here"
+                            }
+                        },
+                        "isMocked": false,
+                        "join": 0,
+                        "mockInput": {
+                            "mock_result": {}
+                        },
+                        "name": "set_webhook_url",
+                        "next": [
+                            {
+                                "do": [
+                                    "@@@workflow_task_id_ref4@@@"
+                                ],
+                                "from": null,
+                                "id": "@@@transition_id_ref6@@@",
+                                "publish": [],
+                                "to": null,
+                                "when": "{{ SUCCEEDED }}"
+                            }
+                        ],
+                        "packOverrides": [],
+                        "publishResultAs": "webhook_url",
+                        "retry": null,
+                        "runAsOrgId": "",
+                        "timeout": 600,
+                        "transitionMode": "FOLLOW_ALL",
+                        "with": null,
+                        "securitySchema": {
+                            "redact": {
+                                "input": [],
+                                "result": []
+                            }
+                        }
+                    }
+                ],
+                "timeout": 28800,
+                "type": "STANDARD",
+                "varsSchema": {}
+            },
+            "nonfunctional_fields": {
+                "description": "",
+                "name": "[DEMO] - Alert on Crate Updates",
+                "tasks[0].description": "Perform an HTTP request",
+                "tasks[0].metadata": {
+                    "x": 407.99999999999994,
+                    "y": 720
+                },
+                "tasks[0].next[0].label": "",
+                "tasks[1].description": "",
+                "tasks[1].metadata": {
+                    "x": 399.5408511472758,
+                    "y": 193.0084571677396
+                },
+                "tasks[1].next[0].label": "",
+                "tasks[2].description": "Set a variable as an action",
+                "tasks[2].metadata": {
+                    "x": 408,
+                    "y": 528
+                },
+                "tasks[2].next[0].label": "",
+                "tasks[3].description": "Timeframe in seconds",
+                "tasks[3].metadata": {
+                    "x": 408,
+                    "y": 24
+                },
+                "tasks[3].next[0].label": "",
+                "tasks[4].description": "Set a variable as an action",
+                "tasks[4].metadata": {
+                    "x": 408,
+                    "y": 360
+                },
+                "tasks[4].next[0].label": "Updates Found",
+                "tasks[5].description": "Set a variable as an action",
+                "tasks[5].metadata": {
+                    "x": 408.00000000000006,
+                    "y": -143.99999999999994
+                },
+                "tasks[5].next[0].label": ""
+            },
+            "references": {
+                "transition_id_ref5": {
+                    "kind": "string",
+                    "type": "transition_id",
+                    "src_key_hash": "Hq4iypcRYaZdNoyZNqHkxigZGdshcoGMDkcwfdCBppff",
+                    "content_hash": "8UWkSCHHySApagupcpUhH128kttnDDTD3M5N37Z9wP9t",
+                    "locations": [
+                        "tasks[4].next[0].id"
+                    ]
+                },
+                "workflow_task_id_ref3": {
+                    "kind": "string",
+                    "type": "workflow_task_id",
+                    "src_key_hash": "8Xjq1hG1x4eiQnhPUVvCxk1yiRB8Cb9q4aSes8h9KZEY",
+                    "content_hash": "oyhH1ii8NdTJDzTr8svUer2jLpKbMWaFT7krbKThKrZ",
+                    "locations": [
+                        "tasks[2].id",
+                        "tasks[4].next[0].do[0]"
+                    ]
+                },
+                "action_ref2": {
+                    "kind": "string",
+                    "type": "action",
+                    "src_key_hash": "5dfdhrX4sMSTqU1PM7bLnqK2ZN8Cbq2AZLBfGeznAcgK",
+                    "content_hash": "HSEfWa6r3EymMKgxqapS8QUC5BpJHNUqJqWhJoseRQgm",
+                    "locations": [
+                        "tasks[1].action.id"
+                    ]
+                },
+                "transition_id_ref3": {
+                    "kind": "string",
+                    "type": "transition_id",
+                    "src_key_hash": "AqsWNXffqiXc9xQ2gj2QNE7D65eK8z2dC8u8b46qEatq",
+                    "content_hash": "Ddy7pX5WTimhgQtN1MH6CEQffduwF1No9MzkLeHCWYwE",
+                    "locations": [
+                        "tasks[2].next[0].id"
+                    ]
+                },
+                "transition_id_ref6": {
+                    "kind": "string",
+                    "type": "transition_id",
+                    "src_key_hash": "6t9ucA4FvCUv87js2MojLri4Mqt26K4w6FJvEutJJgnR",
+                    "content_hash": "5gyeyBv53BEVSgB3AKy8KbXZzHT1dKzfDGnCAcrZdY2b",
+                    "locations": [
+                        "tasks[5].next[0].id"
+                    ]
+                },
+                "workflow_task_id_ref2": {
+                    "kind": "string",
+                    "type": "workflow_task_id",
+                    "src_key_hash": "7os9kA7JBNeafjBfimPx7bR5iikcGhNuwH1jpuvcBTyq",
+                    "content_hash": "G2Zwe1MbKawqTjCYod5y3EwYoDdGAtRMCU4t8rWjg4EL",
+                    "locations": [
+                        "tasks[1].id",
+                        "tasks[3].next[0].do[0]"
+                    ]
+                },
+                "action_ref3": {
+                    "kind": "string",
+                    "type": "action",
+                    "src_key_hash": "H2vG56Yv3nsJWSxGYN5fwHvUVQJm4ekpMMCWXhYDyb3J",
+                    "content_hash": "Aj7g63oBpFTyTLgcv25UHmfMB5WmghbjNdHZYGy7KxYN",
+                    "locations": [
+                        "tasks[2].action.id",
+                        "tasks[3].action.id",
+                        "tasks[4].action.id",
+                        "tasks[5].action.id"
+                    ]
+                },
+                "workflow_task_id_ref4": {
+                    "kind": "string",
+                    "type": "workflow_task_id",
+                    "src_key_hash": "HMYenJxyFvoRVh9vkjwjUzPhF4G7L4rvbynd7YQN7rVb",
+                    "content_hash": "7BXwDcn6nHX49B8Y9K7ixjhjRr8T1RcnE5Z9vu65N7y2",
+                    "locations": [
+                        "tasks[3].id",
+                        "tasks[5].next[0].do[0]"
+                    ]
+                },
+                "transition_id_ref2": {
+                    "kind": "string",
+                    "type": "transition_id",
+                    "src_key_hash": "EJykYmWPAejuatDJxsZYfDBaST9yyZoLsxmoaF5ph1Y3",
+                    "content_hash": "2FTTHqzfbLLntCZ57VBv8nbU9R5s6TDHF9EGbtDZLZzA",
+                    "locations": [
+                        "tasks[1].next[0].id"
+                    ]
+                },
+                "workflow_task_id_ref6": {
+                    "kind": "string",
+                    "type": "workflow_task_id",
+                    "src_key_hash": "BFHJ3TD9tW6VrJ1UJxVqJXswHCTXbttmZJg6zurd3iKF",
+                    "content_hash": "5G7sWsHPHhSZu2HU6x5UDAeHiFRPnyH2cgwsBBiXgdaz",
+                    "locations": [
+                        "tasks[5].id"
+                    ]
+                },
+                "workflow_task_id_ref1": {
+                    "kind": "string",
+                    "type": "workflow_task_id",
+                    "src_key_hash": "7MVoWT4k31J4yGy8Q8wEV6BZCya5pRF1meJPbKMWTc5V",
+                    "content_hash": "FQo5827SHNFeiCTFAtqcMSagkmbnbevPtBuJjBNykeXB",
+                    "locations": [
+                        "tasks[0].id",
+                        "tasks[2].next[0].do[0]"
+                    ]
+                },
+                "workflow_task_id_ref5": {
+                    "kind": "string",
+                    "type": "workflow_task_id",
+                    "src_key_hash": "8o3AFST5tFxFmycmdsoFEFnXALAKC96geZov97HYy35f",
+                    "content_hash": "E3zmy8wuiXhXY6jVe5ZvbTEXjqXaHB5z79p5AdWTwFu8",
+                    "locations": [
+                        "tasks[4].id",
+                        "tasks[1].next[0].do[0]"
+                    ]
+                },
+                "transition_id_ref1": {
+                    "kind": "string",
+                    "type": "transition_id",
+                    "src_key_hash": "3yvSz4XMasox6J1GjEcSVDtR9dv9cxzrDJyBYUfetrya",
+                    "content_hash": "DJ1DoQBs8ZorcZqnjpDStz83QGJpoApMd1Gsv5pvs766",
+                    "locations": [
+                        "tasks[0].next[0].id"
+                    ]
+                },
+                "transition_id_ref4": {
+                    "kind": "string",
+                    "type": "transition_id",
+                    "src_key_hash": "GBWjKkpaYjRxygZFZQPdVSRuBibgmA6PZfrFVQxvTaZH",
+                    "content_hash": "ERivnBTLntY8Ki6upbeLBR5EbJPTYfRWg7f9q4Ktveeb",
+                    "locations": [
+                        "tasks[3].next[0].id"
+                    ]
+                },
+                "action_ref1": {
+                    "kind": "string",
+                    "type": "action",
+                    "src_key_hash": "14Cgp7yWC5KnteK8gtBwTf5bLFjwt4kpGpKMn7vV5dvP",
+                    "content_hash": "FMu3hsNV7SdbaFHCpQXe4YsxtfRZHq3LfQ8Ej6uv322w",
+                    "locations": [
+                        "tasks[0].action.id"
+                    ]
+                }
+            },
+            "dependencies": [
+                "transition_id:Hq4iypcRYaZdNoyZNqHkxigZGdshcoGMDkcwfdCBppff",
+                "workflow_task_id:HMYenJxyFvoRVh9vkjwjUzPhF4G7L4rvbynd7YQN7rVb",
+                "transition_id:GBWjKkpaYjRxygZFZQPdVSRuBibgmA6PZfrFVQxvTaZH",
+                "transition_id:6t9ucA4FvCUv87js2MojLri4Mqt26K4w6FJvEutJJgnR",
+                "action:H2vG56Yv3nsJWSxGYN5fwHvUVQJm4ekpMMCWXhYDyb3J",
+                "workflow_task_id:8Xjq1hG1x4eiQnhPUVvCxk1yiRB8Cb9q4aSes8h9KZEY",
+                "transition_id:EJykYmWPAejuatDJxsZYfDBaST9yyZoLsxmoaF5ph1Y3",
+                "workflow_task_id:7MVoWT4k31J4yGy8Q8wEV6BZCya5pRF1meJPbKMWTc5V",
+                "workflow_task_id:8o3AFST5tFxFmycmdsoFEFnXALAKC96geZov97HYy35f",
+                "transition_id:3yvSz4XMasox6J1GjEcSVDtR9dv9cxzrDJyBYUfetrya",
+                "action:14Cgp7yWC5KnteK8gtBwTf5bLFjwt4kpGpKMn7vV5dvP",
+                "transition_id:AqsWNXffqiXc9xQ2gj2QNE7D65eK8z2dC8u8b46qEatq",
+                "workflow_task_id:BFHJ3TD9tW6VrJ1UJxVqJXswHCTXbttmZJg6zurd3iKF",
+                "workflow_task_id:7os9kA7JBNeafjBfimPx7bR5iikcGhNuwH1jpuvcBTyq",
+                "action:5dfdhrX4sMSTqU1PM7bLnqK2ZN8Cbq2AZLBfGeznAcgK"
+            ]
+        }
+    },
+    "__typename": "ExportBundle"
+}
