@@ -1,0 +1,1615 @@
+{
+    "version": 2,
+    "exportedAt": "2025-06-13T19:48:51.309949+00:00",
+    "signing": {
+        "cert": "-----BEGIN CERTIFICATE-----\nMIICazCCAfGgAwIBAgIUFJtHAR8D+ZfChHcAXHemH7s8zRowCgYIKoZIzj0EAwIwfDELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAkZMMQ4wDAYDVQQHEwVUYW1wYTEOMAwGA1UEChMFUmV3c3QxEzARBgNVBAsTClJld3N0IERldnMxKzApBgNVBAMTImxvY2FsIFJld3N0IEltcG9ydC9FeHBvcnQgQ0EyIHYxLjEwHhcNMjIwNjAzMTkwMDU1WhcNMjUwNTIzMTkwMTI1WjBDMQswCQYDVQQGEwJVUzELMAkGA1UECBMCRkwxDjAMBgNVBAcTBVRhbXBhMRcwFQYDVQQDEw5sb2NhbC5yZXdzdC5pbzB2MBAGByqGSM49AgEGBSuBBAAiA2IABMcTJzyLIvX1+3545EJbFeNVjahxVq6TFQ7n/IYZs4yEMQzDWZjAyHhJPZk3Dxq/wFzesXMYJu41rhxfz7AZh15LtFGfy9V2B4X5KH7sGJWqOan0mabuF83llruTLA/NQaNtMGswDgYDVR0PAQH/BAQDAgeAMB0GA1UdDgQWBBTDePOSC6hckrg6usrK2giZv9GxpjAfBgNVHSMEGDAWgBTojdemsJqfnB19iyMxmIi3OGYw6TAZBgNVHREEEjAQgg5sb2NhbC5yZXdzdC5pbzAKBggqhkjOPQQDAgNoADBlAjEA8NsLnuGhfTPC7dB0ojWf5WmH64qFZuPFD6Q0RwGYO0D1Tn2x5+/37kW3HFcGHV0wAjBM7LSidsc7E9+fmcesnN5hM34eGMP+YWCoEeFIPPANXQKemAgUVf35iXyU64sVEC4=\n-----END CERTIFICATE-----",
+        "hash": "sha512",
+        "signature": "MGUCMQCKbSJ0TTgo4s5gZfg4ovuP0BAmicyiLwQ8Sf2cMX6AHNDlphJCf+UZ+TsNoEJQ8ZUCMEo33ZcSaDLoYd1zQoMw+fC4kvbPmpdTd8ZT3QmE96Dd2C9j/nxbClVC8JYm+L965w=="
+    },
+    "objects": {
+        "workflow_task_id:AMVVhwedzLE8hEVyN88RKhBUBDsufFv7xHmhSGSRRFjv": {
+            "type": "workflow_task_id",
+            "content_hash": "FJXwjB1sX3yr4u4w4oLG5ga6m4z3mXmvFsGVCDRLykKa",
+            "hash": "4YbGMVpCCpzjXxjMwo8gVQ1Qo52PsxpxxVXpkciLEnGH",
+            "fields": {
+                "id": "3489446d21a34cee9338a3d12d225839"
+            }
+        },
+        "workflow_task_id:Gpsqqa6AFxae3PUwmpXZ4X7nUqLhX85QfRJt79wkTtb8": {
+            "type": "workflow_task_id",
+            "content_hash": "4TWn39c4F5udU5skqhUiT5NBKys9fFL2Wf7jFPhpCTT5",
+            "hash": "CR7MdqaCR3tkadrayt5oNZkeJHS7mE31RJ2U1ecp7WZN",
+            "fields": {
+                "id": "4321087f081a42ff8feeaf9744c3dbfb"
+            }
+        },
+        "transition_id:74vm3CW6iNWL5qs6MTwDaJGexxZvWqWwzJDCxzfyEiJU": {
+            "type": "transition_id",
+            "content_hash": "3bzHYSarMdpdXaEUTgpMn8Ff3YfCswYkcc5QWyfc9wNE",
+            "hash": "AjKo8uDcYWSNpnj62jg3SR9pK4xcbjQfz527M71qTbRM",
+            "fields": {
+                "id": "c144d835-9c04-4da5-a978-819c74280001"
+            }
+        },
+        "action:AzUe9FH41DyoqspZCNyD5GA7PtsbbBEjKJRKKp1ARinm": {
+            "type": "action",
+            "content_hash": "Aj7g63oBpFTyTLgcv25UHmfMB5WmghbjNdHZYGy7KxYN",
+            "hash": "JAbYYJfYDMeHf1dt791VFAinW1gZoCwsGcGznS61qhTC",
+            "fields": {
+                "ref": "transforms.set_variable"
+            }
+        },
+        "workflow_task_id:EpmurRYcSNUjeaaT2GdiJSyKECgFa6ATd1tMsb5LQmHs": {
+            "type": "workflow_task_id",
+            "content_hash": "9MbM8EXBTfRPiSFXsQpGK9CUhQrSHGyaFaEAnuwsq7j5",
+            "hash": "4QkdBQGQMG76vzV7zd6Q672a2TwYFFzaCs5ucZMg9QaF",
+            "fields": {
+                "id": "5c2b94b4492b488e9399d520ba3ed597"
+            }
+        },
+        "workflow_task_id:4musbR5aY94Z7ecAKRGhK1QbYEmCbuRsg8YqntbFjnUw": {
+            "type": "workflow_task_id",
+            "content_hash": "CqSQorBFk3xkmyh5bzSwb34TyJ8wieuR7b5ikwaQBj8c",
+            "hash": "DVk9ZNdXR32wrHYSQPe9XpxrzbKGo8wxnHsjhHLgnLtb",
+            "fields": {
+                "id": "eae9cbed03a14c42b3371a0f991a2008"
+            }
+        },
+        "workflow_task_id:5rdYiJ5XNeJ4VU4VmMPbZiAES9d8iT5FZjm8asTvNiuR": {
+            "type": "workflow_task_id",
+            "content_hash": "7oKZZzJ8sQp3Bvj8KzKw6XbfMUMkcMThTsdDYS3LQD4k",
+            "hash": "5PSmWvkhnKwSSdU9NSYtT8HNzMfUkRqs4bSvXGmkxeEV",
+            "fields": {
+                "id": "5080c417e80c40a7b69c08b6dba95357"
+            }
+        },
+        "action:FodHMaJC59FDgub4yYgvrux2yTouoJFPBh9zQyshTuSJ": {
+            "type": "action",
+            "content_hash": "FMu3hsNV7SdbaFHCpQXe4YsxtfRZHq3LfQ8Ej6uv322w",
+            "hash": "CDXNu8XJkn4bBRzcx18z5UYnjXiUM2WB6hTMAwGhMQ4K",
+            "fields": {
+                "ref": "core.http_request"
+            }
+        },
+        "workflow_task_id:6ouRh1rV2MQe6Bmn9h3kv97JtaAuetxaaBzmq3fuaTZw": {
+            "type": "workflow_task_id",
+            "content_hash": "EnoyTWGcdDZCv8NvunBkFLRBjpGgoi3KEBMiRzUtsvqb",
+            "hash": "2RjxACRf5R4DXyNiRAqBA1CkpcikAcio1VcgMrxr63Gs",
+            "fields": {
+                "id": "2fc86d61e986447ab31162f615abe8f2"
+            }
+        },
+        "transition_id:HFg5kZCuHkkSWv3Lziwsv7hfMErucdooNzmDequz9yAt": {
+            "type": "transition_id",
+            "content_hash": "BqNSc2krS83KjmdbYvGqBQLPz68bZBEGYGQzNtKDr8St",
+            "hash": "BBQpDsAdCrLQaUaezV67J6xzoJ8421RGa1d6gBmv5YSA",
+            "fields": {
+                "id": "c3216d2b-1d3e-44ca-8aff-c4832ba00476"
+            }
+        },
+        "transition_id:6hRT43kxmEkbjRasnt8XD1qvS29W4mtgCKy9V4B6GZRR": {
+            "type": "transition_id",
+            "content_hash": "2THZVxTdjkYKc3gk7jFEb7JTYAdRzpLJT9mJHoYnypit",
+            "hash": "9Ui3LxuMzCjtP2DBMBjsKD2WyX6NCF3VMMJ1pRuUDgGw",
+            "fields": {
+                "id": "63e4bdc3-9208-4ae6-9631-07c88dea2418"
+            }
+        },
+        "transition_id:7usQuo4FxU735Uss2sw3wyXLG7PDQedoH6cpkYormgKg": {
+            "type": "transition_id",
+            "content_hash": "B1VFbihoBcveBsBgU9pCKnVAuerP1brH4VEzzuVBSXjA",
+            "hash": "qvbsdcZ1dKrc8yStfQfMaxcxrC2kCJWgqfME7EQMpSB",
+            "fields": {
+                "id": "35b18cc4-0a92-46f1-ab82-e6de1d9cc649"
+            }
+        },
+        "action:8daRHFp6vcBipvjt5jkSEGisYP5A7ZFY8opsQMSf5Kh": {
+            "type": "action",
+            "content_hash": "CdPL6KHuhM7mBvTHi4QnQbxCitnoxuRrq1BfHNnQYzKB",
+            "hash": "Arr2RCEM96WqU2EkvigszSfsW9GZHa4HJC5a1fL9qZ5g",
+            "fields": {
+                "ref": "core.noop"
+            }
+        },
+        "transition_id:D7yD2RngTA3jPCLjBZuLoFNihPn8wqVA2PLU6W7ufS4v": {
+            "type": "transition_id",
+            "content_hash": "kTyDoTmVJTBwytsjMsCMTP5QUjCbVtu3SqsDnfsJwni",
+            "hash": "oaiCrrJ46d5DSL6XgzCGBKeGf45ZTVz45zQKwFJLowY",
+            "fields": {
+                "id": "57a55a9f-12c0-4d09-9472-5839b1724195"
+            }
+        },
+        "transition_id:5RfjAo4usqoSMaJtpQM5Lwn4Cok3JPDk5zLAcJAqSetZ": {
+            "type": "transition_id",
+            "content_hash": "DdbRP8qGKCWTbao76Sf7Myc9KpZnoa2SJdx3dZxYfYDq",
+            "hash": "EhRAk4C8YtGKoJMFfqigYSXrZeYiig96uaJKEiFcn8zJ",
+            "fields": {
+                "id": "fa85eb48-cc9c-439a-ac55-42ade30db7b6"
+            }
+        },
+        "transition_id:7dVwNVbL4FjaREcwDAbmstT1eUD6HxfFeiqTPSj1rHWt": {
+            "type": "transition_id",
+            "content_hash": "FiqGmPrx5fKWe3SktfHJfaoiaQ9xsmjLh55ZD3XiFdVv",
+            "hash": "HbJCeLHhMCS3RVknJSRKVSf6kkS3m9wRQkw7XQv5vQSs",
+            "fields": {
+                "id": "7aa5f2d7-7c8e-490f-bb39-70f1c91c3492"
+            }
+        },
+        "workflow_task_id:AHSMnRwWuxaAez1n6UtLDHix3ApdUuGSV9YkBySvVAet": {
+            "type": "workflow_task_id",
+            "content_hash": "8RqV7TqSssnK26NSfPMRsTWdnzbaAeEHzLMat58aBMRh",
+            "hash": "41VEVAgBVhgY7kqhNp2qYfvENDDXaoi3U2iT2x5Fim7V",
+            "fields": {
+                "id": "6098a80ce1f042e086d911bd1f6ed4ab"
+            }
+        },
+        "transition_id:F4yTwFATomjNydH2pYGCs3Ko124diHQXC1SkPJmgr2mJ": {
+            "type": "transition_id",
+            "content_hash": "71tVsChqJf16JGJ6WYvAPE16QbWVi3byo4efWpgxRa3S",
+            "hash": "2Vht7BA1GVhTqeQvfJi47M12yuvZRLDibFQL8w8bfJSF",
+            "fields": {
+                "id": "252efe91-4963-46f8-952e-c6e6d6b215f4"
+            }
+        },
+        "transition_id:J2rNcnYzyZN3xXSXYpq7wBSgeo9zMkcN9kPV3kWqNTf5": {
+            "type": "transition_id",
+            "content_hash": "EhXzmQNea4FaF779v7Nwaci4CBA3X1f3xtEJmmAoSFpz",
+            "hash": "2XzBhJurWQcHRL19c2ZeDMRkPcFDtVzzXyj674x2SJWK",
+            "fields": {
+                "id": "1c267a43-1fae-44d6-9a54-5bd0bb27a3cb"
+            }
+        },
+        "workflow_task_id:D5BQ5cyEFGZJ3JR9DbepeuhSi6AtAy6wjBxrcjBkqWoH": {
+            "type": "workflow_task_id",
+            "content_hash": "8zteEmxyfWox7n9joAcRGYoizy8JF9WT6DvHJQp9FQ9p",
+            "hash": "5PiB9rtWFCFBQqunQfU7dPinoXjLtsc7aZL4QMk4qRDu",
+            "fields": {
+                "id": "d826c13ed977422bba32f831d27bc25b"
+            }
+        },
+        "transition_id:FBe9oXP2YdXmsFapNvcXXfGkfisfQcUTht6FZuZh2Cvq": {
+            "type": "transition_id",
+            "content_hash": "6gvWfrRRtgKVehNo7qyvfpi9xDCXTPzbNDVN8mhZhoZx",
+            "hash": "3E2kqW7gNYnM6H91d3Aav8U6RoD46w9nMEbqYQJ1NZaY",
+            "fields": {
+                "id": "1c738295-908a-4aa0-bff8-31442dad3c51"
+            }
+        },
+        "workflow_task_id:BH3rijkzJYS6GJw3PCPBkhnAU5T3oDGNV7mKiATG44Zq": {
+            "type": "workflow_task_id",
+            "content_hash": "2K58qcyWzoQN67UPoY8B864PrPH3LJdNXspRN8eVEd4N",
+            "hash": "AqYdbVQ8mg2pVBUd9wSxyhnzU49W2D31a12ixg3EvhbK",
+            "fields": {
+                "id": "16bfa715ff964c4897fed9c4447c6fbc"
+            }
+        },
+        "transition_id:7UHQdN96pEhYP5Mo4vbMW8tMeUWN3MKV71ucyigL1ZZ4": {
+            "type": "transition_id",
+            "content_hash": "7F1FsmgoB5gf8JoTJooNeydbFAjhRYdw5aXutFRE9rS7",
+            "hash": "HafHhPK8e1DJyH7Pcumcj34FQkHm9U2UNp5sdou8XtNk",
+            "fields": {
+                "id": "d4ac792b-74a3-4b3b-9df6-44902c653dab"
+            }
+        },
+        "workflow_task_id:6kMvjCJGg1g2Ne3yX64iUtNdaPSvwoLXmeTtHoTcDG5w": {
+            "type": "workflow_task_id",
+            "content_hash": "3pmJzvk2WyJjhnSLRpWmnPk5ezBrkLXQmPYWrEZtC4uh",
+            "hash": "EuPSPL4DAttUuMUX2Jb4zyKHiYkZMaxj2dr4GnbpNcsA",
+            "fields": {
+                "id": "dfc0d5de70d2484097cdbdc12ee1c3d5"
+            }
+        },
+        "workflow_task_id:enGskVTEg28WEaX9c5B6Am4KZuASoWnr3ZqPbYYo374": {
+            "type": "workflow_task_id",
+            "content_hash": "4YJzDi7ob2coK3ZUrATa3rBSn7yowGuY2BK2c3NspEuU",
+            "hash": "7yenvvyFJRYe7jUroH5Z7EJ6mjZ1tt3gdpzwEbYh3thV",
+            "fields": {
+                "id": "3cdac1ac9a3c420e90acdc8a715f7144"
+            }
+        },
+        "workflow_task_id:HXUiSDBXizCAxunKWv3sS8CBgTyWcwwUPNizGk9ASzzH": {
+            "type": "workflow_task_id",
+            "content_hash": "4pBoJDWh9iQMAWsYGVhgZe6LpfumqtyhpDy4P6zGCVFz",
+            "hash": "6u6KztZ7P4iHgRCcteEwxd9ygF3TL23BGADxcNPiZPXU",
+            "fields": {
+                "id": "331e3eb150d940ecbc2dfedfdf13b9c8"
+            }
+        },
+        "transition_id:FoZaZLJqXvfZ7HzbNDdRnMXd22qsCWJ1gtH2wrakWiPk": {
+            "type": "transition_id",
+            "content_hash": "4muVEop4rywku1UrRe8SwAve8FaodJKxa8xC8Jp6ed8V",
+            "hash": "AiRD6VbramX7t34pY3Rk94ZaY1iNquNRAXqzYXusb9rf",
+            "fields": {
+                "id": "53f518af-b60b-4512-bdd7-34b0c0ee5923"
+            }
+        },
+        "transition_id:4oHkh9htLwW4cG8DJ1UvB5AMQm5hs7GchKFRMiismgcm": {
+            "type": "transition_id",
+            "content_hash": "6hu5F8V41ewsNegJEuMmtVNY3WfBnVWY1R73hXdvF9XQ",
+            "hash": "EC6FhFLCUzS5CKojbcwPV2WXpsFCixkaCs9U34tsw4WP",
+            "fields": {
+                "id": "d5510116-80d5-4920-b1f2-efcca7707e9d"
+            }
+        },
+        "transition_id:27fgs5DvHd4Bo3bDxn3uWafGyQpKsvZgcfcdr8K9peT9": {
+            "type": "transition_id",
+            "content_hash": "BmYqt2guEQFToK9xEzZ28phufhy5mTTDp1nEiPN1NeVh",
+            "hash": "4H89sBVjof3zw9LvJsFH2uBxzjbSJdZR8RtDJfrQbeTb",
+            "fields": {
+                "id": "36d82ee5-a1eb-4cb7-a53e-f3add7491eb5"
+            }
+        },
+        "transition_id:BXefX6KV9qhytav7GpUAZsYV4FYdPwHWjU5fsJ1nvx8i": {
+            "type": "transition_id",
+            "content_hash": "H12WZNikUXuizKU1MG1wvjLGuvKiXdJCgzRwFSYQhZtf",
+            "hash": "D9UzWBdvAwbhkFjHcVSNMLjABXvULhKcP9LW6236ky3J",
+            "fields": {
+                "id": "f9181e49-03f7-4f5b-8858-d8a150afcaa3"
+            }
+        },
+        "transition_id:HPZo6y9BkSY5T2Xmfbo21Fc9B8CbwkvLEsZWGVyaVNHz": {
+            "type": "transition_id",
+            "content_hash": "6UHhX1P9ZfM9jKYVytpJzV5W6fkHKnTnsnApqYrbnArC",
+            "hash": "3AZqhhvLGcksAwH8VuZmP5x6qYcJ1su11YG4uUNUPVcc",
+            "fields": {
+                "id": "fac49aeb-14c8-4783-977d-beb05aa56088"
+            }
+        },
+        "workflow_task_id:9XeB76Z6hmBovyfAromH4pukMD8Z6NeRXZ9dHYqZpigB": {
+            "type": "workflow_task_id",
+            "content_hash": "EQjbK94i6F6hN2C9Wfw6oLjab7pLAPwXrh6HqdiQVSCf",
+            "hash": "n3MmZQzESRmXwV8SGDYA2LbC3vRtBazp8DskYGaYBDj",
+            "fields": {
+                "id": "55fbe83796ca427e865c0f38a586d946"
+            }
+        },
+        "workflow_task_id:6vWdgZGHGFbAwRDLTUWZzUVeBG4DsXZt9uKwyzeTaaDS": {
+            "type": "workflow_task_id",
+            "content_hash": "WuCRga5oAUDPLk9zJV3crxQtYc5oN9B1FTbn2KV4hty",
+            "hash": "65pxh7FMWJoA76rvhAPVfBGRVPw8cFAmzaAUGbkxTKMK",
+            "fields": {
+                "id": "279c97f99c6045c8b03702f27aab686f"
+            }
+        },
+        "transition_id:7xZ3iXWfkfQtqjdmu4DPW11AufUMiuvbtwe1U1XZFRCe": {
+            "type": "transition_id",
+            "content_hash": "7KGQM9uzwLxwjVaX1jC4dyShCh22nLdMnX6cRVXXkbi",
+            "hash": "HGuRgCov49crK18hGiyU4RgSq4Aio6ijFt62afcxBBw3",
+            "fields": {
+                "id": "292bce27-ccfe-4bfd-b643-93a385a58075"
+            }
+        },
+        "transition_id:ErWdxeDZALC9GVAfb3djMUJ2bxGHhWJHnRMvCkE2icGR": {
+            "type": "transition_id",
+            "content_hash": "8ZnKTpEpCQZePw8k27hw1wUstMrSrJihrH9YbBBPkL8p",
+            "hash": "HVWxtDXiHFpiFzLnesUAZuvFERx83xpakYjY9nbRoX9M",
+            "fields": {
+                "id": "e4151b2b-770f-4287-b9c2-ce1de35c02fe"
+            }
+        },
+        "transition_id:7zSsmYA9NuSiPN8qnn9AQ5PsWVt1H4owp4piDGPofSVQ": {
+            "type": "transition_id",
+            "content_hash": "FgU2iaVmkyYUC5dj2c2VoZREKUmPkucaE6UZHVphNwu1",
+            "hash": "2LDDvovgkX3gh67iBBGieNDKQQp1qKqo3oPCicHo2yZK",
+            "fields": {
+                "id": "1aa6ab49-035c-400c-8c8a-930c411d341a"
+            }
+        },
+        "workflow_task_id:2X62oFk2RYExfZkAj4qyhyC8ze83Rewcjqtq2fZ1dMiE": {
+            "type": "workflow_task_id",
+            "content_hash": "4TyEzBRKYeuYd7TJjJJbFkx2Abs3ATcdeyjsuYzyywcP",
+            "hash": "KajEccCV5ayKoLtVCqyP2BdpTaAqTVzNoVKwuY5GuRS",
+            "fields": {
+                "id": "81d431ae53bb47a78771e9c53d0b5ab2"
+            }
+        },
+        "action:Gp1B9yr3W5EhaNAhjmJhgnyM68wU3pK8gH4DAsqJhKxU": {
+            "type": "action",
+            "content_hash": "23N3ubJaPa6X5iBRydHACFjBkPCx3ojoiFwyDcNZB5a1",
+            "hash": "AchMyaNUwhPjK8j3wVV34tZM4hrNovi1XH4z1MkHzuFP",
+            "fields": {
+                "ref": "microsoft_graph.graph_api_request"
+            }
+        },
+        "workflow_task_id:4ncZ7D7XWpPXmqY1hEKmaTUAVmoBnvdqmxvgP7LGAdfF": {
+            "type": "workflow_task_id",
+            "content_hash": "8ZEhQ438sDRKB8RrdY7ZgwWQLjVYHiGDWRY7UxgLm7M3",
+            "hash": "EtRBPA4AEdRttyMg7EV3JULqHMTn3cCjRqh31mbEuQPo",
+            "fields": {
+                "id": "78a3312ed7114e8d9a6f9643d26585ec"
+            }
+        },
+        "workflow:79e2RXSnBJ4CzfD4eyc6GMPWSPVZCFHPi2DfQKE55243": {
+            "type": "workflow",
+            "content_hash": "6AmeFUNqHwuXrckyJ9H4vzUZCBTSE12nBZX36cw8zZZx",
+            "hash": "4JyzKuqkWdG1sz8RubTG9p9c1qUpmVtQS7Y9QEUiunV9",
+            "fields": {
+                "humanSecondsSaved": 0,
+                "notes": [],
+                "output": [],
+                "parameters": {},
+                "tasks": [
+                    {
+                        "id": "@@@workflow_task_id_ref1@@@",
+                        "action": {
+                            "id": "@@@action_ref1@@@"
+                        },
+                        "humanSecondsSaved": 0,
+                        "input": {},
+                        "isMocked": false,
+                        "join": 0,
+                        "mockInput": {
+                            "mock_result": {}
+                        },
+                        "name": "alert",
+                        "next": [
+                            {
+                                "do": [
+                                    "@@@workflow_task_id_ref3@@@"
+                                ],
+                                "from": null,
+                                "id": "@@@transition_id_ref1@@@",
+                                "publish": [],
+                                "to": null,
+                                "when": "{{ SUCCEEDED }}"
+                            },
+                            {
+                                "do": [
+                                    "@@@workflow_task_id_ref9@@@"
+                                ],
+                                "from": null,
+                                "id": "@@@transition_id_ref2@@@",
+                                "publish": [],
+                                "to": null,
+                                "when": "{{ SUCCEEDED }}"
+                            },
+                            {
+                                "do": [
+                                    "@@@workflow_task_id_ref10@@@"
+                                ],
+                                "from": null,
+                                "id": "@@@transition_id_ref3@@@",
+                                "publish": [],
+                                "to": null,
+                                "when": "{{ SUCCEEDED }}"
+                            }
+                        ],
+                        "packOverrides": [],
+                        "publishResultAs": "",
+                        "retry": null,
+                        "runAsOrgId": "",
+                        "timeout": 600,
+                        "transitionMode": "FOLLOW_ALL",
+                        "with": null,
+                        "securitySchema": {
+                            "redact": {
+                                "input": [],
+                                "result": []
+                            }
+                        }
+                    },
+                    {
+                        "id": "@@@workflow_task_id_ref2@@@",
+                        "action": {
+                            "id": "@@@action_ref2@@@"
+                        },
+                        "humanSecondsSaved": 0,
+                        "input": {
+                            "params": {
+                                "text": "{{ CTX.installed_rogue_apps | d([]) | length > 0 }}"
+                            }
+                        },
+                        "isMocked": false,
+                        "join": 0,
+                        "mockInput": {
+                            "mock_result": {}
+                        },
+                        "name": "check_rogue_apps_installed",
+                        "next": [
+                            {
+                                "do": [
+                                    "@@@workflow_task_id_ref4@@@"
+                                ],
+                                "from": null,
+                                "id": "@@@transition_id_ref4@@@",
+                                "publish": [],
+                                "to": null,
+                                "when": "{{ RESULT.result == false}}"
+                            },
+                            {
+                                "do": [
+                                    "@@@workflow_task_id_ref5@@@"
+                                ],
+                                "from": null,
+                                "id": "@@@transition_id_ref5@@@",
+                                "publish": [],
+                                "to": null,
+                                "when": "{{ RESULT.result == true }}"
+                            }
+                        ],
+                        "packOverrides": [],
+                        "publishResultAs": "is_rogue_app_installed",
+                        "retry": null,
+                        "runAsOrgId": "",
+                        "timeout": 600,
+                        "transitionMode": "FOLLOW_ALL",
+                        "with": null,
+                        "securitySchema": {
+                            "redact": {
+                                "input": [],
+                                "result": []
+                            }
+                        }
+                    },
+                    {
+                        "id": "@@@workflow_task_id_ref3@@@",
+                        "action": {
+                            "id": "@@@action_ref1@@@"
+                        },
+                        "humanSecondsSaved": 0,
+                        "input": {},
+                        "isMocked": false,
+                        "join": 0,
+                        "mockInput": {
+                            "mock_result": {}
+                        },
+                        "name": "create_ticket",
+                        "next": [
+                            {
+                                "do": [],
+                                "from": null,
+                                "id": "@@@transition_id_ref6@@@",
+                                "publish": [],
+                                "to": null,
+                                "when": "{{ SUCCEEDED }}"
+                            }
+                        ],
+                        "packOverrides": [],
+                        "publishResultAs": "",
+                        "retry": null,
+                        "runAsOrgId": "",
+                        "timeout": 600,
+                        "transitionMode": "FOLLOW_ALL",
+                        "with": null,
+                        "securitySchema": {
+                            "redact": {
+                                "input": [],
+                                "result": []
+                            }
+                        }
+                    },
+                    {
+                        "id": "@@@workflow_task_id_ref4@@@",
+                        "action": {
+                            "id": "@@@action_ref1@@@"
+                        },
+                        "humanSecondsSaved": 0,
+                        "input": {},
+                        "isMocked": false,
+                        "join": 0,
+                        "mockInput": {
+                            "mock_result": {}
+                        },
+                        "name": "finish",
+                        "next": [
+                            {
+                                "do": [],
+                                "from": null,
+                                "id": "@@@transition_id_ref7@@@",
+                                "publish": [],
+                                "to": null,
+                                "when": "{{ SUCCEEDED }}"
+                            }
+                        ],
+                        "packOverrides": [],
+                        "publishResultAs": "",
+                        "retry": null,
+                        "runAsOrgId": "",
+                        "timeout": 600,
+                        "transitionMode": "FOLLOW_ALL",
+                        "with": null,
+                        "securitySchema": {
+                            "redact": {
+                                "input": [],
+                                "result": []
+                            }
+                        }
+                    },
+                    {
+                        "id": "@@@workflow_task_id_ref5@@@",
+                        "action": {
+                            "id": "@@@action_ref3@@@"
+                        },
+                        "humanSecondsSaved": 0,
+                        "input": {
+                            "json": null,
+                            "params": null,
+                            "headers": null,
+                            "base_url": "https://graph.microsoft.com/",
+                            "endpoint": "/beta/roleManagement/directory/roleAssignments?$expand=principal",
+                            "raw_body": null,
+                            "client_kwargs": {
+                                "use_delegated_admin": false
+                            },
+                            "request_method": "GET",
+                            "raw_body_from_url": null,
+                            "require_2xx_status": null
+                        },
+                        "isMocked": false,
+                        "join": 0,
+                        "mockInput": {
+                            "mock_result": {}
+                        },
+                        "name": "get_admin_users",
+                        "next": [
+                            {
+                                "do": [
+                                    "@@@workflow_task_id_ref6@@@"
+                                ],
+                                "from": null,
+                                "id": "@@@transition_id_ref8@@@",
+                                "publish": [
+                                    {
+                                        "key": "admins",
+                                        "value": "{{ \r\n    [\r\n        user\r\n        for user in RESULT.result.data.value\r\n        if user.roleDefinitionId == \"Role ID associated with admins\"\r\n    ]\r\n }}"
+                                    }
+                                ],
+                                "to": null,
+                                "when": "{{ SUCCEEDED }}"
+                            }
+                        ],
+                        "packOverrides": [],
+                        "publishResultAs": "",
+                        "retry": null,
+                        "runAsOrgId": "",
+                        "timeout": 600,
+                        "transitionMode": "FOLLOW_ALL",
+                        "with": null,
+                        "securitySchema": {
+                            "redact": {
+                                "input": [],
+                                "result": []
+                            }
+                        }
+                    },
+                    {
+                        "id": "@@@workflow_task_id_ref6@@@",
+                        "action": {
+                            "id": "@@@action_ref3@@@"
+                        },
+                        "humanSecondsSaved": 0,
+                        "input": {
+                            "json": null,
+                            "params": null,
+                            "headers": null,
+                            "base_url": "https://graph.microsoft.com/v1.0",
+                            "endpoint": "servicePrincipals/{{item().id}}/appRoleAssignedTo",
+                            "raw_body": null,
+                            "client_kwargs": {
+                                "use_delegated_admin": false
+                            },
+                            "request_method": "GET",
+                            "raw_body_from_url": null,
+                            "require_2xx_status": null
+                        },
+                        "isMocked": false,
+                        "join": 0,
+                        "mockInput": {
+                            "mock_result": {}
+                        },
+                        "name": "get_app_roles",
+                        "next": [
+                            {
+                                "do": [
+                                    "@@@workflow_task_id_ref13@@@"
+                                ],
+                                "from": null,
+                                "id": "@@@transition_id_ref9@@@",
+                                "publish": [],
+                                "to": null,
+                                "when": "{{ SUCCEEDED }}"
+                            }
+                        ],
+                        "packOverrides": [],
+                        "publishResultAs": "app_role_data",
+                        "retry": null,
+                        "runAsOrgId": "",
+                        "timeout": 600,
+                        "transitionMode": "FOLLOW_ALL",
+                        "with": {
+                            "items": "{{ CTX.installed_rogue_apps }}",
+                            "concurrency": "1"
+                        },
+                        "securitySchema": {
+                            "redact": {
+                                "input": [],
+                                "result": []
+                            }
+                        }
+                    },
+                    {
+                        "id": "@@@workflow_task_id_ref7@@@",
+                        "action": {
+                            "id": "@@@action_ref4@@@"
+                        },
+                        "humanSecondsSaved": 0,
+                        "input": {
+                            "url": "https://raw.githubusercontent.com/huntresslabs/rogueapps/main/public/rogueapps.json",
+                            "body": null,
+                            "json": null,
+                            "files": [],
+                            "method": "GET",
+                            "params": null,
+                            "cookies": null,
+                            "headers": null,
+                            "timeout": 5,
+                            "auth_password": null,
+                            "auth_username": null,
+                            "allow_redirects": true,
+                            "require_2xx_status": null
+                        },
+                        "isMocked": false,
+                        "join": 0,
+                        "mockInput": {
+                            "mock_result": {}
+                        },
+                        "name": "get_huntress_rogue_apps",
+                        "next": [
+                            {
+                                "do": [
+                                    "@@@workflow_task_id_ref8@@@"
+                                ],
+                                "from": null,
+                                "id": "@@@transition_id_ref10@@@",
+                                "publish": [
+                                    {
+                                        "key": "rogue_apps",
+                                        "value": "{{ RESULT.result.data | from_json_string }}"
+                                    }
+                                ],
+                                "to": null,
+                                "when": "{{ SUCCEEDED }}"
+                            }
+                        ],
+                        "packOverrides": [],
+                        "publishResultAs": "",
+                        "retry": null,
+                        "runAsOrgId": "",
+                        "timeout": 600,
+                        "transitionMode": "FOLLOW_ALL",
+                        "with": null,
+                        "securitySchema": {
+                            "redact": {
+                                "input": [
+                                    "auth_password"
+                                ],
+                                "result": []
+                            }
+                        }
+                    },
+                    {
+                        "id": "@@@workflow_task_id_ref8@@@",
+                        "action": {
+                            "id": "@@@action_ref3@@@"
+                        },
+                        "humanSecondsSaved": 0,
+                        "input": {
+                            "json": null,
+                            "params": null,
+                            "headers": null,
+                            "base_url": "https://graph.microsoft.com/",
+                            "endpoint": "beta/servicePrincipals?$filter=appId in ({{ [ \"'\" ~ app.appId ~ \"'\" for app in CTX.rogue_apps ] | d([]) | join(',') }})\r\n",
+                            "raw_body": null,
+                            "client_kwargs": {
+                                "use_delegated_admin": false
+                            },
+                            "request_method": "GET",
+                            "raw_body_from_url": null,
+                            "require_2xx_status": null
+                        },
+                        "isMocked": false,
+                        "join": 0,
+                        "mockInput": {
+                            "mock_result": {}
+                        },
+                        "name": "get_installed_rogue_apps",
+                        "next": [
+                            {
+                                "do": [
+                                    "@@@workflow_task_id_ref2@@@"
+                                ],
+                                "from": null,
+                                "id": "@@@transition_id_ref11@@@",
+                                "publish": [
+                                    {
+                                        "key": "installed_rogue_apps",
+                                        "value": "{{ RESULT.result.data.value.value if RESULT.result.data.value is mapping and 'value' in RESULT.result.data.value else RESULT.result.data.value }}"
+                                    }
+                                ],
+                                "to": null,
+                                "when": "{{ SUCCEEDED }}"
+                            }
+                        ],
+                        "packOverrides": [],
+                        "publishResultAs": "installed_rogue_app_data",
+                        "retry": null,
+                        "runAsOrgId": "",
+                        "timeout": 600,
+                        "transitionMode": "FOLLOW_ALL",
+                        "with": null,
+                        "securitySchema": {
+                            "redact": {
+                                "input": [],
+                                "result": []
+                            }
+                        }
+                    },
+                    {
+                        "id": "@@@workflow_task_id_ref9@@@",
+                        "action": {
+                            "id": "@@@action_ref1@@@"
+                        },
+                        "humanSecondsSaved": 0,
+                        "input": {},
+                        "isMocked": false,
+                        "join": 0,
+                        "mockInput": {
+                            "mock_result": {}
+                        },
+                        "name": "send_email",
+                        "next": [
+                            {
+                                "do": [],
+                                "from": null,
+                                "id": "@@@transition_id_ref12@@@",
+                                "publish": [],
+                                "to": null,
+                                "when": "{{ SUCCEEDED }}"
+                            }
+                        ],
+                        "packOverrides": [],
+                        "publishResultAs": "",
+                        "retry": null,
+                        "runAsOrgId": "",
+                        "timeout": 600,
+                        "transitionMode": "FOLLOW_ALL",
+                        "with": null,
+                        "securitySchema": {
+                            "redact": {
+                                "input": [],
+                                "result": []
+                            }
+                        }
+                    },
+                    {
+                        "id": "@@@workflow_task_id_ref10@@@",
+                        "action": {
+                            "id": "@@@action_ref1@@@"
+                        },
+                        "humanSecondsSaved": 0,
+                        "input": {},
+                        "isMocked": false,
+                        "join": 0,
+                        "mockInput": {
+                            "mock_result": {}
+                        },
+                        "name": "send_message",
+                        "next": [
+                            {
+                                "do": [],
+                                "from": null,
+                                "id": "@@@transition_id_ref13@@@",
+                                "publish": [],
+                                "to": null,
+                                "when": "{{ SUCCEEDED }}"
+                            }
+                        ],
+                        "packOverrides": [],
+                        "publishResultAs": "",
+                        "retry": null,
+                        "runAsOrgId": "",
+                        "timeout": 600,
+                        "transitionMode": "FOLLOW_ALL",
+                        "with": null,
+                        "securitySchema": {
+                            "redact": {
+                                "input": [],
+                                "result": []
+                            }
+                        }
+                    },
+                    {
+                        "id": "@@@workflow_task_id_ref11@@@",
+                        "action": {
+                            "id": "@@@action_ref2@@@"
+                        },
+                        "humanSecondsSaved": 0,
+                        "input": {
+                            "params": {
+                                "text": "{{ [\r\n    {\r\n    \"app_id\" : role.resourceId,\r\n    \"admins\" : [\r\n        role.principalDisplayName\r\n        for admin in CTX.admins\r\n        if admin.principalId == role.principalId\r\n    ]\r\n    }\r\n    for role in CTX.app_roles\r\n] }}"
+                            }
+                        },
+                        "isMocked": false,
+                        "join": 0,
+                        "mockInput": {
+                            "mock_result": {}
+                        },
+                        "name": "set_admin_alerts",
+                        "next": [
+                            {
+                                "do": [
+                                    "@@@workflow_task_id_ref12@@@"
+                                ],
+                                "from": null,
+                                "id": "@@@transition_id_ref14@@@",
+                                "publish": [],
+                                "to": null,
+                                "when": "{{ SUCCEEDED }}"
+                            }
+                        ],
+                        "packOverrides": [],
+                        "publishResultAs": "admin_alerts",
+                        "retry": null,
+                        "runAsOrgId": "",
+                        "timeout": 600,
+                        "transitionMode": "FOLLOW_ALL",
+                        "with": null,
+                        "securitySchema": {
+                            "redact": {
+                                "input": [],
+                                "result": []
+                            }
+                        }
+                    },
+                    {
+                        "id": "@@@workflow_task_id_ref12@@@",
+                        "action": {
+                            "id": "@@@action_ref2@@@"
+                        },
+                        "humanSecondsSaved": 0,
+                        "input": {
+                            "params": {
+                                "text": "{{ [\r\n  {\r\n    'App Name': rogue_app.appDisplayName,\r\n    'App Id': rogue_app.appId,\r\n    'Description': rogue_app.description,\r\n    'Enabled': installed_app.accountEnabled,\r\n    'Created': installed_app.createdDateTime,\r\n    'Tags': rogue_app.tags | join(', '),\r\n    'References': rogue_app.references,\r\n    'Huntress Added': rogue_app.dateAdded,\r\n    'privileged_admins': [admin.admins for admin in CTX.admin_alerts if admin.app_id == installed_app.id] | flatten\r\n  }\r\n  for installed_app in CTX.installed_rogue_apps\r\n  for rogue_app in CTX.rogue_apps\r\n  if rogue_app.appId == installed_app.appId\r\n] }}\r\n"
+                            }
+                        },
+                        "isMocked": false,
+                        "join": 0,
+                        "mockInput": {
+                            "mock_result": {}
+                        },
+                        "name": "set_alert_objects",
+                        "next": [
+                            {
+                                "do": [
+                                    "@@@workflow_task_id_ref14@@@",
+                                    "@@@workflow_task_id_ref16@@@",
+                                    "@@@workflow_task_id_ref15@@@"
+                                ],
+                                "from": null,
+                                "id": "@@@transition_id_ref15@@@",
+                                "publish": [],
+                                "to": null,
+                                "when": "{{ SUCCEEDED }}"
+                            }
+                        ],
+                        "packOverrides": [],
+                        "publishResultAs": "alert_objects",
+                        "retry": null,
+                        "runAsOrgId": "",
+                        "timeout": 600,
+                        "transitionMode": "FOLLOW_ALL",
+                        "with": null,
+                        "securitySchema": {
+                            "redact": {
+                                "input": [],
+                                "result": []
+                            }
+                        }
+                    },
+                    {
+                        "id": "@@@workflow_task_id_ref13@@@",
+                        "action": {
+                            "id": "@@@action_ref2@@@"
+                        },
+                        "humanSecondsSaved": 0,
+                        "input": {
+                            "params": {
+                                "text": "{{ \r\n    [\r\n    dict_item\r\n    for item in CTX.app_role_data\r\n    for dict_item in (item.result.result.data | jsonpath_query(\"value.value\") | d(item.result.result.data.value, true))\r\n    if dict_item\r\n    ] | d([])\r\n }}\r\n"
+                            }
+                        },
+                        "isMocked": false,
+                        "join": 0,
+                        "mockInput": {
+                            "mock_result": {}
+                        },
+                        "name": "set_app_roles",
+                        "next": [
+                            {
+                                "do": [
+                                    "@@@workflow_task_id_ref11@@@"
+                                ],
+                                "from": null,
+                                "id": "@@@transition_id_ref16@@@",
+                                "publish": [],
+                                "to": null,
+                                "when": "{{ SUCCEEDED }}"
+                            }
+                        ],
+                        "packOverrides": [],
+                        "publishResultAs": "app_roles",
+                        "retry": null,
+                        "runAsOrgId": "",
+                        "timeout": 600,
+                        "transitionMode": "FOLLOW_ALL",
+                        "with": null,
+                        "securitySchema": {
+                            "redact": {
+                                "input": [],
+                                "result": []
+                            }
+                        }
+                    },
+                    {
+                        "id": "@@@workflow_task_id_ref14@@@",
+                        "action": {
+                            "id": "@@@action_ref2@@@"
+                        },
+                        "humanSecondsSaved": 0,
+                        "input": {
+                            "params": {
+                                "text": "<style>\r\n  body {\r\n    font-family: Arial, sans-serif;\r\n    background: #fff;\r\n    color: #333;\r\n    line-height: 1.6;\r\n  }\r\n\r\n  .alert-header {\r\n    background-color: #d9534f;\r\n    color: #fff;\r\n    padding: 1em;\r\n    font-size: 1.3em;\r\n    font-weight: bold;\r\n    margin-bottom: 2em;\r\n    border-radius: 6px;\r\n  }\r\n\r\n  .app {\r\n    border: 1px solid #ddd;\r\n    padding: 1.2em 1.5em;\r\n    border-radius: 8px;\r\n    margin-bottom: 2em;\r\n    background-color: #fdfdfd;\r\n    box-shadow: 0 2px 4px rgba(0,0,0,0.04);\r\n  }\r\n\r\n  .app-title {\r\n    font-size: 1.2em;\r\n    font-weight: bold;\r\n    margin-bottom: 0.4em;\r\n    color: #c9302c;\r\n  }\r\n\r\n  .app-meta {\r\n    margin-bottom: 0.4em;\r\n  }\r\n\r\n  .meta-label {\r\n    font-weight: bold;\r\n    display: inline-block;\r\n    min-width: 130px;\r\n  }\r\n\r\n  .badge {\r\n    display: inline-block;\r\n    background: #5bc0de;\r\n    color: #fff;\r\n    padding: 2px 8px;\r\n    margin-right: 5px;\r\n    margin-top: 3px;\r\n    border-radius: 4px;\r\n    font-size: 0.85em;\r\n  }\r\n\r\n  .admin-list {\r\n    margin-top: 0.5em;\r\n    padding-left: 1.2em;\r\n  }\r\n\r\n  .links-list {\r\n    padding-left: 1.2em;\r\n    margin-top: 0.5em;\r\n  }\r\n\r\n  .links-list li a {\r\n    color: #337ab7;\r\n    text-decoration: none;\r\n  }\r\n\r\n  .links-list li a:hover {\r\n    text-decoration: underline;\r\n  }\r\n</style>\r\n\r\n<div class=\"alert-header\">\r\n  🚨 Rogue Applications Installed & Flagged\r\n</div>\r\n\r\n{% for app in CTX.alert_objects %}\r\n<div class=\"app\">\r\n  <div class=\"app-title\">{{ app['App Name'] }}</div>\r\n  <div class=\"app-meta\"><span class=\"meta-label\">App ID:</span> {{ app['App Id'] }}</div>\r\n  <div class=\"app-meta\"><span class=\"meta-label\">Status:</span> {{ 'Enabled' if app['Enabled'] else 'Disabled' }}</div>\r\n  <div class=\"app-meta\"><span class=\"meta-label\">Created On:</span> {{ app['Created'] }}</div>\r\n  <div class=\"app-meta\"><span class=\"meta-label\">Reported:</span> {{ app['Huntress Added'] }}</div>\r\n  \r\n  <div class=\"app-meta\"><span class=\"meta-label\">Tags:</span>\r\n    {% if app['Tags'] is iterable and app['Tags'] is not string %}\r\n      {% for tag in app['Tags'] %}\r\n        <span class=\"badge\">{{ tag }}</span>\r\n      {% endfor %}\r\n    {% else %}\r\n      <span>{{ app['Tags'] }}</span>\r\n    {% endif %}\r\n  </div>\r\n\r\n  <div class=\"app-meta\"><span class=\"meta-label\">Description:</span> {{ app['Description'] | default('No description provided') }}</div>\r\n\r\n  <div class=\"app-meta\"><span class=\"meta-label\">Reference Links:</span></div>\r\n  <ul class=\"links-list\">\r\n    {% if app['References'] is iterable and app['References'] is not string %}\r\n      {% for link in app['References'] %}\r\n        <li><a href=\"{{ link }}\" target=\"_blank\">{{ link }}</a></li>\r\n      {% endfor %}\r\n    {% else %}\r\n      <li><a href=\"{{ app['References'] }}\" target=\"_blank\">{{ app['References'] }}</a></li>\r\n    {% endif %}\r\n  </ul>\r\n\r\n  <div class=\"app-meta\"><span class=\"meta-label\">Admins with Assigned Roles:</span> \r\n    {% if app['privileged_admins'] %}\r\n      Detected\r\n      <ul class=\"admin-list\">\r\n        {% for admin in app['privileged_admins'] %}\r\n          <li>{{ admin }}</li>\r\n        {% endfor %}\r\n      </ul>\r\n    {% else %}\r\n      None detected\r\n    {% endif %}\r\n  </div>\r\n</div>\r\n{% endfor %}\r\n"
+                            }
+                        },
+                        "isMocked": false,
+                        "join": 0,
+                        "mockInput": {
+                            "mock_result": {}
+                        },
+                        "name": "set_rogue_apps_html",
+                        "next": [
+                            {
+                                "do": [
+                                    "@@@workflow_task_id_ref1@@@"
+                                ],
+                                "from": null,
+                                "id": "@@@transition_id_ref17@@@",
+                                "publish": [],
+                                "to": null,
+                                "when": "{{ SUCCEEDED }}"
+                            }
+                        ],
+                        "packOverrides": [],
+                        "publishResultAs": "rogue_apps_html",
+                        "retry": null,
+                        "runAsOrgId": "",
+                        "timeout": 600,
+                        "transitionMode": "FOLLOW_ALL",
+                        "with": null,
+                        "securitySchema": {
+                            "redact": {
+                                "input": [],
+                                "result": []
+                            }
+                        }
+                    },
+                    {
+                        "id": "@@@workflow_task_id_ref15@@@",
+                        "action": {
+                            "id": "@@@action_ref2@@@"
+                        },
+                        "humanSecondsSaved": 0,
+                        "input": {
+                            "params": {
+                                "text": "## 🚨 Rogue Applications Installed & Flagged\r\n\r\n{% for app in CTX.alert_objects %}\r\n---\r\n\r\n### 🔹 {{ app['App Name'] }}\r\n\r\n- **App ID:** {{ app['App Id'] }}\r\n- **Status:** {{ 'Enabled' if app['Enabled'] else 'Disabled' }}\r\n- **Created On:** {{ app['Created'] }}\r\n- **Reported by Huntress:** {{ app['Huntress Added'] }}\r\n- **Tags:** \r\n  {% if app['Tags'] is iterable and app['Tags'] is not string %}\r\n    {{ app['Tags'] | join(', ') }}\r\n  {% else %}\r\n    {{ app['Tags'] }}\r\n  {% endif %}\r\n- **Description:** {{ app['Description'] | default('No description provided') }}\r\n\r\n**Reference Links:**\r\n{% if app['References'] is iterable and app['References'] is not string %}\r\n{% for link in app['References'] %}\r\n- [{{ link }}]({{ link }})\r\n{% endfor %}\r\n{% else %}\r\n- [{{ app['References'] }}]({{ app['References'] }})\r\n{% endif %}\r\n\r\n**Admins with Assigned Roles:**\r\n{% if app['privileged_admins'] %}\r\n{% for admin in app['privileged_admins'] %}\r\n- {{ admin }}\r\n{% endfor %}\r\n{% else %}\r\n- None detected\r\n{% endif %}\r\n\r\n{% endfor %}\r\n"
+                            }
+                        },
+                        "isMocked": false,
+                        "join": 0,
+                        "mockInput": {
+                            "mock_result": {}
+                        },
+                        "name": "set_rogue_apps_markdown",
+                        "next": [
+                            {
+                                "do": [
+                                    "@@@workflow_task_id_ref1@@@"
+                                ],
+                                "from": null,
+                                "id": "@@@transition_id_ref18@@@",
+                                "publish": [],
+                                "to": null,
+                                "when": "{{ SUCCEEDED }}"
+                            }
+                        ],
+                        "packOverrides": [],
+                        "publishResultAs": "rogue_apps_markdown",
+                        "retry": null,
+                        "runAsOrgId": "",
+                        "timeout": 600,
+                        "transitionMode": "FOLLOW_ALL",
+                        "with": null,
+                        "securitySchema": {
+                            "redact": {
+                                "input": [],
+                                "result": []
+                            }
+                        }
+                    },
+                    {
+                        "id": "@@@workflow_task_id_ref16@@@",
+                        "action": {
+                            "id": "@@@action_ref2@@@"
+                        },
+                        "humanSecondsSaved": 0,
+                        "input": {
+                            "params": {
+                                "text": "ROGUE APPLICATIONS INSTALLED & FLAGGED\r\n=======================================\r\n\r\n{% for app in CTX.alert_objects %}\r\n---------------------------------------\r\nApp Name: {{ app['App Name'] }}\r\nApp ID: {{ app['App Id'] }}\r\nStatus: {{ 'Enabled' if app['Enabled'] else 'Disabled' }}\r\nCreated On: {{ app['Created'] }}\r\nReported by Huntress: {{ app['Huntress Added'] }}\r\nTags: \r\n  {% if app['Tags'] is iterable and app['Tags'] is not string %}\r\n    {{ app['Tags'] | join(', ') }}\r\n  {% else %}\r\n    {{ app['Tags'] }}\r\n  {% endif %}\r\nDescription: {{ app['Description'] | default('No description provided') }}\r\n\r\nReference Links:\r\n{% if app['References'] is iterable and app['References'] is not string %}\r\n{% for link in app['References'] %}\r\n  - {{ link }}\r\n{% endfor %}\r\n{% else %}\r\n  - {{ app['References'] }}\r\n{% endif %}\r\n\r\nAdmins with Assigned Roles:\r\n{% if app['privileged_admins'] %}\r\n{% for admin in app['privileged_admins'] %}\r\n  - {{ admin }}\r\n{% endfor %}\r\n{% else %}\r\n  - None detected\r\n{% endif %}\r\n\r\n{% endfor %}\r\n"
+                            }
+                        },
+                        "isMocked": false,
+                        "join": 0,
+                        "mockInput": {
+                            "mock_result": {}
+                        },
+                        "name": "set_rogue_apps_text",
+                        "next": [
+                            {
+                                "do": [
+                                    "@@@workflow_task_id_ref1@@@"
+                                ],
+                                "from": null,
+                                "id": "@@@transition_id_ref19@@@",
+                                "publish": [],
+                                "to": null,
+                                "when": "{{ SUCCEEDED }}"
+                            }
+                        ],
+                        "packOverrides": [],
+                        "publishResultAs": "rogue_apps_text",
+                        "retry": null,
+                        "runAsOrgId": "",
+                        "timeout": 600,
+                        "transitionMode": "FOLLOW_ALL",
+                        "with": null,
+                        "securitySchema": {
+                            "redact": {
+                                "input": [],
+                                "result": []
+                            }
+                        }
+                    }
+                ],
+                "timeout": 28800,
+                "type": "STANDARD",
+                "varsSchema": {}
+            },
+            "nonfunctional_fields": {
+                "description": "",
+                "name": "Generate Rogue App Report",
+                "tasks[0].description": "Action that does nothing",
+                "tasks[0].metadata": {
+                    "x": 240,
+                    "y": 1368
+                },
+                "tasks[0].next[0].label": "PSA",
+                "tasks[0].next[1].label": "Email",
+                "tasks[0].next[2].label": "Teams/Discord/Slack",
+                "tasks[1].description": "This checks if the response was empty or not.",
+                "tasks[1].metadata": {
+                    "x": 336,
+                    "y": 336
+                },
+                "tasks[1].next[0].label": "false",
+                "tasks[1].next[1].label": "true",
+                "tasks[2].description": "Action that does nothing",
+                "tasks[2].metadata": {
+                    "x": 0,
+                    "y": 1536
+                },
+                "tasks[2].next[0].label": "",
+                "tasks[3].description": "Action that does nothing",
+                "tasks[3].metadata": {
+                    "x": -96,
+                    "y": 432
+                },
+                "tasks[3].next[0].label": "",
+                "tasks[4].description": "Gets all of the admin users in an org via roles.",
+                "tasks[4].metadata": {
+                    "x": 336,
+                    "y": 503.9999999999999
+                },
+                "tasks[4].next[0].label": "",
+                "tasks[5].description": "Gets all roles for a selected app by id.",
+                "tasks[5].metadata": {
+                    "x": 336.0000000000002,
+                    "y": 648
+                },
+                "tasks[5].next[0].label": "",
+                "tasks[6].description": "This request pulls a list of huntress rogue apps via github.",
+                "tasks[6].metadata": {
+                    "x": 336.00000000000006,
+                    "y": 48
+                },
+                "tasks[6].next[0].label": "",
+                "tasks[7].description": "This request gets all app within an org that have ids matching a passed in list.",
+                "tasks[7].metadata": {
+                    "x": 336.00000000000006,
+                    "y": 192
+                },
+                "tasks[7].next[0].label": "",
+                "tasks[8].description": "Action that does nothing",
+                "tasks[8].metadata": {
+                    "x": 336.00000000000006,
+                    "y": 1536
+                },
+                "tasks[8].next[0].label": "",
+                "tasks[9].description": "Action that does nothing",
+                "tasks[9].metadata": {
+                    "x": 671.9999999999999,
+                    "y": 1536
+                },
+                "tasks[9].next[0].label": "",
+                "tasks[10].description": "Finds the admins who have roles with rogue apps",
+                "tasks[10].metadata": {
+                    "x": 335.9999999999999,
+                    "y": 936.0000000000001
+                },
+                "tasks[10].next[0].label": "",
+                "tasks[11].description": "Creates alert objects to allow for easy iteration over a single list of objects.",
+                "tasks[11].metadata": {
+                    "x": 336,
+                    "y": 1080
+                },
+                "tasks[11].next[0].label": "",
+                "tasks[12].description": "Sets the app roles from the data returned by the microsoft graph response",
+                "tasks[12].metadata": {
+                    "x": 336,
+                    "y": 792
+                },
+                "tasks[12].next[0].label": "",
+                "tasks[13].description": "Set a variable as an action",
+                "tasks[13].metadata": {
+                    "x": 336,
+                    "y": 1224
+                },
+                "tasks[13].next[0].label": "",
+                "tasks[14].description": "Set a variable as an action",
+                "tasks[14].metadata": {
+                    "x": 672,
+                    "y": 1224
+                },
+                "tasks[14].next[0].label": "",
+                "tasks[15].description": "Set a variable as an action",
+                "tasks[15].metadata": {
+                    "x": 0,
+                    "y": 1224
+                },
+                "tasks[15].next[0].label": ""
+            },
+            "references": {
+                "action_ref1": {
+                    "kind": "string",
+                    "type": "action",
+                    "src_key_hash": "8daRHFp6vcBipvjt5jkSEGisYP5A7ZFY8opsQMSf5Kh",
+                    "content_hash": "CdPL6KHuhM7mBvTHi4QnQbxCitnoxuRrq1BfHNnQYzKB",
+                    "locations": [
+                        "tasks[0].action.id",
+                        "tasks[2].action.id",
+                        "tasks[3].action.id",
+                        "tasks[8].action.id",
+                        "tasks[9].action.id"
+                    ]
+                },
+                "transition_id_ref16": {
+                    "kind": "string",
+                    "type": "transition_id",
+                    "src_key_hash": "7zSsmYA9NuSiPN8qnn9AQ5PsWVt1H4owp4piDGPofSVQ",
+                    "content_hash": "FgU2iaVmkyYUC5dj2c2VoZREKUmPkucaE6UZHVphNwu1",
+                    "locations": [
+                        "tasks[12].next[0].id"
+                    ]
+                },
+                "workflow_task_id_ref10": {
+                    "kind": "string",
+                    "type": "workflow_task_id",
+                    "src_key_hash": "enGskVTEg28WEaX9c5B6Am4KZuASoWnr3ZqPbYYo374",
+                    "content_hash": "4YJzDi7ob2coK3ZUrATa3rBSn7yowGuY2BK2c3NspEuU",
+                    "locations": [
+                        "tasks[9].id",
+                        "tasks[0].next[2].do[0]"
+                    ]
+                },
+                "action_ref2": {
+                    "kind": "string",
+                    "type": "action",
+                    "src_key_hash": "AzUe9FH41DyoqspZCNyD5GA7PtsbbBEjKJRKKp1ARinm",
+                    "content_hash": "Aj7g63oBpFTyTLgcv25UHmfMB5WmghbjNdHZYGy7KxYN",
+                    "locations": [
+                        "tasks[1].action.id",
+                        "tasks[10].action.id",
+                        "tasks[11].action.id",
+                        "tasks[12].action.id",
+                        "tasks[13].action.id",
+                        "tasks[14].action.id",
+                        "tasks[15].action.id"
+                    ]
+                },
+                "transition_id_ref1": {
+                    "kind": "string",
+                    "type": "transition_id",
+                    "src_key_hash": "F4yTwFATomjNydH2pYGCs3Ko124diHQXC1SkPJmgr2mJ",
+                    "content_hash": "71tVsChqJf16JGJ6WYvAPE16QbWVi3byo4efWpgxRa3S",
+                    "locations": [
+                        "tasks[0].next[0].id"
+                    ]
+                },
+                "action_ref3": {
+                    "kind": "string",
+                    "type": "action",
+                    "src_key_hash": "Gp1B9yr3W5EhaNAhjmJhgnyM68wU3pK8gH4DAsqJhKxU",
+                    "content_hash": "23N3ubJaPa6X5iBRydHACFjBkPCx3ojoiFwyDcNZB5a1",
+                    "locations": [
+                        "tasks[4].action.id",
+                        "tasks[5].action.id",
+                        "tasks[7].action.id"
+                    ]
+                },
+                "transition_id_ref3": {
+                    "kind": "string",
+                    "type": "transition_id",
+                    "src_key_hash": "J2rNcnYzyZN3xXSXYpq7wBSgeo9zMkcN9kPV3kWqNTf5",
+                    "content_hash": "EhXzmQNea4FaF779v7Nwaci4CBA3X1f3xtEJmmAoSFpz",
+                    "locations": [
+                        "tasks[0].next[2].id"
+                    ]
+                },
+                "transition_id_ref11": {
+                    "kind": "string",
+                    "type": "transition_id",
+                    "src_key_hash": "4oHkh9htLwW4cG8DJ1UvB5AMQm5hs7GchKFRMiismgcm",
+                    "content_hash": "6hu5F8V41ewsNegJEuMmtVNY3WfBnVWY1R73hXdvF9XQ",
+                    "locations": [
+                        "tasks[7].next[0].id"
+                    ]
+                },
+                "transition_id_ref19": {
+                    "kind": "string",
+                    "type": "transition_id",
+                    "src_key_hash": "FoZaZLJqXvfZ7HzbNDdRnMXd22qsCWJ1gtH2wrakWiPk",
+                    "content_hash": "4muVEop4rywku1UrRe8SwAve8FaodJKxa8xC8Jp6ed8V",
+                    "locations": [
+                        "tasks[15].next[0].id"
+                    ]
+                },
+                "transition_id_ref4": {
+                    "kind": "string",
+                    "type": "transition_id",
+                    "src_key_hash": "6hRT43kxmEkbjRasnt8XD1qvS29W4mtgCKy9V4B6GZRR",
+                    "content_hash": "2THZVxTdjkYKc3gk7jFEb7JTYAdRzpLJT9mJHoYnypit",
+                    "locations": [
+                        "tasks[1].next[0].id"
+                    ]
+                },
+                "transition_id_ref12": {
+                    "kind": "string",
+                    "type": "transition_id",
+                    "src_key_hash": "BXefX6KV9qhytav7GpUAZsYV4FYdPwHWjU5fsJ1nvx8i",
+                    "content_hash": "H12WZNikUXuizKU1MG1wvjLGuvKiXdJCgzRwFSYQhZtf",
+                    "locations": [
+                        "tasks[8].next[0].id"
+                    ]
+                },
+                "transition_id_ref10": {
+                    "kind": "string",
+                    "type": "transition_id",
+                    "src_key_hash": "ErWdxeDZALC9GVAfb3djMUJ2bxGHhWJHnRMvCkE2icGR",
+                    "content_hash": "8ZnKTpEpCQZePw8k27hw1wUstMrSrJihrH9YbBBPkL8p",
+                    "locations": [
+                        "tasks[6].next[0].id"
+                    ]
+                },
+                "workflow_task_id_ref9": {
+                    "kind": "string",
+                    "type": "workflow_task_id",
+                    "src_key_hash": "6kMvjCJGg1g2Ne3yX64iUtNdaPSvwoLXmeTtHoTcDG5w",
+                    "content_hash": "3pmJzvk2WyJjhnSLRpWmnPk5ezBrkLXQmPYWrEZtC4uh",
+                    "locations": [
+                        "tasks[8].id",
+                        "tasks[0].next[1].do[0]"
+                    ]
+                },
+                "workflow_task_id_ref16": {
+                    "kind": "string",
+                    "type": "workflow_task_id",
+                    "src_key_hash": "EpmurRYcSNUjeaaT2GdiJSyKECgFa6ATd1tMsb5LQmHs",
+                    "content_hash": "9MbM8EXBTfRPiSFXsQpGK9CUhQrSHGyaFaEAnuwsq7j5",
+                    "locations": [
+                        "tasks[15].id",
+                        "tasks[11].next[0].do[1]"
+                    ]
+                },
+                "transition_id_ref6": {
+                    "kind": "string",
+                    "type": "transition_id",
+                    "src_key_hash": "HFg5kZCuHkkSWv3Lziwsv7hfMErucdooNzmDequz9yAt",
+                    "content_hash": "BqNSc2krS83KjmdbYvGqBQLPz68bZBEGYGQzNtKDr8St",
+                    "locations": [
+                        "tasks[2].next[0].id"
+                    ]
+                },
+                "transition_id_ref14": {
+                    "kind": "string",
+                    "type": "transition_id",
+                    "src_key_hash": "7dVwNVbL4FjaREcwDAbmstT1eUD6HxfFeiqTPSj1rHWt",
+                    "content_hash": "FiqGmPrx5fKWe3SktfHJfaoiaQ9xsmjLh55ZD3XiFdVv",
+                    "locations": [
+                        "tasks[10].next[0].id"
+                    ]
+                },
+                "transition_id_ref18": {
+                    "kind": "string",
+                    "type": "transition_id",
+                    "src_key_hash": "7UHQdN96pEhYP5Mo4vbMW8tMeUWN3MKV71ucyigL1ZZ4",
+                    "content_hash": "7F1FsmgoB5gf8JoTJooNeydbFAjhRYdw5aXutFRE9rS7",
+                    "locations": [
+                        "tasks[14].next[0].id"
+                    ]
+                },
+                "workflow_task_id_ref13": {
+                    "kind": "string",
+                    "type": "workflow_task_id",
+                    "src_key_hash": "2X62oFk2RYExfZkAj4qyhyC8ze83Rewcjqtq2fZ1dMiE",
+                    "content_hash": "4TyEzBRKYeuYd7TJjJJbFkx2Abs3ATcdeyjsuYzyywcP",
+                    "locations": [
+                        "tasks[12].id",
+                        "tasks[5].next[0].do[0]"
+                    ]
+                },
+                "workflow_task_id_ref15": {
+                    "kind": "string",
+                    "type": "workflow_task_id",
+                    "src_key_hash": "D5BQ5cyEFGZJ3JR9DbepeuhSi6AtAy6wjBxrcjBkqWoH",
+                    "content_hash": "8zteEmxyfWox7n9joAcRGYoizy8JF9WT6DvHJQp9FQ9p",
+                    "locations": [
+                        "tasks[14].id",
+                        "tasks[11].next[0].do[2]"
+                    ]
+                },
+                "transition_id_ref2": {
+                    "kind": "string",
+                    "type": "transition_id",
+                    "src_key_hash": "FBe9oXP2YdXmsFapNvcXXfGkfisfQcUTht6FZuZh2Cvq",
+                    "content_hash": "6gvWfrRRtgKVehNo7qyvfpi9xDCXTPzbNDVN8mhZhoZx",
+                    "locations": [
+                        "tasks[0].next[1].id"
+                    ]
+                },
+                "transition_id_ref5": {
+                    "kind": "string",
+                    "type": "transition_id",
+                    "src_key_hash": "5RfjAo4usqoSMaJtpQM5Lwn4Cok3JPDk5zLAcJAqSetZ",
+                    "content_hash": "DdbRP8qGKCWTbao76Sf7Myc9KpZnoa2SJdx3dZxYfYDq",
+                    "locations": [
+                        "tasks[1].next[1].id"
+                    ]
+                },
+                "workflow_task_id_ref4": {
+                    "kind": "string",
+                    "type": "workflow_task_id",
+                    "src_key_hash": "6vWdgZGHGFbAwRDLTUWZzUVeBG4DsXZt9uKwyzeTaaDS",
+                    "content_hash": "WuCRga5oAUDPLk9zJV3crxQtYc5oN9B1FTbn2KV4hty",
+                    "locations": [
+                        "tasks[3].id",
+                        "tasks[1].next[0].do[0]"
+                    ]
+                },
+                "workflow_task_id_ref6": {
+                    "kind": "string",
+                    "type": "workflow_task_id",
+                    "src_key_hash": "AMVVhwedzLE8hEVyN88RKhBUBDsufFv7xHmhSGSRRFjv",
+                    "content_hash": "FJXwjB1sX3yr4u4w4oLG5ga6m4z3mXmvFsGVCDRLykKa",
+                    "locations": [
+                        "tasks[5].id",
+                        "tasks[4].next[0].do[0]"
+                    ]
+                },
+                "workflow_task_id_ref5": {
+                    "kind": "string",
+                    "type": "workflow_task_id",
+                    "src_key_hash": "HXUiSDBXizCAxunKWv3sS8CBgTyWcwwUPNizGk9ASzzH",
+                    "content_hash": "4pBoJDWh9iQMAWsYGVhgZe6LpfumqtyhpDy4P6zGCVFz",
+                    "locations": [
+                        "tasks[4].id",
+                        "tasks[1].next[1].do[0]"
+                    ]
+                },
+                "transition_id_ref7": {
+                    "kind": "string",
+                    "type": "transition_id",
+                    "src_key_hash": "74vm3CW6iNWL5qs6MTwDaJGexxZvWqWwzJDCxzfyEiJU",
+                    "content_hash": "3bzHYSarMdpdXaEUTgpMn8Ff3YfCswYkcc5QWyfc9wNE",
+                    "locations": [
+                        "tasks[3].next[0].id"
+                    ]
+                },
+                "transition_id_ref13": {
+                    "kind": "string",
+                    "type": "transition_id",
+                    "src_key_hash": "D7yD2RngTA3jPCLjBZuLoFNihPn8wqVA2PLU6W7ufS4v",
+                    "content_hash": "kTyDoTmVJTBwytsjMsCMTP5QUjCbVtu3SqsDnfsJwni",
+                    "locations": [
+                        "tasks[9].next[0].id"
+                    ]
+                },
+                "workflow_task_id_ref11": {
+                    "kind": "string",
+                    "type": "workflow_task_id",
+                    "src_key_hash": "4musbR5aY94Z7ecAKRGhK1QbYEmCbuRsg8YqntbFjnUw",
+                    "content_hash": "CqSQorBFk3xkmyh5bzSwb34TyJ8wieuR7b5ikwaQBj8c",
+                    "locations": [
+                        "tasks[10].id",
+                        "tasks[12].next[0].do[0]"
+                    ]
+                },
+                "workflow_task_id_ref14": {
+                    "kind": "string",
+                    "type": "workflow_task_id",
+                    "src_key_hash": "BH3rijkzJYS6GJw3PCPBkhnAU5T3oDGNV7mKiATG44Zq",
+                    "content_hash": "2K58qcyWzoQN67UPoY8B864PrPH3LJdNXspRN8eVEd4N",
+                    "locations": [
+                        "tasks[13].id",
+                        "tasks[11].next[0].do[0]"
+                    ]
+                },
+                "transition_id_ref9": {
+                    "kind": "string",
+                    "type": "transition_id",
+                    "src_key_hash": "7usQuo4FxU735Uss2sw3wyXLG7PDQedoH6cpkYormgKg",
+                    "content_hash": "B1VFbihoBcveBsBgU9pCKnVAuerP1brH4VEzzuVBSXjA",
+                    "locations": [
+                        "tasks[5].next[0].id"
+                    ]
+                },
+                "workflow_task_id_ref1": {
+                    "kind": "string",
+                    "type": "workflow_task_id",
+                    "src_key_hash": "AHSMnRwWuxaAez1n6UtLDHix3ApdUuGSV9YkBySvVAet",
+                    "content_hash": "8RqV7TqSssnK26NSfPMRsTWdnzbaAeEHzLMat58aBMRh",
+                    "locations": [
+                        "tasks[0].id",
+                        "tasks[13].next[0].do[0]",
+                        "tasks[14].next[0].do[0]",
+                        "tasks[15].next[0].do[0]"
+                    ]
+                },
+                "workflow_task_id_ref8": {
+                    "kind": "string",
+                    "type": "workflow_task_id",
+                    "src_key_hash": "4ncZ7D7XWpPXmqY1hEKmaTUAVmoBnvdqmxvgP7LGAdfF",
+                    "content_hash": "8ZEhQ438sDRKB8RrdY7ZgwWQLjVYHiGDWRY7UxgLm7M3",
+                    "locations": [
+                        "tasks[7].id",
+                        "tasks[6].next[0].do[0]"
+                    ]
+                },
+                "transition_id_ref15": {
+                    "kind": "string",
+                    "type": "transition_id",
+                    "src_key_hash": "HPZo6y9BkSY5T2Xmfbo21Fc9B8CbwkvLEsZWGVyaVNHz",
+                    "content_hash": "6UHhX1P9ZfM9jKYVytpJzV5W6fkHKnTnsnApqYrbnArC",
+                    "locations": [
+                        "tasks[11].next[0].id"
+                    ]
+                },
+                "transition_id_ref8": {
+                    "kind": "string",
+                    "type": "transition_id",
+                    "src_key_hash": "7xZ3iXWfkfQtqjdmu4DPW11AufUMiuvbtwe1U1XZFRCe",
+                    "content_hash": "7KGQM9uzwLxwjVaX1jC4dyShCh22nLdMnX6cRVXXkbi",
+                    "locations": [
+                        "tasks[4].next[0].id"
+                    ]
+                },
+                "action_ref4": {
+                    "kind": "string",
+                    "type": "action",
+                    "src_key_hash": "FodHMaJC59FDgub4yYgvrux2yTouoJFPBh9zQyshTuSJ",
+                    "content_hash": "FMu3hsNV7SdbaFHCpQXe4YsxtfRZHq3LfQ8Ej6uv322w",
+                    "locations": [
+                        "tasks[6].action.id"
+                    ]
+                },
+                "workflow_task_id_ref7": {
+                    "kind": "string",
+                    "type": "workflow_task_id",
+                    "src_key_hash": "6ouRh1rV2MQe6Bmn9h3kv97JtaAuetxaaBzmq3fuaTZw",
+                    "content_hash": "EnoyTWGcdDZCv8NvunBkFLRBjpGgoi3KEBMiRzUtsvqb",
+                    "locations": [
+                        "tasks[6].id"
+                    ]
+                },
+                "transition_id_ref17": {
+                    "kind": "string",
+                    "type": "transition_id",
+                    "src_key_hash": "27fgs5DvHd4Bo3bDxn3uWafGyQpKsvZgcfcdr8K9peT9",
+                    "content_hash": "BmYqt2guEQFToK9xEzZ28phufhy5mTTDp1nEiPN1NeVh",
+                    "locations": [
+                        "tasks[13].next[0].id"
+                    ]
+                },
+                "workflow_task_id_ref12": {
+                    "kind": "string",
+                    "type": "workflow_task_id",
+                    "src_key_hash": "5rdYiJ5XNeJ4VU4VmMPbZiAES9d8iT5FZjm8asTvNiuR",
+                    "content_hash": "7oKZZzJ8sQp3Bvj8KzKw6XbfMUMkcMThTsdDYS3LQD4k",
+                    "locations": [
+                        "tasks[11].id",
+                        "tasks[10].next[0].do[0]"
+                    ]
+                },
+                "workflow_task_id_ref3": {
+                    "kind": "string",
+                    "type": "workflow_task_id",
+                    "src_key_hash": "Gpsqqa6AFxae3PUwmpXZ4X7nUqLhX85QfRJt79wkTtb8",
+                    "content_hash": "4TWn39c4F5udU5skqhUiT5NBKys9fFL2Wf7jFPhpCTT5",
+                    "locations": [
+                        "tasks[2].id",
+                        "tasks[0].next[0].do[0]"
+                    ]
+                },
+                "workflow_task_id_ref2": {
+                    "kind": "string",
+                    "type": "workflow_task_id",
+                    "src_key_hash": "9XeB76Z6hmBovyfAromH4pukMD8Z6NeRXZ9dHYqZpigB",
+                    "content_hash": "EQjbK94i6F6hN2C9Wfw6oLjab7pLAPwXrh6HqdiQVSCf",
+                    "locations": [
+                        "tasks[1].id",
+                        "tasks[7].next[0].do[0]"
+                    ]
+                }
+            },
+            "dependencies": [
+                "workflow_task_id:AMVVhwedzLE8hEVyN88RKhBUBDsufFv7xHmhSGSRRFjv",
+                "workflow_task_id:Gpsqqa6AFxae3PUwmpXZ4X7nUqLhX85QfRJt79wkTtb8",
+                "transition_id:74vm3CW6iNWL5qs6MTwDaJGexxZvWqWwzJDCxzfyEiJU",
+                "action:AzUe9FH41DyoqspZCNyD5GA7PtsbbBEjKJRKKp1ARinm",
+                "workflow_task_id:EpmurRYcSNUjeaaT2GdiJSyKECgFa6ATd1tMsb5LQmHs",
+                "workflow_task_id:4musbR5aY94Z7ecAKRGhK1QbYEmCbuRsg8YqntbFjnUw",
+                "workflow_task_id:5rdYiJ5XNeJ4VU4VmMPbZiAES9d8iT5FZjm8asTvNiuR",
+                "action:FodHMaJC59FDgub4yYgvrux2yTouoJFPBh9zQyshTuSJ",
+                "workflow_task_id:6ouRh1rV2MQe6Bmn9h3kv97JtaAuetxaaBzmq3fuaTZw",
+                "transition_id:HFg5kZCuHkkSWv3Lziwsv7hfMErucdooNzmDequz9yAt",
+                "transition_id:6hRT43kxmEkbjRasnt8XD1qvS29W4mtgCKy9V4B6GZRR",
+                "transition_id:7usQuo4FxU735Uss2sw3wyXLG7PDQedoH6cpkYormgKg",
+                "action:8daRHFp6vcBipvjt5jkSEGisYP5A7ZFY8opsQMSf5Kh",
+                "transition_id:D7yD2RngTA3jPCLjBZuLoFNihPn8wqVA2PLU6W7ufS4v",
+                "transition_id:5RfjAo4usqoSMaJtpQM5Lwn4Cok3JPDk5zLAcJAqSetZ",
+                "transition_id:J2rNcnYzyZN3xXSXYpq7wBSgeo9zMkcN9kPV3kWqNTf5",
+                "transition_id:7dVwNVbL4FjaREcwDAbmstT1eUD6HxfFeiqTPSj1rHWt",
+                "transition_id:F4yTwFATomjNydH2pYGCs3Ko124diHQXC1SkPJmgr2mJ",
+                "workflow_task_id:AHSMnRwWuxaAez1n6UtLDHix3ApdUuGSV9YkBySvVAet",
+                "workflow_task_id:D5BQ5cyEFGZJ3JR9DbepeuhSi6AtAy6wjBxrcjBkqWoH",
+                "transition_id:FBe9oXP2YdXmsFapNvcXXfGkfisfQcUTht6FZuZh2Cvq",
+                "workflow_task_id:BH3rijkzJYS6GJw3PCPBkhnAU5T3oDGNV7mKiATG44Zq",
+                "transition_id:7UHQdN96pEhYP5Mo4vbMW8tMeUWN3MKV71ucyigL1ZZ4",
+                "workflow_task_id:6kMvjCJGg1g2Ne3yX64iUtNdaPSvwoLXmeTtHoTcDG5w",
+                "workflow_task_id:enGskVTEg28WEaX9c5B6Am4KZuASoWnr3ZqPbYYo374",
+                "workflow_task_id:HXUiSDBXizCAxunKWv3sS8CBgTyWcwwUPNizGk9ASzzH",
+                "transition_id:FoZaZLJqXvfZ7HzbNDdRnMXd22qsCWJ1gtH2wrakWiPk",
+                "transition_id:4oHkh9htLwW4cG8DJ1UvB5AMQm5hs7GchKFRMiismgcm",
+                "transition_id:27fgs5DvHd4Bo3bDxn3uWafGyQpKsvZgcfcdr8K9peT9",
+                "transition_id:BXefX6KV9qhytav7GpUAZsYV4FYdPwHWjU5fsJ1nvx8i",
+                "transition_id:HPZo6y9BkSY5T2Xmfbo21Fc9B8CbwkvLEsZWGVyaVNHz",
+                "workflow_task_id:9XeB76Z6hmBovyfAromH4pukMD8Z6NeRXZ9dHYqZpigB",
+                "workflow_task_id:6vWdgZGHGFbAwRDLTUWZzUVeBG4DsXZt9uKwyzeTaaDS",
+                "transition_id:7xZ3iXWfkfQtqjdmu4DPW11AufUMiuvbtwe1U1XZFRCe",
+                "transition_id:ErWdxeDZALC9GVAfb3djMUJ2bxGHhWJHnRMvCkE2icGR",
+                "transition_id:7zSsmYA9NuSiPN8qnn9AQ5PsWVt1H4owp4piDGPofSVQ",
+                "workflow_task_id:2X62oFk2RYExfZkAj4qyhyC8ze83Rewcjqtq2fZ1dMiE",
+                "action:Gp1B9yr3W5EhaNAhjmJhgnyM68wU3pK8gH4DAsqJhKxU",
+                "workflow_task_id:4ncZ7D7XWpPXmqY1hEKmaTUAVmoBnvdqmxvgP7LGAdfF"
+            ]
+        }
+    },
+    "__typename": "ExportBundle"
+}
