@@ -89,10 +89,8 @@ process {
         exit 1
     }
 
-    $Report | Write-Host
-
-    if ($CustomField) {
-        Ninja-Property-Set -Name $CustomField -Value $($Report | Out-String)
+    $Report | Write-Host    if ($CustomField) {
+        Write-Output "${CustomField}:$($Report | Out-String)"
     }
 }
 end {

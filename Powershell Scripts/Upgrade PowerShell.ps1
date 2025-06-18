@@ -1,25 +1,27 @@
-# Upgrades PowerShell to version 5.1 by installing .NET Framework 4.5.2 and installing the proper Windows Management Framework (WMF) for the OS.
+# Cross-platform PowerShell installation and upgrade script. Supports Windows PowerShell 5.1 upgrade and PowerShell Core installation on Linux/macOS.
 #Requires -Version 2.0
 
 <#
 .SYNOPSIS
-    Upgrades PowerShell to version 5.1 by installing .NET Framework 4.5.2 and installing the proper Windows Management Framework (WMF) for the OS.
+    Cross-platform PowerShell installation and upgrade script. Upgrades Windows PowerShell to 5.1 or installs PowerShell Core on Linux/macOS.
 .DESCRIPTION
-    Upgrades PowerShell to version 5.1 by installing .NET Framework 4.5.2 and installing the proper Windows Management Framework (WMF) for the OS.
+    This script provides cross-platform PowerShell installation capabilities:
+    - Windows: Upgrades PowerShell to version 5.1 by installing .NET Framework 4.5.2 and Windows Management Framework (WMF)
+    - Linux: Installs PowerShell Core using package managers
+    - macOS: Installs PowerShell Core using Homebrew or direct download
 .EXAMPLE
     -ForceRestart
 
-    - Downloads and installs .NET Framework 4.5.2, followed by PowerShell 5.1, and schedules a restart.
+    - On Windows: Downloads and installs .NET Framework 4.5.2, followed by PowerShell 5.1, and schedules a restart.
+    - On Linux/macOS: Installs PowerShell Core
 
 PARAMETER: -ForceRestart
-    A system restart will be scheduled to occur 60 seconds after the script has successfully completed.
+    Windows only: A system restart will be scheduled to occur 60 seconds after the script has successfully completed.
 
 .NOTES
-    Minimum OS Architecture Supported: Windows 7 SP1, Windows Server 2008 R2 SP1
-    Release Notes: The script has been updated to support Windows 7 SP1 and Server 2008 R2 SP1. Readability has been improved, and throw statements have been replaced with Write-Host for better error handling. 
-    Exchange detection has been enhanced, and installer logs have been added for better troubleshooting. The script is now more verbose and includes improved support for x86 systems. 
-    It will now properly error out on incompatible systems. Additionally, it uses a standard downloader, includes installer verification, and performs installation success checks. 
-    Detection of pre-existing PowerShell installations has also been improved.
+    Minimum OS Architecture Supported: Windows 7 SP1, Windows Server 2008 R2 SP1, Linux (various distributions), macOS 10.13+
+    Release Notes: Updated for cross-platform support. Windows-specific functionality preserved for PowerShell 5.1 upgrade.
+    Linux/macOS functionality added for PowerShell Core installation.
 #>
 
 [CmdletBinding()]
@@ -53,6 +55,75 @@ param (
 )
 
 begin {
+    # Cross-platform OS detection
+    function Get-OperatingSystem {
+        if ($IsWindows -or $env:OS -like "Windows*") {
+            return "Windows"
+        } elseif ($IsLinux) {
+            return "Linux"
+        } elseif ($IsMacOS) {
+            return "macOS"
+        } else {
+            return "Unknown"
+        }
+    }
+
+    $OS = Get-OperatingSystem
+
+    # Handle non-Windows systems differently
+    if ($OS -eq "Linux") {
+        Write-Host "Detected Linux system. Installing PowerShell Core..."
+        
+        # Detect Linux distribution
+        if (Test-Path "/etc/os-release") {
+            $OSRelease = Get-Content "/etc/os-release" | ConvertFrom-StringData
+            $LinuxDistro = $OSRelease.ID
+            
+            switch ($LinuxDistro) {
+                "ubuntu" {
+                    Write-Host "Installing PowerShell Core on Ubuntu..."
+                    Invoke-Expression "sudo apt-get update && sudo apt-get install -y wget apt-transport-https software-properties-common"
+                    Invoke-Expression "wget -q https://packages.microsoft.com/config/ubuntu/$(lsb_release -rs)/packages-microsoft-prod.deb"
+                    Invoke-Expression "sudo dpkg -i packages-microsoft-prod.deb"
+                    Invoke-Expression "sudo apt-get update && sudo apt-get install -y powershell"
+                }
+                { $_ -eq "centos" -or $_ -eq "rhel" -or $_ -eq "fedora" } {
+                    Write-Host "Installing PowerShell Core on RHEL/CentOS/Fedora..."
+                    Invoke-Expression "sudo yum install -y https://packages.microsoft.com/config/rhel/7/packages-microsoft-prod.rpm"
+                    Invoke-Expression "sudo yum install -y powershell"
+                }
+                default {
+                    Write-Host "For other Linux distributions, please visit:"
+                    Write-Host "https://docs.microsoft.com/en-us/powershell/scripting/install/installing-powershell-core-on-linux"
+                }
+            }
+        }
+        exit 0
+    }
+    
+    if ($OS -eq "macOS") {
+        Write-Host "Detected macOS system. Installing PowerShell Core..."
+        
+        # Check if Homebrew is available
+        if (Get-Command "brew" -ErrorAction SilentlyContinue) {
+            Write-Host "Installing PowerShell Core via Homebrew..."
+            Invoke-Expression "brew install --cask powershell"
+        } else {
+            Write-Host "Homebrew not found. Please install Homebrew or visit:"
+            Write-Host "https://docs.microsoft.com/en-us/powershell/scripting/install/installing-powershell-core-on-macos"
+            Write-Host "To install via package: https://github.com/PowerShell/PowerShell/releases"
+        }
+        exit 0
+    }
+    
+    if ($OS -ne "Windows") {
+        Write-Host "Unsupported operating system: $OS"
+        Write-Host "This script supports Windows, Linux, and macOS."
+        exit 1
+    }
+
+    # Windows-specific code continues below...
+    Write-Host "Detected Windows system. Proceeding with PowerShell 5.1 upgrade..."
 
     # Try to retrieve the list of currently installed services
     try {

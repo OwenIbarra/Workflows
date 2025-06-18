@@ -1,11 +1,11 @@
-# Reports the active power plan and active power settings. Outputs to activity log and customfield activePowerPlan and activePowerSettings by default.
+# Reports the active power plan and active power settings. Outputs to activity log and optionally to structured output by default.
 #Requires -Version 5.1
 
 <#
 .SYNOPSIS
-    Reports the active power plan and active power settings. Outputs to activity log and customfield "activePowerPlan" and "activePowerSettings" by default.
+    Reports the active power plan and active power settings. Outputs to activity log and optionally to structured output by default.
 .DESCRIPTION
-    Reports the active power plan and active power settings. Outputs to activity log and customfield "activePowerPlan" and "activePowerSettings" by default.
+    Reports the active power plan and active power settings. Outputs to activity log and optionally to structured output by default.
 .EXAMPLE
     (No Parameters)
 
@@ -45,9 +45,9 @@
     When sharing media            Prevent idling to sleep         Allow the computer to sleep      N/A    
 
 PARAMETER: -PowerPlanCustomFieldName "ReplaceMeWithAnyMultilineCustomField"
-    Replace the quoted text with any custom field name you'd like the script to write the active power plan to.
+    Replace the quoted text with any output identifier you'd like the script to write the active power plan to.
 PARAMETER: -PowerSettingsCustomFieldName "ReplaceMeWithAnyTextCustomField"
-    Replace the quoted text with any custom field name you'd like the script to write the active power settings to.
+    Replace the quoted text with any output identifier you'd like the script to write the active power settings to.
 .OUTPUTS
     None
 .NOTES
@@ -64,10 +64,7 @@ param (
 )
 
 begin {
-
-    # If Script forms are used replace parameters with their value.
-    if ($env:powerPlanCustomFieldName -and $env:powerPlanCustomFieldName -notlike "null" ) { $PowerPlanCustomFieldName = $env:powerPlanCustomFieldName }
-    if ($env:powerSettingsCustomFieldName -and $env:powerSettingsCustomFieldName -notlike "null") { $PowerSettingsCustomFieldName = $env:powerSettingsCustomFieldName }
+    # No environment variable processing needed for cross-platform compatibility
 
     # Script will fail if not elevated (some setting values are hidden to non-admins)
     function Test-IsElevated {
@@ -231,15 +228,13 @@ process {
     $Report.Add("`n$CurrentPowerSettings")
 
     # Write to the activity log
-    Write-Host $Report
-
-    # Save our findings to a custom field
+    Write-Host $Report    # Output results to be captured by automation platforms or saved to files if needed
     if ($PowerPlanCustomFieldName) {
-        Ninja-Property-Set -Name $PowerPlanCustomFieldName -Value $ActivePowerPlan
+        Write-Output "PowerPlan:$ActivePowerPlan"
     }
 
     if ($PowerSettingsCustomFieldName) {
-        Ninja-Property-Set -Name $PowerSettingsCustomFieldName -Value $CurrentPowerSettings
+        Write-Output "PowerSettings:$CurrentPowerSettings"
     }
 }
 end {
