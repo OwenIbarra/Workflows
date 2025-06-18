@@ -1,259 +1,227 @@
-# This is an example script for retrieving system configuration values. Specify a type to have the value converted to a more PowerShell native type.
-#Requires -Version 4
+# Generates a report for the number of active users in active directory that have logged in the specified time frame.
+#Requires -Version 5.1
 
 <#
 .SYNOPSIS
-    This is an example script for retrieving system configuration values. Specify a type to have the value converted to a more PowerShell native type.
+    Generates a report for the number of active users in active directory that have logged in the specified time frame.
 .DESCRIPTION
-    This is a cross-platform script that can retrieve system configuration values from various sources like registry (Windows), 
-    configuration files (Linux/macOS), or environment variables. It demonstrates how to handle different data types consistently.
+    Generates a report for the number of active users in active directory that have logged in the specified time frame.
+
 .EXAMPLE
-    -ConfigName "date"
+    (No Parameters)
+    
+    Number of active users: 2
+    Total users (including active and inactive): 5
+    Percent Active: 40%
 
-    Retrieving value from configuration date.
-    1697094000
+    SamAccountName UserPrincipalName   mail           LastLogonDate      
+    -------------- -----------------   ----           -------------      
+    kbohlander     kbohlander@test.lan                6/5/2023 8:58:20 AM
+    tuser          tuser@test.lan      tuser@test.com 6/6/2023 8:30:23 AM
+
+PARAMETER: -NumberOfDays "ReplaceWithAnumber"
+    How long ago in days to report on.
 .EXAMPLE
-    -ConfigName "date" -ValueType "Date"
+    -NumberOfDays "1" (If today was 6/7/2023)
+    
+    Number of active users: 2
+    Total users (including active and inactive): 5
+    Percent Active: 40%
 
-    Retrieving value from configuration date.
+    SamAccountName UserPrincipalName   mail           LastLogonDate      
+    -------------- -----------------   ----           -------------      
+    tuser          tuser@test.lan      tuser@test.com 6/6/2023 8:30:23 AM
 
-    Thursday, October 12, 2023 12:00:00 AM
+PARAMETER: -ExcludeDisabledUsers
+    Excludes the user from the report if they're currently disabled.
 
-PARAMETER: -ConfigName "NameOfAConfigurationToRetrieve"
-    The name of a configuration setting that has a value you would like to retrieve.
+PARAMETER: -CustomFieldName "ReplaceMeWithAnyMultilineCustomField"
+    Name of a multiline custom field to save the results to.
+.EXAMPLE
+    -CustomFieldName "ReplaceMeWithAnyMultilineCustomField"
+    
+    Number of active users: 2
+    Total users (including active and inactive): 5
+    Percent Active: 40%
 
-PARAMETER: -ValueType "ReplaceMeWithFieldType"
-    To convert the value into a more PowerShell-native type, simply specify the type. This is optional; leave blank to output the raw value.
-    Valid options are: "Text", "Checkbox", "Date", "Date And Time", "Decimal", "Integer", "Time", "Boolean"
-
-PARAMETER: -ConfigSource "Replace Me With A Configuration Source"
-    Source of the configuration value. Options: "Registry", "EnvironmentVariable", "ConfigFile", "Auto" (default: Auto)
-
+    SamAccountName UserPrincipalName   mail           LastLogonDate      
+    -------------- -----------------   ----           -------------      
+    kbohlander     kbohlander@test.lan                6/5/2023 8:58:20 AM
+    tuser          tuser@test.lan      tuser@test.com 6/6/2023 8:30:23 AM
 .OUTPUTS
-    The configuration value, optionally converted to the specified type
+    None
 .NOTES
-    Minimum OS Architecture Supported: Windows 10, Server 2012 R2, Linux, macOS
-    Release Notes: Updated for cross-platform compatibility, removed RMM dependencies
+    Minimum OS Architecture Supported: Windows 10, Windows Server 2016
+    Release Notes: Renamed script and added Script Variable support
 #>
 
 [CmdletBinding()]
 param (
     [Parameter()]
-    [String]$ConfigName,
+    [int]$NumberOfDays = 30,
     [Parameter()]
-    [String]$ValueType,
+    [String]$CustomFieldName,
     [Parameter()]
-    [String]$ConfigSource = "Auto"
+    [Switch]$ExcludeDisabledUsers = [System.Convert]::ToBoolean($env:excludeDisabledUsersFromReport)
 )
 
 begin {
-    # Cross-platform OS detection
-    function Get-OperatingSystem {
-        if ($IsWindows -or $env:OS -like "Windows*") {
-            return "Windows"
-        } elseif ($IsLinux) {
-            return "Linux"
-        } elseif ($IsMacOS) {
-            return "macOS"
-        } else {
-            return "Unknown"
-        }
+    # Tests for administrative rights which is required to get the last logon date.
+    function Test-IsElevated {
+        $id = [System.Security.Principal.WindowsIdentity]::GetCurrent()
+        $p = New-Object System.Security.Principal.WindowsPrincipal($id)
+        $p.IsInRole([System.Security.Principal.WindowsBuiltInRole]::Administrator)
     }
 
-    $OS = Get-OperatingSystem
-
-    # A configuration name is required.
-    if (-not $ConfigName) {
-        Write-Error "No configuration name was specified!"
-        exit 1
+    # Tests if the device the script is running on is a dmona controller.
+    function Test-IsDomainController {
+        return $(Get-CimInstance -ClassName Win32_OperatingSystem).ProductType -eq 2
     }
 
-    # If the value type specified is a date or date and time, change it to "Date or Date Time" to be used by the function.
-    if ($ValueType -eq "Date" -or $ValueType -eq "Date And Time") {
-        $ValueType = "Date or Date Time"
-    }    # Cross-platform configuration retrieval function
-    function Get-ConfigValue {
+    # This function is to make it easier to set Ninja Custom Fields.
+    function Set-NinjaProperty {
         [CmdletBinding()]
         Param(
-            [Parameter(Mandatory = $True, ValueFromPipeline = $True)]
+            [Parameter(Mandatory = $True)]
             [String]$Name,
             [Parameter()]
             [String]$Type,
+            [Parameter(Mandatory = $True, ValueFromPipeline = $True)]
+            $Value,
             [Parameter()]
-            [String]$Source = "Auto"
+            [String]$DocumentName
         )
 
-        $ConfigValue = $null
+        # If we're requested to set the field value for a Ninja document we'll specify it here.
+        $DocumentationParams = @{}
+        if ($DocumentName) { $DocumentationParams["DocumentName"] = $DocumentName }
 
-        # Determine configuration source
-        switch ($Source) {
-            "Registry" {
-                if ($OS -eq "Windows") {
-                    try {
-                        $ConfigValue = Get-ItemProperty -Path "HKLM:\SOFTWARE\SystemConfiguration" -Name $Name -ErrorAction SilentlyContinue | Select-Object -ExpandProperty $Name
-                    }
-                    catch {
-                        Write-Warning "Could not retrieve registry value for $Name"
-                    }
-                } else {
-                    Write-Warning "Registry source not available on $OS"
-                }
+        # This is a list of valid fields we can set. If no type is given we'll assume the input doesn't have to be changed in any way.
+        $ValidFields = "Attachment", "Checkbox", "Date", "Date or Date Time", "Decimal", "Dropdown", "Email", "Integer", "IP Address", "MultiLine", "MultiSelect", "Phone", "Secure", "Text", "Time", "URL"
+        if ($Type -and $ValidFields -notcontains $Type) { Write-Warning "$Type is an invalid type! Please check here for valid types. https://ninjarmm.zendesk.com/hc/en-us/articles/16973443979789-Command-Line-Interface-CLI-Supported-Fields-and-Functionality" }
+
+        # The below field requires additional information in order to set
+        $NeedsOptions = "Dropdown"
+        if ($DocumentName) {
+            if ($NeedsOptions -contains $Type) {
+                # We'll redirect the error output to the success stream to make it easier to error out if nothing was found or something else went wrong.
+                $NinjaPropertyOptions = Ninja-Property-Docs-Options -AttributeName $Name @DocumentationParams 2>&1
             }
-            "EnvironmentVariable" {
-                $ConfigValue = [System.Environment]::GetEnvironmentVariable($Name)
-            }
-            "ConfigFile" {
-                # Example configuration file locations
-                $ConfigPaths = switch ($OS) {
-                    "Windows" { @("$env:ProgramData\SystemConfig\config.json", "$env:USERPROFILE\.config\config.json") }
-                    "Linux" { @("/etc/systemconfig/config.json", "$HOME/.config/systemconfig/config.json") }
-                    "macOS" { @("/usr/local/etc/systemconfig/config.json", "$HOME/.config/systemconfig/config.json") }
-                    default { @() }
-                }
-                
-                foreach ($ConfigPath in $ConfigPaths) {
-                    if (Test-Path $ConfigPath) {
-                        try {
-                            $ConfigData = Get-Content $ConfigPath | ConvertFrom-Json
-                            $ConfigValue = $ConfigData.$Name
-                            break
-                        }
-                        catch {
-                            Write-Warning "Could not parse configuration file: $ConfigPath"
-                        }
-                    }
-                }
-            }
-            "Auto" {
-                # Try environment variable first, then registry (Windows), then config files
-                $ConfigValue = [System.Environment]::GetEnvironmentVariable($Name)
-                
-                if (-not $ConfigValue -and $OS -eq "Windows") {
-                    try {
-                        $ConfigValue = Get-ItemProperty -Path "HKLM:\SOFTWARE\SystemConfiguration" -Name $Name -ErrorAction SilentlyContinue | Select-Object -ExpandProperty $Name
-                    }
-                    catch { }
-                }
-                
-                if (-not $ConfigValue) {
-                    # Try config files
-                    $ConfigPaths = switch ($OS) {
-                        "Windows" { @("$env:ProgramData\SystemConfig\config.json") }
-                        "Linux" { @("/etc/systemconfig/config.json") }
-                        "macOS" { @("/usr/local/etc/systemconfig/config.json") }
-                        default { @() }
-                    }
-                    
-                    foreach ($ConfigPath in $ConfigPaths) {
-                        if (Test-Path $ConfigPath) {
-                            try {
-                                $ConfigData = Get-Content $ConfigPath | ConvertFrom-Json
-                                $ConfigValue = $ConfigData.$Name
-                                if ($ConfigValue) { break }
-                            }
-                            catch { }
-                        }
-                    }
-                }
+        }
+        else {
+            if ($NeedsOptions -contains $Type) {
+                $NinjaPropertyOptions = Ninja-Property-Options -Name $Name 2>&1
             }
         }
 
-        if (-not $ConfigValue) {
-            throw "Configuration value '$Name' not found"
-        }        # Type conversion switch
+        # If we received some sort of error it should have an exception property and we'll exit the function with that error information.
+        if ($NinjaPropertyOptions.Exception) { throw $NinjaPropertyOptions }
+
+        # The below type's require values not typically given in order to be set. The below code will convert whatever we're given into a format ninjarmm-cli supports.
         switch ($Type) {
             "Checkbox" {
-                # Convert string/number to boolean
-                if ($ConfigValue -eq "1" -or $ConfigValue -eq "true" -or $ConfigValue -eq $true) {
-                    $true
-                } else {
-                    $false
-                }
+                # While it's highly likely we were given a value like "True" or a boolean datatype it's better to be safe than sorry.
+                $NinjaValue = [System.Convert]::ToBoolean($Value)
             }
             "Date or Date Time" {
-                # Handle Unix timestamp or ISO date strings
-                if ($ConfigValue -match '^\d+$') {
-                    # Unix timestamp
-                    $UTC = (Get-Date "1970-01-01 00:00:00").AddSeconds([int64]$ConfigValue)
-                    $TimeZone = [TimeZoneInfo]::Local
-                    [TimeZoneInfo]::ConvertTimeFromUtc($UTC, $TimeZone)
-                } else {
-                    # Try to parse as date string
-                    try {
-                        [DateTime]::Parse($ConfigValue)
-                    }
-                    catch {
-                        Write-Warning "Could not parse '$ConfigValue' as date"
-                        $ConfigValue
-                    }
-                }
+                # Ninjarmm-cli is expecting the time to be representing as a Unix Epoch string. So we'll convert what we were given into that format.
+                $Date = (Get-Date $Value).ToUniversalTime()
+                $TimeSpan = New-TimeSpan (Get-Date "1970-01-01 00:00:00") $Date
+                $NinjaValue = $TimeSpan.TotalSeconds
             }
-            "Decimal" {
-                # Convert to double
-                try {
-                    [double]$ConfigValue
+            "Dropdown" {
+                # Ninjarmm-cli is expecting the guid of the option we're trying to select. So we'll match up the value we were given with a guid.
+                $Options = $NinjaPropertyOptions -replace '=', ',' | ConvertFrom-Csv -Header "GUID", "Name"
+                $Selection = $Options | Where-Object { $_.Name -eq $Value } | Select-Object -ExpandProperty GUID
+
+                if (-not $Selection) {
+                    throw "Value is not present in dropdown"
                 }
-                catch {
-                    Write-Warning "Could not parse '$ConfigValue' as decimal"
-                    $ConfigValue
-                }
-            }
-            "Integer" {
-                # Convert to integer
-                try {
-                    [int]$ConfigValue
-                }
-                catch {
-                    Write-Warning "Could not parse '$ConfigValue' as integer"
-                    $ConfigValue
-                }
-            }
-            "Time" {
-                # Handle time values (seconds since midnight or time strings)
-                if ($ConfigValue -match '^\d+$') {
-                    $Seconds = [int]$ConfigValue
-                    $TimeSpan = [TimeSpan]::FromSeconds($Seconds)
-                    $TimeSpan.ToString("hh\:mm\:ss")
-                } else {
-                    try {
-                        $ParsedTime = [DateTime]::Parse($ConfigValue)
-                        $ParsedTime.ToString("HH:mm:ss")
-                    }
-                    catch {
-                        Write-Warning "Could not parse '$ConfigValue' as time"
-                        $ConfigValue
-                    }
-                }
-            }
-            "Boolean" {
-                # Convert to boolean
-                if ($ConfigValue -eq "1" -or $ConfigValue -eq "true" -or $ConfigValue -eq $true -or $ConfigValue -eq "yes") {
-                    $true
-                } else {
-                    $false
-                }
+
+                $NinjaValue = $Selection
             }
             default {
-                # Return raw value
-                $ConfigValue
+                # All the other types shouldn't require additional work on the input.
+                $NinjaValue = $Value
+            }
+        }
+
+        # We'll need to set the field differently depending on if its a field in a Ninja Document or not.
+        if ($DocumentName) {
+            $CustomField = Ninja-Property-Docs-Set -AttributeName $Name -AttributeValue $NinjaValue @DocumentationParams 2>&1
+        }
+        else {
+            $CustomField = Ninja-Property-Set -Name $Name -Value $NinjaValue 2>&1
+        }
+
+        if ($CustomField.Exception) {
+            throw $CustomField
+        }
+    }
+
+    # Todays date
+    $Today = Get-Date
+
+    if ($env:numberOfDaysToReportOn -and $env:numberOfDaysToReportOn -notlike "null") { $NumberOfDays = $env:numberOfDaysToReportOn }
+    if ($env:customFieldName -and $env:customFieldName -notlike "null") { $CustomFieldName = $env:customFieldName }
+}
+process {
+    # Erroring out when ran without administrator rights
+    if (-not (Test-IsElevated)) {
+        Write-Error -Message "Access Denied. Please run with Administrator privileges."
+        exit 1
+    }
+
+    # Erroring out when ran on a non-domain controller
+    if (-not (Test-IsDomainController)) {
+        Write-Error -Message "The script needs to be run on a domain controller!"
+        exit 1
+    }
+
+    # If disabled users are to be excluded we're going to fetch different properties and Filter out disabled users
+    if ($ExcludeDisabledUsers) {
+        $Users = Get-ADUser -Filter * -Properties SamAccountName, UserPrincipalName, mail, LastLogonDate, Enabled | 
+            Where-Object { $_.Enabled -eq $True }
+        $ActiveUsers = Get-ADUser -Filter { LastLogonDate -ge 0 } -Properties SamAccountName, UserPrincipalName, mail, LastLogonDate, Enabled |
+            Where-Object { (New-TimeSpan $_.LastLogonDate $Today).Days -le $NumberOfDays -and $_.Enabled -eq $True } |
+            Select-Object SamAccountName, UserPrincipalName, mail, LastLogonDate
+    }
+    else {
+        $Users = Get-ADUser -Filter * -Properties SamAccountName, UserPrincipalName, mail, LastLogonDate
+        $ActiveUsers = Get-ADUser -Filter { LastLogonDate -ge 0 } -Properties SamAccountName, UserPrincipalName, mail, LastLogonDate |
+            Where-Object { (New-TimeSpan $_.LastLogonDate $Today).Days -le $NumberOfDays } |
+            Select-Object SamAccountName, UserPrincipalName, mail, LastLogonDate
+    }
+
+    # Creating a generic list to start assembling the report
+    $Report = New-Object System.Collections.Generic.List[string]
+
+    # Actual report assembly each section will be print on its own line
+    $Report.Add("Active users: $(($ActiveUsers | Measure-Object).Count)")
+    $Report.Add("Total users: $(($Users | Measure-Object).Count)")
+    $Report.Add("Percent Active: $(if((($Users | Measure-Object).Count) -gt 0){[Math]::Round(($ActiveUsers | Measure-Object).Count / (($Users | Measure-Object).Count) * 100, 2)}else{0})%")
+
+    # Set's up table to use in the report
+    $Report.Add($($ActiveUsers | Format-Table | Out-String))
+
+    if ($ActiveUsers) {
+        # Exports report to activity log
+        $Report | Write-Host
+
+        if ($CustomFieldName) {
+            # Saves report to custom field.
+            try {
+                Set-NinjaProperty -Name $CustomFieldName -Value ($Report | Out-String)
+            }
+            catch {
+                # If we ran into some sort of error we'll output it here.
+                Write-Error -Message $_.ToString() -Category InvalidOperation -Exception (New-Object System.Exception)
+                exit 1
             }
         }
     }
-}
-process {
-    try {
-        Write-Host "Retrieving configuration value for '$ConfigName'..."
-        $ConfigValue = Get-ConfigValue -Name $ConfigName -Type $ValueType -Source $ConfigSource
-        
-        if ($ConfigValue) {
-            Write-Host "Configuration value retrieved successfully."
-            Write-Output $ConfigValue
-        } else {
-            Write-Warning "No value found for configuration '$ConfigName'"
-        }
-    }
-    catch {
-        Write-Error "Failed to retrieve configuration value: $($_.Exception.Message)"
+    else {
+        Write-Error "[Error] No active users found!"
         exit 1
     }
 }
