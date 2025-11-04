@@ -82,7 +82,9 @@ process {
     $Threshold = (Get-Date).AddDays(-$OlderThan)
 
     if ($FromCustomField) {
-        $Threshold = (Get-Date).AddDays( - (Ninja-Property-Get $FromCustomField))
+        # NinjaOne integration removed - cannot retrieve from custom field
+        Write-Warning "FromCustomField specified but NinjaOne integration has been removed. Please use -OlderThan parameter instead."
+        # $Threshold = (Get-Date).AddDays( - (Ninja-Property-Get $FromCustomField))
     }
     
     $CheckPoints = Get-VM | Get-VMSnapshot | Where-Object { $_.CreationTime -lt $Threshold }

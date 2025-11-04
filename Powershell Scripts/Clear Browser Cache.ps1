@@ -15,7 +15,6 @@
     Closing Mozilla Firefox processes for tuser1 as requested.
     Clearing Mozilla Firefox's browser cache for tuser1.
 
-
     Clearing browser cache for cheart
     Closing Mozilla Firefox processes for cheart as requested.
     Clearing Mozilla Firefox's browser cache for cheart.
@@ -427,7 +426,5 @@ process {
     exit $ExitCode
 }
 end {
-    
-    
-    
+
 }

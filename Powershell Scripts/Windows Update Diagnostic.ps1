@@ -275,7 +275,7 @@ process {
     }
 
     if ($ResultsCustomField) {
-        Ninja-Property-Set -Name $ResultsCustomField -Value $($Log | Out-String)
+    # Ninja-Property-Set -Name $ResultsCustomField -Value $($Log | Out-String) # Removed NinjaOne dependency
     }
 
     if ($IssuesFound) {

@@ -203,7 +203,6 @@ process {
             $UpdatePolicyOutput | Write-Host
             Remove-Item $OutputPath
         }
-    
 
         # Check the exit code of the policy update process and handle errors.
         if ($UpdateSecurityPolicy.ExitCode -ne 0) {
@@ -264,7 +263,6 @@ process {
         $UpdatePolicyOutput | Write-Host
         Remove-Item $OutputPath
     }
-    
 
     # Check if the SecEdit process completed successfully by examining the exit code.
     if ($UpdateSecurityPolicy.ExitCode -ne 0) {
@@ -284,7 +282,5 @@ process {
     exit $ExitCode
 }
 end {
-    
-    
-    
+
 }

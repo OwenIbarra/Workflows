@@ -1058,7 +1058,6 @@ process {
         exit 1
     }
 
-    
     # Check the signer's certificate subject to confirm it's Microsoft Corporation.
     if ($InstallationAssistantSignature.SignerCertificate.Subject -ne "CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US") {
         Write-Host -Object "[Error] An invalid signature subject of '$($InstallationAssistantSignature.SignerCertificate.Subject)' was provided. 'CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US' was expected."
@@ -1133,7 +1132,5 @@ process {
     exit $ExitCode
 }
 end {
-    
-    
-    
+
 }

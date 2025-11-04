@@ -139,7 +139,6 @@ begin {
         exit 1
     }
 
-    
     # Define valid migration policy actions and ensure the input is valid.
     $ValidMigrationPolicyActions = "Enable", "Disable", "Default"
     if ($ValidMigrationPolicyActions -notcontains $MigrationPolicy) {
@@ -740,7 +739,5 @@ process {
     exit $ExitCode
 }
 end {
-    
-    
-    
+
 }

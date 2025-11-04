@@ -221,7 +221,7 @@ process {
 
     # If using a custom field sent that to the specified custom field, should be a multi-line
     if ($CustomFieldParam) {
-        Ninja-Property-Set -Name $CustomFieldParam -Value $DisksFormattedString
+    # Ninja-Property-Set -Name $CustomFieldParam -Value $DisksFormattedString # Removed NinjaOne dependency
     }
 
     # Loop through each disk

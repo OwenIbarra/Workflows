@@ -298,7 +298,11 @@ process {
 
     # Output Report
     Write-Host $Report
-    if ($CustomFieldName) { Ninja-Property-Set -Name $CustomFieldName -Value $Report }
+    if ($CustomFieldName) { 
+        Write-Host ""
+        Write-Host "Note: Custom field '$CustomFieldName' was specified but NinjaOne integration has been removed."
+        # Ninja-Property-Set -Name $CustomFieldName -Value $Report 
+    }
 
 
     # If we had any kind of failures its best to not reboot the system or logoff any users

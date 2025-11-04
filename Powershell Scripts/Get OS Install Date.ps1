@@ -83,13 +83,13 @@ process {
 
     if ($InstallDate) {
         if ($CustomField) {
-            Ninja-Property-Set -Name $CustomField -Value $InstallDate
+    # Ninja-Property-Set -Name $CustomField -Value $InstallDate # Removed NinjaOne dependency
         }
         Write-Host "Install Date: $InstallDate"
     }
     else {
         if ($CustomField) {
-            Ninja-Property-Set -Name $CustomField -Value "Unknown"
+    # Ninja-Property-Set -Name $CustomField -Value "Unknown" # Removed NinjaOne dependency
         }
         Write-Host "Install Date: Unknown"
     }

@@ -85,7 +85,7 @@ process {
     $InstalledFeatures | Format-Table -AutoSize | Out-String | Write-Host
 
     if ($CustomField) {
-        Ninja-Property-Set -Name $CustomField -Value $($InstalledFeatures.DisplayName | Out-String)
+    # Ninja-Property-Set -Name $CustomField -Value $($InstalledFeatures.DisplayName | Out-String) # Removed NinjaOne dependency
     }
 }
 end {

@@ -140,10 +140,10 @@ process {
     # PowerShell 2.0 does not support ninjarmm-cli
     if ($PSVersionTable.PSVersion.Major -gt 2) {
         if ($ControlInstances.LaunchURL.Count -gt 1) {
-            Ninja-Property-Set -Name $CustomField -Value ($ControlInstances | Format-List -Property Instance, LaunchURL | Out-String)
+    # Ninja-Property-Set -Name $CustomField -Value ($ControlInstances | Format-List -Property Instance, LaunchURL | Out-String) # Removed NinjaOne dependency
         }
         else {
-            Ninja-Property-Set -Name $CustomField -Value ($ControlInstances.LaunchURL | Out-String)
+    # Ninja-Property-Set -Name $CustomField -Value ($ControlInstances.LaunchURL | Out-String) # Removed NinjaOne dependency
         }
     }
     else {

@@ -36,7 +36,6 @@
     DataCenterBridging
     Windows-Defender-Default-Definitions
 
-
 .NOTES
     Minimum OS Architecture Supported: Windows 10
     Release Notes: Initial Release
@@ -188,7 +187,6 @@ begin {
         $InstallParentOrDefaultFeatures = $true
     }
 
-
     if ($GetFeatureNameList -and $FeatureNameToInstall) {
         Write-Host "[Error] The Get Feature Name List and Feature Name To Install parameters cannot be used together."
         exit 1
@@ -244,8 +242,6 @@ process {
 }
 
 end {
-    
-    
-    
+
 }
 

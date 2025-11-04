@@ -490,7 +490,6 @@ process {
         exit 1
     }
 
-
     # Check for outdated Chocolatey version if upgrades are allowed
     $ChocolateyOutdated = & choco outdated --limitoutput
     if ($ChocolateyOutdated -match "chocolatey\|" -and $UpgradeChocolatey) {
@@ -575,9 +574,6 @@ process {
     exit $ExitCode
 }
 end {
-    
-    
-    
-}
 
+}
 

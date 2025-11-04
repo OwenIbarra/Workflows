@@ -59,7 +59,9 @@ begin {
     }
 
     if($AllowedServersField -and -not ($AllowedServers)){
-        $AllowedServers = (Ninja-Property-Get $AllowedServersField) -split ',' | ForEach-Object { ($_).trim() }
+        # NinjaOne integration removed - cannot retrieve from custom field
+        Write-Warning "AllowedServersField specified but NinjaOne integration has been removed. Please use -AllowedServers parameter instead."
+        # $AllowedServers = (Ninja-Property-Get $AllowedServersField) -split ',' | ForEach-Object { ($_).trim() }
     }
 
     if($env:allowedServers -and $env:allowedServers -notlike "null"){
@@ -179,7 +181,7 @@ process {
             }
         }
 
-        Ninja-Property-Set -Name $CustomField -Value ($resultObject | Where-Object { $AllowedServers -notcontains $_."IP Address" } | Format-List | Out-String)
+    # Ninja-Property-Set -Name $CustomField -Value ($resultObject | Where-Object { $AllowedServers -notcontains $_."IP Address" } | Format-List | Out-String) # Removed NinjaOne dependency
 
         if($ErrorOut -eq $True){
             exit 1

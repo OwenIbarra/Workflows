@@ -40,7 +40,8 @@ param (
 begin {
     if ($env:customFieldName -and $env:customFieldName -notlike "null") { $CustomField = $env:customFieldName }
     if ($env:delimiter -and $env:delimiter -notlike "null") { $Delimiter = $env:delimiter }
-    $CheckNinjaCommand = "Ninja-Property-Set"
+    # NinjaOne integration removed
+    # $CheckNinjaCommand = "Ninja-Property-Set"
 }
 process {
     # Get objects in the Administrators group, includes user objects and groups
@@ -54,7 +55,7 @@ process {
     Write-Host "Local Admins Found (Users & Groups): $($Users -join $Delimiter)"
     if ($(Get-Command $CheckNinjaCommand -ErrorAction SilentlyContinue).Name -like $CheckNinjaCommand -and -not [string]::IsNullOrEmpty($CustomField) -and -not [string]::IsNullOrWhiteSpace($CustomField)) {
         Write-Host "Attempting to set Custom Field: $CustomField"
-        Ninja-Property-Set -Name $CustomField -Value $($Users -join $Delimiter)
+    # Ninja-Property-Set -Name $CustomField -Value $($Users -join $Delimiter) # Removed NinjaOne dependency
     }
     else {
         Write-Warning "Unable to set customfield either due to legacy OS or this script is not running as an elevated user."
