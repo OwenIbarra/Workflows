@@ -1,11 +1,15 @@
 # This is an example script for setting a custom field value. Specifying a type is recommended but not required.
+# NOTE: This script is NON-FUNCTIONAL as NinjaOne integration has been removed from this repository.
+# This file is kept for reference purposes only.
 #Requires -Version 4
 
 <#
 .SYNOPSIS
     This is an example script for setting a custom field value. Specifying a type is recommended but not required.
+    NOTE: This script is NON-FUNCTIONAL as NinjaOne integration has been removed.
 .DESCRIPTION
     This is an example script for setting a custom field value. Specifying a type is recommended but not required.
+    NOTE: This script is NON-FUNCTIONAL as NinjaOne integration has been removed from this repository.
 .EXAMPLE
     -CustomFieldName "text" -Value "Even More Text"
     
@@ -90,19 +94,13 @@ process {
     if ($CustomFieldType) { $NinjaPropertyParams["Type"] = $CustomFieldType }
     if ($NinjaDocumentName) { $NinjaPropertyParams["DocumentName"] = $NinjaDocumentName }
 
-    # Log that we are about to attempt setting a custom field.
+    # Log that custom field setting is no longer supported
     Write-Host "Setting Custom Field '$CustomFieldName' with value '$Value'...."
-
-    # Set a custom field using our function with the 'splatted' options.
-    try {
-    }
-    catch {
-        # If we ran into some sort of error we'll output it here.
-        Write-Error -Message $_.ToString() -Category InvalidOperation -Exception (New-Object System.Exception)
-        exit 1
-    }
-
-    Write-Host "Success!"
+    Write-Host ""
+    Write-Host "ERROR: NinjaOne integration has been removed from this repository."
+    Write-Host "This example script is no longer functional."
+    Write-Host "Custom fields cannot be set without NinjaOne integration."
+    exit 1
 }
 end {
 
