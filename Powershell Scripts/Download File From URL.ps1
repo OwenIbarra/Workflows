@@ -83,20 +83,16 @@ begin {
     
             # We'll redirect the error output to the success stream to make it easier to error out if nothing was found or something else went wrong.
             Write-Host "Retrieving value from Ninja Document..."
-            $NinjaPropertyValue = Ninja-Property-Docs-Get -AttributeName $Name @DocumentationParams 2>&1
     
             # Certain fields require more information to parse.
             if ($NeedsOptions -contains $Type) {
-                $NinjaPropertyOptions = Ninja-Property-Docs-Options -AttributeName $Name @DocumentationParams 2>&1
             }
         }
         else {
             # We'll redirect error output to the success stream to make it easier to error out if nothing was found or something else went wrong.
-            $NinjaPropertyValue = Ninja-Property-Get -Name $Name 2>&1
     
             # Certain fields require more information to parse.
             if ($NeedsOptions -contains $Type) {
-                $NinjaPropertyOptions = Ninja-Property-Options -Name $Name 2>&1
             }
         }
     
@@ -480,8 +476,6 @@ process {
    
 }
 end {
-    
-    
-    
+
 }
 

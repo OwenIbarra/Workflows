@@ -79,7 +79,7 @@ process {
 
     Write-Host "All Profiles - $FormattedSize, $($AllProfiles -join ', ')"
 
-    Ninja-Property-Set -Name $CustomField -Value "$AllProfiles"
+    # Ninja-Property-Set -Name $CustomField -Value "$AllProfiles" # Removed NinjaOne dependency
 
     if ($Max -and $Max -gt 0) {
         if ($Largest.Length -gt $Max * 1GB) {

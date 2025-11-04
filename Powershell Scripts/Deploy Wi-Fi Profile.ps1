@@ -122,7 +122,6 @@ begin {
         exit 1
     }
 
-
     function Get-NinjaProperty {
         [CmdletBinding()]
         Param(
@@ -147,20 +146,16 @@ begin {
         
             # Retrieve the property value from Ninja Document
             Write-Host "Retrieving value from Ninja Document..."
-            $NinjaPropertyValue = Ninja-Property-Docs-Get -AttributeName $Name @DocumentationParams 2>&1
         
             # Retrieve property options if needed
             if ($NeedsOptions -contains $Type) {
-                $NinjaPropertyOptions = Ninja-Property-Docs-Options -AttributeName $Name @DocumentationParams 2>&1
             }
         }
         else {
             # Retrieve the property value directly
-            $NinjaPropertyValue = Ninja-Property-Get -Name $Name 2>&1
         
             # Retrieve property options if needed
             if ($NeedsOptions -contains $Type) {
-                $NinjaPropertyOptions = Ninja-Property-Options -Name $Name 2>&1
             }
         }
         
@@ -551,7 +546,5 @@ process {
     exit $ExitCode
 }
 end {
-    
-    
-    
+
 }

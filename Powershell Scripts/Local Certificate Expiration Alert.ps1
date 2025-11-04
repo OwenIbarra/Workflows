@@ -75,7 +75,7 @@ begin {
 
     # If using the custom field option, check for the default value and replace it if necessary.
     if ($PSVersionTable.PSVersion.Major -gt 2) {
-        $CustomField = Ninja-Property-Get -Name $ExpirationFromCustomField 2>$Null
+    # $CustomField = Ninja-Property-Get -Name $ExpirationFromCustomField 2>$Null # Removed NinjaOne dependency
     }
 
     if ($CustomField -and $DaysUntilExpiration -eq 30 -and (Test-IsElevated) -and $PSVersionTable.PSVersion.Major -gt 2) {

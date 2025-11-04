@@ -208,11 +208,11 @@ begin {
         )
         if ($Format -eq "csv") {
             $csv = $Object | ConvertTo-Csv -NoTypeInformation | Out-String
-            Ninja-Property-Set $Name $csv
+    # Ninja-Property-Set $Name $csv # Removed NinjaOne dependency
         }
         else {
             $json = $Object | ConvertTo-Json | Out-String
-            Ninja-Property-Set $Name $json
+    # Ninja-Property-Set $Name $json # Removed NinjaOne dependency
         }
     }
 
@@ -262,7 +262,9 @@ process {
 
     # For this kind of alert it might be worth it to create a whole custom field of ignorables.
     if ($ExclusionsFromCustomField) {
-        (Ninja-Property-Get $ExclusionsFromCustomField) -split ',' | ForEach-Object { $ExcludedTools.Add($_.Trim()) }
+        # NinjaOne integration removed - cannot retrieve from custom field
+        Write-Warning "ExclusionsFromCustomField specified but NinjaOne integration has been removed. Please use -ExcludeTools parameter instead."
+        # (Ninja-Property-Get $ExclusionsFromCustomField) -split ',' | ForEach-Object { $ExcludedTools.Add($_.Trim()) }
     }
 
     if ($ExportCSV) {

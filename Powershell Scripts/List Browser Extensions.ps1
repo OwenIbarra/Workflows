@@ -130,90 +130,90 @@ begin {
         $p.IsInRole([System.Security.Principal.WindowsBuiltInRole]::Administrator)
     }
 
-    function Set-NinjaProperty {
-        [CmdletBinding()]
-        Param(
-            [Parameter(Mandatory = $True)]
-            [String]$Name,
-            [Parameter()]
-            [String]$Type,
-            [Parameter(Mandatory = $True, ValueFromPipeline = $True)]
-            $Value,
-            [Parameter()]
-            [String]$DocumentName
-        )
+    # function Set-NinjaProperty { # Removed NinjaOne dependency
+    # [CmdletBinding()] # Removed NinjaOne dependency
+    # Param( # Removed NinjaOne dependency
+    # [Parameter(Mandatory = $True)] # Removed NinjaOne dependency
+    # [String]$Name, # Removed NinjaOne dependency
+    # [Parameter()] # Removed NinjaOne dependency
+    # [String]$Type, # Removed NinjaOne dependency
+    # [Parameter(Mandatory = $True, ValueFromPipeline = $True)] # Removed NinjaOne dependency
+    # $Value, # Removed NinjaOne dependency
+    # [Parameter()] # Removed NinjaOne dependency
+    # [String]$DocumentName # Removed NinjaOne dependency
+    # ) # Removed NinjaOne dependency
     
-        $Characters = $Value | Out-String | Measure-Object -Character | Select-Object -ExpandProperty Characters
-        if ($Characters -ge 200000) {
-            throw [System.ArgumentOutOfRangeException]::New("Character limit exceeded; the value is greater than or equal to 200,000 characters.")
-        }
+    # $Characters = $Value | Out-String | Measure-Object -Character | Select-Object -ExpandProperty Characters # Removed NinjaOne dependency
+    # if ($Characters -ge 200000) { # Removed NinjaOne dependency
+    # throw [System.ArgumentOutOfRangeException]::New("Character limit exceeded; the value is greater than or equal to 200,000 characters.") # Removed NinjaOne dependency
+    # } # Removed NinjaOne dependency
         
-        # If requested to set the field value for a Ninja document, we'll specify it here.
-        $DocumentationParams = @{}
-        if ($DocumentName) { $DocumentationParams["DocumentName"] = $DocumentName }
+    # # If requested to set the field value for a Ninja document, we'll specify it here. # Removed NinjaOne dependency
+    # $DocumentationParams = @{} # Removed NinjaOne dependency
+    # if ($DocumentName) { $DocumentationParams["DocumentName"] = $DocumentName } # Removed NinjaOne dependency
         
-        # This is a list of valid fields that can be set. If no type is specified, it is assumed that the input does not need to be changed.
-        $ValidFields = "Attachment", "Checkbox", "Date", "Date or Date Time", "Decimal", "Dropdown", "Email", "Integer", "IP Address", "MultiLine", "MultiSelect", "Phone", "Secure", "Text", "Time", "URL", "WYSIWYG"
-        if ($Type -and $ValidFields -notcontains $Type) { Write-Warning "$Type is an invalid type! Please check here for valid types: https://ninjarmm.zendesk.com/hc/en-us/articles/16973443979789-Command-Line-Interface-CLI-Supported-Fields-and-Functionality" }
+    # # This is a list of valid fields that can be set. If no type is specified, it is assumed that the input does not need to be changed. # Removed NinjaOne dependency
+    # $ValidFields = "Attachment", "Checkbox", "Date", "Date or Date Time", "Decimal", "Dropdown", "Email", "Integer", "IP Address", "MultiLine", "MultiSelect", "Phone", "Secure", "Text", "Time", "URL", "WYSIWYG" # Removed NinjaOne dependency
+    # if ($Type -and $ValidFields -notcontains $Type) { Write-Warning "$Type is an invalid type! Please check here for valid types: https://ninjarmm.zendesk.com/hc/en-us/articles/16973443979789-Command-Line-Interface-CLI-Supported-Fields-and-Functionality" } # Removed NinjaOne dependency
         
-        # The field below requires additional information to be set.
-        $NeedsOptions = "Dropdown"
-        if ($DocumentName) {
-            if ($NeedsOptions -contains $Type) {
-                # Redirect error output to the success stream to make it easier to handle errors if nothing is found or if something else goes wrong.
-                $NinjaPropertyOptions = Ninja-Property-Docs-Options -AttributeName $Name @DocumentationParams 2>&1
-            }
-        }
-        else {
-            if ($NeedsOptions -contains $Type) {
-                $NinjaPropertyOptions = Ninja-Property-Options -Name $Name 2>&1
-            }
-        }
+    # # The field below requires additional information to be set. # Removed NinjaOne dependency
+    # $NeedsOptions = "Dropdown" # Removed NinjaOne dependency
+    # if ($DocumentName) { # Removed NinjaOne dependency
+    # if ($NeedsOptions -contains $Type) { # Removed NinjaOne dependency
+    # # Redirect error output to the success stream to make it easier to handle errors if nothing is found or if something else goes wrong. # Removed NinjaOne dependency
+    # $NinjaPropertyOptions = Ninja-Property-Docs-Options -AttributeName $Name @DocumentationParams 2>&1 # Removed NinjaOne dependency
+    # } # Removed NinjaOne dependency
+    # } # Removed NinjaOne dependency
+    # else { # Removed NinjaOne dependency
+    # if ($NeedsOptions -contains $Type) { # Removed NinjaOne dependency
+    # $NinjaPropertyOptions = Ninja-Property-Options -Name $Name 2>&1 # Removed NinjaOne dependency
+    # } # Removed NinjaOne dependency
+    # } # Removed NinjaOne dependency
         
-        # If an error is received with an exception property, the function will exit with that error information.
-        if ($NinjaPropertyOptions.Exception) { throw $NinjaPropertyOptions }
+    # # If an error is received with an exception property, the function will exit with that error information. # Removed NinjaOne dependency
+    # if ($NinjaPropertyOptions.Exception) { throw $NinjaPropertyOptions } # Removed NinjaOne dependency
         
-        # The below types require values not typically given in order to be set. The below code will convert whatever we're given into a format ninjarmm-cli supports.
-        switch ($Type) {
-            "Checkbox" {
-                # Although it's highly likely we were given a value like "True" or a boolean datatype, it's better to be safe than sorry.
-                $NinjaValue = [System.Convert]::ToBoolean($Value)
-            }
-            "Date or Date Time" {
-                # Ninjarmm-cli expects the GUID of the option to be selected. Therefore, the given value will be matched with a GUID.
-                $Date = (Get-Date $Value).ToUniversalTime()
-                $TimeSpan = New-TimeSpan (Get-Date "1970-01-01 00:00:00") $Date
-                $NinjaValue = $TimeSpan.TotalSeconds
-            }
-            "Dropdown" {
-                # Ninjarmm-cli is expecting the guid of the option we're trying to select. So we'll match up the value we were given with a guid.
-                $Options = $NinjaPropertyOptions -replace '=', ',' | ConvertFrom-Csv -Header "GUID", "Name"
-                $Selection = $Options | Where-Object { $_.Name -eq $Value } | Select-Object -ExpandProperty GUID
+    # # The below types require values not typically given in order to be set. The below code will convert whatever we're given into a format ninjarmm-cli supports. # Removed NinjaOne dependency
+    # switch ($Type) { # Removed NinjaOne dependency
+    # "Checkbox" { # Removed NinjaOne dependency
+    # # Although it's highly likely we were given a value like "True" or a boolean datatype, it's better to be safe than sorry. # Removed NinjaOne dependency
+    # $NinjaValue = [System.Convert]::ToBoolean($Value) # Removed NinjaOne dependency
+    # } # Removed NinjaOne dependency
+    # "Date or Date Time" { # Removed NinjaOne dependency
+    # # Ninjarmm-cli expects the GUID of the option to be selected. Therefore, the given value will be matched with a GUID. # Removed NinjaOne dependency
+    # $Date = (Get-Date $Value).ToUniversalTime() # Removed NinjaOne dependency
+    # $TimeSpan = New-TimeSpan (Get-Date "1970-01-01 00:00:00") $Date # Removed NinjaOne dependency
+    # $NinjaValue = $TimeSpan.TotalSeconds # Removed NinjaOne dependency
+    # } # Removed NinjaOne dependency
+    # "Dropdown" { # Removed NinjaOne dependency
+    # # Ninjarmm-cli is expecting the guid of the option we're trying to select. So we'll match up the value we were given with a guid. # Removed NinjaOne dependency
+    # $Options = $NinjaPropertyOptions -replace '=', ',' | ConvertFrom-Csv -Header "GUID", "Name" # Removed NinjaOne dependency
+    # $Selection = $Options | Where-Object { $_.Name -eq $Value } | Select-Object -ExpandProperty GUID # Removed NinjaOne dependency
         
-                if (-not $Selection) {
-                    throw [System.ArgumentOutOfRangeException]::New("Value is not present in dropdown options.")
-                }
+    # if (-not $Selection) { # Removed NinjaOne dependency
+    # throw [System.ArgumentOutOfRangeException]::New("Value is not present in dropdown options.") # Removed NinjaOne dependency
+    # } # Removed NinjaOne dependency
         
-                $NinjaValue = $Selection
-            }
-            default {
-                # All the other types shouldn't require additional work on the input.
-                $NinjaValue = $Value
-            }
-        }
+    # $NinjaValue = $Selection # Removed NinjaOne dependency
+    # } # Removed NinjaOne dependency
+    # default { # Removed NinjaOne dependency
+    # # All the other types shouldn't require additional work on the input. # Removed NinjaOne dependency
+    # $NinjaValue = $Value # Removed NinjaOne dependency
+    # } # Removed NinjaOne dependency
+    # } # Removed NinjaOne dependency
         
-        # We'll need to set the field differently depending on if its a field in a Ninja Document or not.
-        if ($DocumentName) {
-            $CustomField = Ninja-Property-Docs-Set -AttributeName $Name -AttributeValue $NinjaValue @DocumentationParams 2>&1
-        }
-        else {
-            $CustomField = $NinjaValue | Ninja-Property-Set-Piped -Name $Name 2>&1
-        }
+    # # We'll need to set the field differently depending on if its a field in a Ninja Document or not. # Removed NinjaOne dependency
+    # if ($DocumentName) { # Removed NinjaOne dependency
+    # $CustomField = Ninja-Property-Docs-Set -AttributeName $Name -AttributeValue $NinjaValue @DocumentationParams 2>&1 # Removed NinjaOne dependency
+    # } # Removed NinjaOne dependency
+    # else { # Removed NinjaOne dependency
+    # $CustomField = $NinjaValue | Ninja-Property-Set-Piped -Name $Name 2>&1 # Removed NinjaOne dependency
+    # } # Removed NinjaOne dependency
         
-        if ($CustomField.Exception) {
-            throw $CustomField
-        }
-    }
+    # if ($CustomField.Exception) { # Removed NinjaOne dependency
+    # throw $CustomField # Removed NinjaOne dependency
+    # } # Removed NinjaOne dependency
+    # } # Removed NinjaOne dependency
 
     # Function to find installation keys based on the display name, optionally returning uninstall strings
     function Find-InstallKey {
@@ -488,7 +488,7 @@ process {
                 }while ($Characters -ge 9500)
             }
 
-            Set-NinjaProperty -Name $MultilineCustomField -Value $CustomFieldValue
+    # Set-NinjaProperty -Name $MultilineCustomField -Value $CustomFieldValue # Removed NinjaOne dependency
             Write-Host "Successfully set Custom Field '$MultilineCustomField'!"
         }
         catch {
@@ -542,7 +542,7 @@ process {
             }
     
             # Set the custom field.
-            Set-NinjaProperty -Name $WysiwygCustomField -Value $CustomFieldValue
+    # Set-NinjaProperty -Name $WysiwygCustomField -Value $CustomFieldValue # Removed NinjaOne dependency
             Write-Host "Successfully set Custom Field '$WysiwygCustomField'!"
         }
         catch {

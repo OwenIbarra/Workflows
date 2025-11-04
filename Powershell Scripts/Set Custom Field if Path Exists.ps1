@@ -46,85 +46,85 @@ begin {
     }
 
     # This function is to make it easier to set Ninja Custom Fields.
-    function Set-NinjaProperty {
-        [CmdletBinding()]
-        Param(
-            [Parameter(Mandatory = $True)]
-            [String]$Name,
-            [Parameter()]
-            [String]$Type,
-            [Parameter(Mandatory = $True, ValueFromPipeline = $True)]
-            $Value,
-            [Parameter()]
-            [String]$DocumentName
-        )
+    # function Set-NinjaProperty { # Removed NinjaOne dependency
+    # [CmdletBinding()] # Removed NinjaOne dependency
+    # Param( # Removed NinjaOne dependency
+    # [Parameter(Mandatory = $True)] # Removed NinjaOne dependency
+    # [String]$Name, # Removed NinjaOne dependency
+    # [Parameter()] # Removed NinjaOne dependency
+    # [String]$Type, # Removed NinjaOne dependency
+    # [Parameter(Mandatory = $True, ValueFromPipeline = $True)] # Removed NinjaOne dependency
+    # $Value, # Removed NinjaOne dependency
+    # [Parameter()] # Removed NinjaOne dependency
+    # [String]$DocumentName # Removed NinjaOne dependency
+    # ) # Removed NinjaOne dependency
 
-        # If we're requested to set the field value for a Ninja document we'll specify it here.
-        $DocumentationParams = @{}
-        if ($DocumentName) { $DocumentationParams["DocumentName"] = $DocumentName }
+    # # If we're requested to set the field value for a Ninja document we'll specify it here. # Removed NinjaOne dependency
+    # $DocumentationParams = @{} # Removed NinjaOne dependency
+    # if ($DocumentName) { $DocumentationParams["DocumentName"] = $DocumentName } # Removed NinjaOne dependency
 
-        # This is a list of valid fields we can set. If no type is given we'll assume the input doesn't have to be changed in any way.
-        $ValidFields = "Attachment", "Checkbox", "Date", "Date or Date Time", "Decimal", "Dropdown", "Email", "Integer", "IP Address", "MultiLine", "MultiSelect", "Phone", "Secure", "Text", "Time", "URL"
-        if ($Type -and $ValidFields -notcontains $Type) { Write-Warning "$Type is an invalid type! Please check here for valid types. https://ninjarmm.zendesk.com/hc/en-us/articles/16973443979789-Command-Line-Interface-CLI-Supported-Fields-and-Functionality" }
+    # # This is a list of valid fields we can set. If no type is given we'll assume the input doesn't have to be changed in any way. # Removed NinjaOne dependency
+    # $ValidFields = "Attachment", "Checkbox", "Date", "Date or Date Time", "Decimal", "Dropdown", "Email", "Integer", "IP Address", "MultiLine", "MultiSelect", "Phone", "Secure", "Text", "Time", "URL" # Removed NinjaOne dependency
+    # if ($Type -and $ValidFields -notcontains $Type) { Write-Warning "$Type is an invalid type! Please check here for valid types. https://ninjarmm.zendesk.com/hc/en-us/articles/16973443979789-Command-Line-Interface-CLI-Supported-Fields-and-Functionality" } # Removed NinjaOne dependency
 
-        # The below field requires additional information in order to set
-        $NeedsOptions = "Dropdown"
-        if ($DocumentName) {
-            if ($NeedsOptions -contains $Type) {
-                # We'll redirect the error output to the success stream to make it easier to error out if nothing was found or something else went wrong.
-                $NinjaPropertyOptions = Ninja-Property-Docs-Options -AttributeName $Name @DocumentationParams 2>&1
-            }
-        }
-        else {
-            if ($NeedsOptions -contains $Type) {
-                $NinjaPropertyOptions = Ninja-Property-Options -Name $Name 2>&1
-            }
-        }
+    # # The below field requires additional information in order to set # Removed NinjaOne dependency
+    # $NeedsOptions = "Dropdown" # Removed NinjaOne dependency
+    # if ($DocumentName) { # Removed NinjaOne dependency
+    # if ($NeedsOptions -contains $Type) { # Removed NinjaOne dependency
+    # # We'll redirect the error output to the success stream to make it easier to error out if nothing was found or something else went wrong. # Removed NinjaOne dependency
+    # $NinjaPropertyOptions = Ninja-Property-Docs-Options -AttributeName $Name @DocumentationParams 2>&1 # Removed NinjaOne dependency
+    # } # Removed NinjaOne dependency
+    # } # Removed NinjaOne dependency
+    # else { # Removed NinjaOne dependency
+    # if ($NeedsOptions -contains $Type) { # Removed NinjaOne dependency
+    # $NinjaPropertyOptions = Ninja-Property-Options -Name $Name 2>&1 # Removed NinjaOne dependency
+    # } # Removed NinjaOne dependency
+    # } # Removed NinjaOne dependency
 
-        # If we received some sort of error it should have an exception property and we'll exit the function with that error information.
-        if ($NinjaPropertyOptions.Exception) { throw $NinjaPropertyOptions }
+    # # If we received some sort of error it should have an exception property and we'll exit the function with that error information. # Removed NinjaOne dependency
+    # if ($NinjaPropertyOptions.Exception) { throw $NinjaPropertyOptions } # Removed NinjaOne dependency
 
-        # The below type's require values not typically given in order to be set. The below code will convert whatever we're given into a format ninjarmm-cli supports.
-        switch ($Type) {
-            "Checkbox" {
-                # While it's highly likely we were given a value like "True" or a boolean datatype it's better to be safe than sorry.
-                $NinjaValue = [System.Convert]::ToBoolean($Value)
-            }
-            "Date or Date Time" {
-                # Ninjarmm-cli is expecting the time to be representing as a Unix Epoch string. So we'll convert what we were given into that format.
-                $Date = (Get-Date $Value).ToUniversalTime()
-                $TimeSpan = New-TimeSpan (Get-Date "1970-01-01 00:00:00") $Date
-                $NinjaValue = $TimeSpan.TotalSeconds
-            }
-            "Dropdown" {
-                # Ninjarmm-cli is expecting the guid of the option we're trying to select. So we'll match up the value we were given with a guid.
-                $Options = $NinjaPropertyOptions -replace '=', ',' | ConvertFrom-Csv -Header "GUID", "Name"
-                $Selection = $Options | Where-Object { $_.Name -eq $Value } | Select-Object -ExpandProperty GUID
+    # # The below type's require values not typically given in order to be set. The below code will convert whatever we're given into a format ninjarmm-cli supports. # Removed NinjaOne dependency
+    # switch ($Type) { # Removed NinjaOne dependency
+    # "Checkbox" { # Removed NinjaOne dependency
+    # # While it's highly likely we were given a value like "True" or a boolean datatype it's better to be safe than sorry. # Removed NinjaOne dependency
+    # $NinjaValue = [System.Convert]::ToBoolean($Value) # Removed NinjaOne dependency
+    # } # Removed NinjaOne dependency
+    # "Date or Date Time" { # Removed NinjaOne dependency
+    # # Ninjarmm-cli is expecting the time to be representing as a Unix Epoch string. So we'll convert what we were given into that format. # Removed NinjaOne dependency
+    # $Date = (Get-Date $Value).ToUniversalTime() # Removed NinjaOne dependency
+    # $TimeSpan = New-TimeSpan (Get-Date "1970-01-01 00:00:00") $Date # Removed NinjaOne dependency
+    # $NinjaValue = $TimeSpan.TotalSeconds # Removed NinjaOne dependency
+    # } # Removed NinjaOne dependency
+    # "Dropdown" { # Removed NinjaOne dependency
+    # # Ninjarmm-cli is expecting the guid of the option we're trying to select. So we'll match up the value we were given with a guid. # Removed NinjaOne dependency
+    # $Options = $NinjaPropertyOptions -replace '=', ',' | ConvertFrom-Csv -Header "GUID", "Name" # Removed NinjaOne dependency
+    # $Selection = $Options | Where-Object { $_.Name -eq $Value } | Select-Object -ExpandProperty GUID # Removed NinjaOne dependency
 
-                if (-not $Selection) {
-                    throw "Value is not present in dropdown"
-                }
+    # if (-not $Selection) { # Removed NinjaOne dependency
+    # throw "Value is not present in dropdown" # Removed NinjaOne dependency
+    # } # Removed NinjaOne dependency
 
-                $NinjaValue = $Selection
-            }
-            default {
-                # All the other types shouldn't require additional work on the input.
-                $NinjaValue = $Value
-            }
-        }
+    # $NinjaValue = $Selection # Removed NinjaOne dependency
+    # } # Removed NinjaOne dependency
+    # default { # Removed NinjaOne dependency
+    # # All the other types shouldn't require additional work on the input. # Removed NinjaOne dependency
+    # $NinjaValue = $Value # Removed NinjaOne dependency
+    # } # Removed NinjaOne dependency
+    # } # Removed NinjaOne dependency
 
-        # We'll need to set the field differently depending on if its a field in a Ninja Document or not.
-        if ($DocumentName) {
-            $CustomField = Ninja-Property-Docs-Set -AttributeName $Name -AttributeValue $NinjaValue @DocumentationParams 2>&1
-        }
-        else {
-            $CustomField = Ninja-Property-Set -Name $Name -Value $NinjaValue 2>&1
-        }
+    # # We'll need to set the field differently depending on if its a field in a Ninja Document or not. # Removed NinjaOne dependency
+    # if ($DocumentName) { # Removed NinjaOne dependency
+    # $CustomField = Ninja-Property-Docs-Set -AttributeName $Name -AttributeValue $NinjaValue @DocumentationParams 2>&1 # Removed NinjaOne dependency
+    # } # Removed NinjaOne dependency
+    # else { # Removed NinjaOne dependency
+    # $CustomField = Ninja-Property-Set -Name $Name -Value $NinjaValue 2>&1 # Removed NinjaOne dependency
+    # } # Removed NinjaOne dependency
 
-        if ($CustomField.Exception) {
-            throw $CustomField
-        }
-    }
+    # if ($CustomField.Exception) { # Removed NinjaOne dependency
+    # throw $CustomField # Removed NinjaOne dependency
+    # } # Removed NinjaOne dependency
+    # } # Removed NinjaOne dependency
 }
 process {
     $CustomFieldValue = $(
@@ -139,7 +139,7 @@ process {
     )
 
     try {
-        Set-NinjaProperty -Name $CustomField -Value $CustomFieldValue
+    # Set-NinjaProperty -Name $CustomField -Value $CustomFieldValue # Removed NinjaOne dependency
     }
     catch {
         # If we ran into some sort of error we'll output it here.

@@ -98,7 +98,7 @@ process {
 
     # Save our results to a custom field.
     if ($CustomFieldName) {
-        Ninja-Property-Set -Name $CustomFieldName -Value $Report
+    # Ninja-Property-Set -Name $CustomFieldName -Value $Report # Removed NinjaOne dependency
     }
 }
 end {

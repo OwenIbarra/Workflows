@@ -120,17 +120,17 @@ process {
 
         # Export the list in CSV format into a custom field
         if ($ExportCSV) {
-            Ninja-Property-Set $ExportCSV ($LockedOutUsers | ConvertTo-Csv -NoTypeInformation)
+    # Ninja-Property-Set $ExportCSV ($LockedOutUsers | ConvertTo-Csv -NoTypeInformation) # Removed NinjaOne dependency
         }
 
         # Export the usernames into a custom field
         if ($ExportTXT) {
             if ($LockedOutUsers.Name) {
-                Ninja-Property-Set $ExportTXT ($LockedOutUsers.Name | Out-String)
+    # Ninja-Property-Set $ExportTXT ($LockedOutUsers.Name | Out-String) # Removed NinjaOne dependency
             }
 
             if ($LockedOutUsers.SamAccountName) {
-                Ninja-Property-Set $ExportTXT ($LockedOutUsers.SamAccountName | Out-String)
+    # Ninja-Property-Set $ExportTXT ($LockedOutUsers.SamAccountName | Out-String) # Removed NinjaOne dependency
             }
         }
         Exit 1

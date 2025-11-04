@@ -134,91 +134,6 @@ begin {
         }
     }
 
-    function Set-NinjaProperty {
-        [CmdletBinding()]
-        Param(
-            [Parameter(Mandatory = $True)]
-            [String]$Name,
-            [Parameter()]
-            [String]$Type,
-            [Parameter(Mandatory = $True, ValueFromPipeline = $True)]
-            $Value,
-            [Parameter()]
-            [String]$DocumentName
-        )
-    
-        $Characters = $Value | Out-String | Measure-Object -Character | Select-Object -ExpandProperty Characters
-        if ($Characters -ge 200000) {
-            throw [System.ArgumentOutOfRangeException]::New("Character limit exceeded: the value is greater than or equal to 200,000 characters.")
-        }
-        
-        # If requested to set the field value for a Ninja document, specify it here.
-        $DocumentationParams = @{}
-        if ($DocumentName) { $DocumentationParams["DocumentName"] = $DocumentName }
-        
-        # This is a list of valid fields that can be set. If no type is specified, assume that the input does not need to be changed.
-        $ValidFields = "Attachment", "Checkbox", "Date", "Date or Date Time", "Decimal", "Dropdown", "Email", "Integer", "IP Address", "MultiLine", "MultiSelect", "Phone", "Secure", "Text", "Time", "URL", "WYSIWYG"
-        if ($Type -and $ValidFields -notcontains $Type) { Write-Warning "$Type is an invalid type. Please check here for valid types: https://ninjarmm.zendesk.com/hc/en-us/articles/16973443979789-Command-Line-Interface-CLI-Supported-Fields-and-Functionality" }
-        
-        # The field below requires additional information to set.
-        $NeedsOptions = "Dropdown"
-        if ($DocumentName) {
-            if ($NeedsOptions -contains $Type) {
-                # Redirect error output to the success stream to handle errors more easily if nothing is found or something else goes wrong.
-                $NinjaPropertyOptions = Ninja-Property-Docs-Options -AttributeName $Name @DocumentationParams 2>&1
-            }
-        }
-        else {
-            if ($NeedsOptions -contains $Type) {
-                $NinjaPropertyOptions = Ninja-Property-Options -Name $Name 2>&1
-            }
-        }
-        
-        # If an error is received with an exception property, exit the function with that error information.
-        if ($NinjaPropertyOptions.Exception) { throw $NinjaPropertyOptions }
-        
-        # The types below require values not typically given to be set. The code below will convert whatever we're given into a format ninjarmm-cli supports.
-        switch ($Type) {
-            "Checkbox" {
-                # Although it's highly likely we were given a value like "True" or a boolean data type, it's better to be safe than sorry.
-                $NinjaValue = [System.Convert]::ToBoolean($Value)
-            }
-            "Date or Date Time" {
-                # Ninjarmm-cli expects the GUID of the option to be selected. Therefore, match the given value with a GUID.
-                $Date = (Get-Date $Value).ToUniversalTime()
-                $TimeSpan = New-TimeSpan (Get-Date "1970-01-01 00:00:00") $Date
-                $NinjaValue = $TimeSpan.TotalSeconds
-            }
-            "Dropdown" {
-                # Ninjarmm-cli expects the GUID of the option we're trying to select, so match the value we were given with a GUID.
-                $Options = $NinjaPropertyOptions -replace '=', ',' | ConvertFrom-Csv -Header "GUID", "Name"
-                $Selection = $Options | Where-Object { $_.Name -eq $Value } | Select-Object -ExpandProperty GUID
-        
-                if (-not $Selection) {
-                    throw [System.ArgumentOutOfRangeException]::New("Value is not present in dropdown options.")
-                }
-        
-                $NinjaValue = $Selection
-            }
-            default {
-                # All the other types shouldn't require additional work on the input.
-                $NinjaValue = $Value
-            }
-        }
-        
-        # Set the field differently depending on whether it's a field in a Ninja Document or not.
-        if ($DocumentName) {
-            $CustomField = Ninja-Property-Docs-Set -AttributeName $Name -AttributeValue $NinjaValue @DocumentationParams 2>&1
-        }
-        else {
-            $CustomField = $NinjaValue | Ninja-Property-Set-Piped -Name $Name 2>&1
-        }
-        
-        if ($CustomField.Exception) {
-            throw $CustomField
-        }
-    }
-   
     function Test-IsElevated {
         $id = [System.Security.Principal.WindowsIdentity]::GetCurrent()
         $p = New-Object System.Security.Principal.WindowsPrincipal($id)
@@ -272,71 +187,9 @@ process {
 
     # Optionally set a WYSIWYG custom field if specified
     if ($wysiwygCustomField) {
-        try {
-            Write-Host -Object "`nBuilding HTML for Custom Field."
-
-            # Create an HTML report for the custom field
-            $HTML = New-Object System.Collections.Generic.List[object]
-
-            $HTML.Add("<h1 style='text-align: center'>Directory Server Diagnosis Test Results (DCDiag.exe)</h1>")
-            $FailedPercentage = $([math]::Round((($FailedTests.Count / ($FailedTests.Count + $PassingTests.Count)) * 100), 2))
-            $SuccessPercentage = 100 - $FailedPercentage
-            $HTML.Add(
-                @"
-<div class='p-3 linechart'>
-    <div style='width: $FailedPercentage%; background-color: #C6313A;'></div>
-    <div style='width: $SuccessPercentage%; background-color: #007644;'></div>
-        </div>
-        <ul class='unstyled p-3' style='display: flex; justify-content: space-between; '>
-            <li><span class='chart-key' style='background-color: #C6313A;'></span><span>Failed ($($FailedTests.Count))</span></li>
-            <li><span class='chart-key' style='background-color: #007644;'></span><span>Passed ($($PassingTests.Count))</span></li>
-        </ul>
-"@
-            )
-
-            # Add failed tests to the HTML report
-            $FailedTests | Sort-Object Test | ForEach-Object {
-                $HTML.Add(
-                    @"
-<div class='info-card error'>
-    <i class='info-icon fa-solid fa-circle-exclamation'></i>
-    <div class='info-text'>
-        <div class='info-title'>$($_.Test)</div>
-        <div class='info-description'>
-            $($_.Result | Out-String)
-        </div>
-    </div>
-</div>
-"@
-                )
-            }
-
-            # Add passing tests to the HTML report
-            $PassingTests | Sort-Object Test | ForEach-Object {
-                $HTML.Add(
-                    @"
-<div class='info-card success'>
-    <i class='info-icon fa-solid fa-circle-check'></i>
-    <div class='info-text'>
-        <div class='info-title'>$($_.Test)</div>
-        <div class='info-description'>
-            Test passed.
-        </div>
-    </div>
-</div>
-"@
-                )
-            }
-
-            # Set the custom field with the HTML report
-            Write-Host -Object "Attempting to set Custom Field '$wysiwygCustomField'."
-            Set-NinjaProperty -Name $wysiwygCustomField -Value $HTML
-            Write-Host -Object "Successfully set Custom Field '$wysiwygCustomField'!"
-        }
-        catch {
-            Write-Host -Object "[Error] $($_.Exception.Message)"
-            $ExitCode = 1
-        }
+        Write-Host ""
+        Write-Host "Note: Custom field '$wysiwygCustomField' was specified but NinjaOne integration has been removed."
+        Write-Host "All output has been displayed above."
     }
 
     # Display the list of passing tests
@@ -367,7 +220,5 @@ process {
     exit $ExitCode
 }
 end {
-    
-    
-    
+
 }

@@ -329,7 +329,7 @@ process {
         }
 
         if ($PSVersionTable.PSVersion.Major -gt 2) {
-            Ninja-Property-Set -Name $CustomField -Value ($CombinedResults | Out-String)
+    # Ninja-Property-Set -Name $CustomField -Value ($CombinedResults | Out-String) # Removed NinjaOne dependency
         }
         else {
             Write-Warning "Powershell 1 and 2 cannot set custom fields. https://ninjarmm.zendesk.com/hc/en-us/articles/4405408656013"

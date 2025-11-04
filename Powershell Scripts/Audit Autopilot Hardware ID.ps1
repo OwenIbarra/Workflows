@@ -66,7 +66,6 @@ process {
         $DeviceDetail.DeviceHardwareData -and
         -not $(Test-StringEmpty -Text $DeviceDetail.DeviceHardwareData)
     ) {
-        Ninja-Property-Set -Name $CustomField -Value $DeviceDetail.DeviceHardwareData
         Write-Host "HardwareID: $($DeviceDetail.DeviceHardwareData)"
     }
     else {
@@ -76,8 +75,6 @@ process {
     
 }
 end {
-    
-    
-    
+
 }
 

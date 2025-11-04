@@ -25,7 +25,6 @@
     The task has completed successfully.
     See log %windir%\security\logs\scesrv.log for detail info.
 
-
 PARAMETER: -Title "ReplaceMeWithYourDesiredTitle"
     Specify the title of the dialog box to be used in the logon banner.
 
@@ -242,7 +241,6 @@ process {
             $UpdatePolicyOutput | Write-Host
             Remove-Item "$env:TEMP\enable-loginbanner.txt"
         }
-    
 
         # Check the exit code of the policy update process and handle errors.
         if ($UpdateSecurityPolicy.ExitCode -ne 0) {
@@ -337,7 +335,6 @@ process {
         $UpdatePolicyOutput | Write-Host
         Remove-Item "$env:TEMP\enable-loginbanner.txt"
     }
-    
 
     # Check if the SecEdit process completed successfully by examining the exit code.
     if ($UpdateSecurityPolicy.ExitCode -ne 0) {
@@ -357,7 +354,5 @@ process {
     exit $ExitCode
 }
 end {
-    
-    
-    
+
 }

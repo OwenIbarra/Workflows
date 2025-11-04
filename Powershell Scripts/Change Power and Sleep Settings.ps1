@@ -473,8 +473,6 @@ process {
     if ($LowNotify) { Set-PowerValue -GUID "SUB_BATTERY" -Index "bcded951-187b-4d05-bccc-f7e51960c258" -Value 1 -Setting "Enable Low Battery Notification" }
 }
 end {
-    
-    
-    
+
 }
 

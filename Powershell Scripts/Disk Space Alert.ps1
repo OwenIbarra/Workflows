@@ -141,7 +141,6 @@ begin {
     if ($env:retrieveExcludeDataVolumesFromCustomField) { $ExcludeDataVolumeCustomField = $env:retrieveExcludeDataVolumesFromCustomField }
     if ($env:retrieveAlertOnlyForDataVolumesFromCustomField) { $AlertOnlyCustomField = $env:retrieveAlertOnlyForDataVolumesFromCustomField }
 
-
     # Define an array of custom fields to validate
     $CustomFields = @(
         $SystemVolumeMinFreePercentCustomField,
@@ -544,12 +543,10 @@ begin {
         # If the property is being set in a document or field and the type needs options, retrieve them
         if ($DocumentName) {
             if ($NeedsOptions -contains $Type) {
-                $NinjaPropertyOptions = Ninja-Property-Docs-Options -AttributeName $Name @DocumentationParams 2>&1
             }
         }
         else {
             if ($NeedsOptions -contains $Type) {
-                $NinjaPropertyOptions = Ninja-Property-Options -Name $Name 2>&1
             }
         }
         
@@ -617,16 +614,15 @@ begin {
             
         # Set the property value in the document if a document name is provided
         if ($DocumentName) {
-            $CustomField = Ninja-Property-Docs-Set -AttributeName $Name -AttributeValue $NinjaValue @DocumentationParams 2>&1
         }
         else {
             try {
+                # NinjaOne integration removed - property setting skipped
                 # Otherwise, set the standard property value
                 if ($Piped) {
-                    $CustomField = $NinjaValue | Ninja-Property-Set-Piped -Name $Name 2>&1
+                    # $CustomField = $NinjaValue | Ninja-Property-Set-Piped -Name $Name 2>&1
                 }
                 else {
-                    $CustomField = Ninja-Property-Set -Name $Name -Value $NinjaValue 2>&1
                 }
             }
             catch {
@@ -672,21 +668,16 @@ begin {
         
         # If a document name is provided, retrieve the property value from the document
         if ($DocumentName) {
-        
-            $NinjaPropertyValue = Ninja-Property-Docs-Get -AttributeName $Name @DocumentationParams 2>&1
-        
+
             # If the property type requires options, retrieve them
             if ($NeedsOptions -contains $Type) {
-                $NinjaPropertyOptions = Ninja-Property-Docs-Options -AttributeName $Name @DocumentationParams 2>&1
             }
         }
         else {
             # If no document name is provided, retrieve the property value directly
-            $NinjaPropertyValue = Ninja-Property-Get -Name $Name 2>&1
     
             # If the property type requires options, retrieve them
             if ($NeedsOptions -contains $Type) {
-                $NinjaPropertyOptions = Ninja-Property-Options -Name $Name 2>&1
             }
         }
         
@@ -800,7 +791,6 @@ begin {
             }
         }
     }
-    
 
     function Test-IsElevated {
         [CmdletBinding()]
@@ -1589,175 +1579,20 @@ process {
 
     # Update a multiline custom field with volume details and alerts
     if ($MultilineCustomField) {
-        $CustomFieldValue = New-Object System.Collections.Generic.List[String]
-    
-        # Add system volume alerts to the custom field
-        if ($SystemVolumeMinFree.Count -gt 0) {
-            $SystemVolumeMinFree | ForEach-Object {
-                if ($SystemVolume.FreeSpace -lt $_.MinimumInBytes) {
-                    $CustomFieldValue.Add("[Alert] The system volume exceeds the '$($_.Type)' limit of '$($_.Limit)'.`n")
-                }
-            }
-        }
-
-        # Add data volume alerts to the custom field
-        if ($DataVolumeMinFree.Count -gt 0) {
-            $DataVolumeMinFree | ForEach-Object {
-                if ($_.FreeSpace -lt $_.MinimumInBytes) {
-                    $CustomFieldValue.Add("[Alert] The data volume labeled '$($_.Name)' exceeds the '$($_.Type)' limit of '$($_.Limit)'.`n")
-                }
-            }
-        }
-
-        # Add formatted volume details to the custom field
-        if ($SystemVolumeMinFree.Count -gt 0 -or $DataVolumeMinFree.Count -gt 0) {
-            $CustomFieldValue.Add("`n`n")
-        }
-
-        $CustomFieldValue.Add(($FormattedSystemVolume | Format-List -Property Name, DriveLetter, FileSystemType, Path, FreeSpace, Total, PercentageFree | Out-String).Trim())
-        $CustomFieldValue.Add("`n`n")
-        $CustomFieldValue.Add(($FormattedDataVolumes | Format-List -Property Name, DriveLetter, FileSystemType, Path, FreeSpace, Total, PercentageFree | Out-String).Trim())
-    
-        try {
-            # Attempt to set the multiline custom field
-            Write-Host -Object "`nAttempting to set Custom Field '$MultilineCustomField'."
-            Set-CustomField -Name $MultilineCustomField -Value $CustomFieldValue
-            Write-Host -Object "Successfully set Custom Field '$MultilineCustomField'!"
-        }
-        catch {
-            # Handle errors during custom field update
-            Write-Host -Object "[Error] $($_.Exception.Message)"
-            Write-Host -Object "[Error] Failed to set the multiline custom field."
-            $ExitCode = 1
-        }
+        Write-Host ""
+        Write-Host "Note: Custom field '$MultilineCustomField' was specified but NinjaOne integration has been removed."
+        Write-Host "All output has been displayed above."
     }
 
     # Update a WYSIWYG custom field with volume details and alerts
     if ($WYSIWYGCustomField) {
-        $CustomFieldValue = New-Object System.Collections.Generic.List[object]
-
-        # Create WYSIWYG cards for the system volume
-        $FormattedSystemVolume | ForEach-Object {
-
-            $SystemCard = "<div class='card flex-grow-1'>
-    <div class='card-title-box'>
-        <div class='card-title'><i class='fa-solid fa-hard-drive'></i>&nbsp;&nbsp;$($_.Name)</div>
-    </div>
-    <div class='card-body' style='white-space: nowrap'>
-        <div class='container'>
-            <div class='row' style='flex-wrap: nowrap;'>
-                <div class='col-sm'>
-                    <p class='card-text'>Drive Letter: $($_.DriveLetter)</p>
-                    <p class='card-text' style='white-space: nowrap;'>Path: $($_.Path)</p>
-                </div>
-                <div class='col-sm text-end' style='text-align: right;'>
-                    <p class='card-text'>File System: $($_.FileSystemType)</p>
-                </div>
-            </div>
-            <div class='row'>
-                <div class='p-2 linechart'>
-                    <div style='width: $($_.PercentageUsed); background-color: #09344F;'></div>
-                    <div style='width: $($_.PercentageFree); background-color: #04FF48;'></div>
-                </div>
-                <ul class='unstyled p-2' style='display: flex; justify-content: space-between; '>
-                    <li style='white-space: nowrap;'>
-                        <span class='chart-key' style='background-color: #09344F;'></span>
-                        <span>Used Space ($($_.UsedSpace) | $($_.PercentageUsed))</span>
-                    </li>
-                    <li style='white-space: nowrap;'>
-                        <span class='chart-key' style='background-color: #04FF48;'></span>
-                        <span>Free Space ($($_.FreeSpace) | $($_.PercentageFree))</span>
-                    </li>
-                </ul>
-            </div>
-            <div class='row'>
-                <p class='card-text'>Total Space: $($_.Total)</p>
-            </div>
-        </div>
-    </div>
-</div>`n"
-
-            # Highlight the card if the system volume exceeds limits
-            foreach ($Volume in $SystemVolumeMinFree) {
-                if ($Volume.Path -eq $_.Path -and $Volume.FreeSpace -lt $Volume.MinimumInBytes) {
-                    $SystemCard = $SystemCard -replace "class='fa-solid fa-hard-drive'", "class='fa-solid fa-circle-exclamation' style='color: #C6313A;'"
-                    $SystemCard = $SystemCard -replace "class='card flex-grow-1'", "class='card flex-grow-1' style='background-color: #FBEBED;'"
-                }
-            }
-
-            $CustomFieldValue.Add($SystemCard)
-        }
-
-        # Create WYSIWYG cards for data volumes
-        $FormattedDataVolumes | ForEach-Object {
-
-            $DataCard = "<div class='card flex-grow-1'>
-    <div class='card-title-box'>
-        <div class='card-title'><i class='fa-solid fa-hard-drive'></i>&nbsp;&nbsp;$($_.Name)</div>
-    </div>
-    <div class='card-body' style='white-space: nowrap'>
-        <div class='container'>
-            <div class='row' style='flex-wrap: nowrap;'>
-                <div class='col-sm'>
-                    <p class='card-text'>Drive Letter: $($_.DriveLetter)</p>
-                    <p class='card-text' style='white-space: nowrap;'>Path: $($_.Path)</p>
-                </div>
-                <div class='col-sm text-end' style='text-align: right;'>
-                    <p class='card-text'>File System: $($_.FileSystemType)</p>
-                </div>
-            </div>
-            <div class='row'>
-                <div class='p-2 linechart'>
-                    <div style='width: $($_.PercentageUsed); background-color: #09344F;'></div>
-                    <div style='width: $($_.PercentageFree); background-color: #04FF48;'></div>
-                </div>
-                <ul class='unstyled p-2' style='display: flex; justify-content: space-between; '>
-                    <li style='white-space: nowrap;'>
-                        <span class='chart-key' style='background-color: #09344F;'></span>
-                        <span>Used Space ($($_.UsedSpace) | $($_.PercentageUsed))</span>
-                    </li>
-                    <li style='white-space: nowrap;'>
-                        <span class='chart-key' style='background-color: #04FF48;'></span>
-                        <span>Free Space ($($_.FreeSpace) | $($_.PercentageFree))</span>
-                    </li>
-                </ul>
-            </div>
-            <div class='row'>
-                <p class='card-text'>Total Space: $($_.Total)</p>
-            </div>
-        </div>
-    </div>
-</div>`n"
-
-            # Highlight the card if the data volume exceeds limits
-            foreach ($Volume in $DataVolumeMinFree) {
-                if ($Volume.Path -eq $_.Path -and $Volume.FreeSpace -lt $Volume.MinimumInBytes) {
-                    $DataCard = $DataCard -replace "class='fa-solid fa-hard-drive'", "class='fa-solid fa-circle-exclamation' style='color: #C6313A;'"
-                    $DataCard = $DataCard -replace "class='card flex-grow-1'", "class='card flex-grow-1' style='background-color: #FBEBED;'"
-                }
-            }
-
-            $CustomFieldValue.Add($DataCard)
-        }
-
-        try {
-            # Attempt to set the WYSIWYG custom field
-            Write-Host -Object "`nAttempting to set Custom Field '$WYSIWYGCustomField'."
-            Set-CustomField -Name $WYSIWYGCustomField -Value $CustomFieldValue
-            Write-Host -Object "Successfully set Custom Field '$WYSIWYGCustomField'!"
-        }
-        catch {
-            # Handle errors during custom field update
-            Write-Host -Object "[Error] $($_.Exception.Message)"
-            Write-Host -Object "[Error] Failed to set the WYSIWYG custom field."
-            $ExitCode = 1
-        }
+        Write-Host ""
+        Write-Host "Note: Custom field '$WYSIWYGCustomField' was specified but NinjaOne integration has been removed."
+        Write-Host "All output has been displayed above."
     }
 
     exit $ExitCode
 }
 end {
-    
-    
-    
+
 }

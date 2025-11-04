@@ -77,20 +77,20 @@ begin {
         
             # Notify the user that the value is being retrieved from a Ninja document
             Write-Host "Retrieving value from Ninja Document..."
-            $NinjaPropertyValue = Ninja-Property-Docs-Get -AttributeName $Name @DocumentationParams 2>&1
+    # $NinjaPropertyValue = Ninja-Property-Docs-Get -AttributeName $Name @DocumentationParams 2>&1 # Removed NinjaOne dependency
         
             # If the property type requires options, retrieve them
             if ($NeedsOptions -contains $Type) {
-                $NinjaPropertyOptions = Ninja-Property-Docs-Options -AttributeName $Name @DocumentationParams 2>&1
+    # $NinjaPropertyOptions = Ninja-Property-Docs-Options -AttributeName $Name @DocumentationParams 2>&1 # Removed NinjaOne dependency
             }
         }
         else {
             # If no document name is provided, retrieve the property value directly
-            $NinjaPropertyValue = Ninja-Property-Get -Name $Name 2>&1
+    # $NinjaPropertyValue = Ninja-Property-Get -Name $Name 2>&1 # Removed NinjaOne dependency
     
             # If the property type requires options, retrieve them
             if ($NeedsOptions -contains $Type) {
-                $NinjaPropertyOptions = Ninja-Property-Options -Name $Name 2>&1
+    # $NinjaPropertyOptions = Ninja-Property-Options -Name $Name 2>&1 # Removed NinjaOne dependency
             }
         }
         

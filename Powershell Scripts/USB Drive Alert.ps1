@@ -88,7 +88,7 @@ process {
     # Save to custom field if given one
     if ($CustomFieldName) {
         Write-Host ""
-        Ninja-Property-Set -Name $CustomFieldName -Value $CustomFieldReport
+    # Ninja-Property-Set -Name $CustomFieldName -Value $CustomFieldReport # Removed NinjaOne dependency
     }
 
     # Exit with appropriate exit code

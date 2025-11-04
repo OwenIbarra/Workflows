@@ -99,9 +99,6 @@ process {
     Write-Host "Set $Path\$Name to $Value"
 }
 end {
-    
-    
-    
-}
 
+}
 

@@ -87,17 +87,19 @@ process {
 
     # Save the results to a custom field
     if ($CustomFieldName) {
-        Write-Host "[Info] Saving the results to the custom field. ($CustomFieldName)"
-        $CustomField = $(
-            $Drives | ForEach-Object {
-                "#:$($_.DiskNumber), Letter: $($_.DriveLetter), Media: $($_.MediaType), Bus: $($_.BusType), SN: $($_.SerialNumber)"
-            }
-        ) | Ninja-Property-Set-Piped -Name $CustomFieldName 2>&1
-        if ($CustomField.Exception) {
-            Write-Host $CustomField.Exception.Message
-            Write-Host "[Error] Failed to save the results to the custom field. ($CustomFieldName)"
-        }
-        else {
+        Write-Host "[Info] Note: Custom field '$CustomFieldName' was specified but NinjaOne integration has been removed."
+        Write-Host "[Info] Drive information displayed above."
+        # NinjaOne integration removed
+        # $CustomField = $(
+        #     $Drives | ForEach-Object {
+        #         "#:$($_.DiskNumber), Letter: $($_.DriveLetter), Media: $($_.MediaType), Bus: $($_.BusType), SN: $($_.SerialNumber)"
+        #     }
+        # ) | Ninja-Property-Set-Piped -Name $CustomFieldName 2>&1
+        # if ($CustomField.Exception) {
+        #     Write-Host $CustomField.Exception.Message
+        #     Write-Host "[Error] Failed to save the results to the custom field. ($CustomFieldName)"
+        # }
+        # else {
             Write-Host "[Info] The results have been saved to the custom field. ($CustomFieldName)"
         }
     }

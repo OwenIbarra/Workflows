@@ -91,16 +91,16 @@ process {
     if($DeviceStateCustomFieldName -eq $TenantInfoCustomFieldName -and $DeviceStateCustomFieldName){
         $TenantInfo | Add-Member -MemberType NoteProperty -Name 'Join Type' -Value $JoinType
 
-        Ninja-Property-Set -Name $DeviceStateCustomFieldName -Value ($TenantInfo | Format-List -Property "Tenant Name","Tenant ID","Join Type","Device Name","Device ID" | Out-String)
+    # Ninja-Property-Set -Name $DeviceStateCustomFieldName -Value ($TenantInfo | Format-List -Property "Tenant Name","Tenant ID","Join Type","Device Name","Device ID" | Out-String) # Removed NinjaOne dependency
         exit 0
     }
 
     if ($DeviceStateCustomFieldName) {
-        Ninja-Property-Set -Name $DeviceStateCustomFieldName -Value ($JoinType)
+    # Ninja-Property-Set -Name $DeviceStateCustomFieldName -Value ($JoinType) # Removed NinjaOne dependency
     }
 
     if ($TenantInfoCustomFieldName) {
-        Ninja-Property-Set -Name $TenantInfoCustomFieldName -Value ($TenantInfo | Format-List | Out-String)
+    # Ninja-Property-Set -Name $TenantInfoCustomFieldName -Value ($TenantInfo | Format-List | Out-String) # Removed NinjaOne dependency
     }
 }
 end {

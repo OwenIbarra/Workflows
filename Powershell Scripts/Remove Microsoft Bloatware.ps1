@@ -70,7 +70,7 @@ begin {
         )
     
         # We'll redirect error output to the success stream to make it easier to error out if nothing was found or something else went wrong.
-        $NinjaPropertyValue = Ninja-Property-Get -Name $Name 2>&1
+    # $NinjaPropertyValue = Ninja-Property-Get -Name $Name 2>&1 # Removed NinjaOne dependency
     
         # If we received some sort of error it should have an exception property and we'll exit the function with that error information.
         if ($NinjaPropertyValue.Exception) { throw $NinjaPropertyValue }
