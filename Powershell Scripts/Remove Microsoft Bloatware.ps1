@@ -55,6 +55,8 @@ param (
     [String]$OverrideWithCustomField
 )
 
+. "$PSScriptRoot/CustomFieldCompatibility.ps1"
+
 begin {
     # Replace parameters with dynamic script variables.
     if ($env:appsToRemove -and $env:appsToRemove -notlike "null") { $AppsToRemove = $env:appsToRemove }

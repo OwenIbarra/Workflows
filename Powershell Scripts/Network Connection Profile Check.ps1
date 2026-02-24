@@ -30,6 +30,8 @@ param (
     [String]$CustomField
 )
 
+. "$PSScriptRoot/CustomFieldCompatibility.ps1"
+
 begin {
     # If script form variables are used, replace the command the command line parameters with their value.
     if ($env:networkProfileCustomFieldName -and $env:networkProfileCustomFieldName -notlike "null") { $CustomField = $env:networkProfileCustomFieldName }

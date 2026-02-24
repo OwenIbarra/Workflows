@@ -28,6 +28,8 @@ param (
     $CustomField = "hardwareid"
 )
 
+. "$PSScriptRoot/CustomFieldCompatibility.ps1"
+
 begin {
 
     if ($env:customFieldName -and $env:customFieldName -notlike "null") { $CustomField = $env:customFieldName }

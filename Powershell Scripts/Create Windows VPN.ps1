@@ -149,6 +149,8 @@ param (
     [Parameter()]
     [Switch]$SkipSleep
 )
+. "$PSScriptRoot/CustomFieldCompatibility.ps1"
+
 begin {
     Add-Type -AssemblyName System.Drawing
 

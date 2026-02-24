@@ -41,6 +41,8 @@ param (
     [Parameter()]
     [switch]$EnableEventLog
 )
+. "$PSScriptRoot/CustomFieldCompatibility.ps1"
+
 begin {
 
     # Check which Script Variables are used

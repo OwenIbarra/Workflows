@@ -51,6 +51,8 @@ param (
     [Switch]$QueryForLastUserLogon
 )
 
+. "$PSScriptRoot/CustomFieldCompatibility.ps1"
+
 begin {
     # CIM timeout
     $CIMTimeout = 10

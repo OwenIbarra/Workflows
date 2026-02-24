@@ -65,6 +65,8 @@ param (
     [Switch]$ExcludeDisabledUsers = [System.Convert]::ToBoolean($env:excludeDisabledUsersFromReport)
 )
 
+. "$PSScriptRoot/CustomFieldCompatibility.ps1"
+
 begin {
     # Tests for administrative rights which is required to get the last logon date.
     function Test-IsElevated {

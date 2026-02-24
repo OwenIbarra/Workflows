@@ -57,6 +57,8 @@ param (
     [Parameter()]
     [String]$FromCustomField
 )
+. "$PSScriptRoot/CustomFieldCompatibility.ps1"
+
 begin {
     if ($env:ageLimit -and $env:ageLimit -notlike "null") { $OlderThan = $env:ageLimit }
     if ($env:retrieveAgeLimitFromCustomField -and $env:retrieveAgeLimitFromCustomField -notlike "null") { $FromCustomField = $env:retrieveAgeLimitFromCustomField }

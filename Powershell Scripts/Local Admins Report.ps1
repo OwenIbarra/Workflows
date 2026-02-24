@@ -37,6 +37,8 @@ param (
     [String]$Delimiter = ', '
 )
 
+. "$PSScriptRoot/CustomFieldCompatibility.ps1"
+
 begin {
     if ($env:customFieldName -and $env:customFieldName -notlike "null") { $CustomField = $env:customFieldName }
     if ($env:delimiter -and $env:delimiter -notlike "null") { $Delimiter = $env:delimiter }

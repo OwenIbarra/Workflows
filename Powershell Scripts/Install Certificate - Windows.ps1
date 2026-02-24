@@ -54,6 +54,8 @@ param (
     [switch]$OverwriteCertificateIfExisting
 )
 
+. "$PSScriptRoot/CustomFieldCompatibility.ps1"
+
 begin {
 
     function Test-IsSystem {

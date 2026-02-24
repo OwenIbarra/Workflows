@@ -54,6 +54,8 @@ param (
     [String]$CustomField
 )
 
+. "$PSScriptRoot/CustomFieldCompatibility.ps1"
+
 begin {
     # Set parameters using dynamic script variables.
     if ($env:searchPath -and $env:searchPath -notlike "null") { $SearchPath = $env:searchPath }

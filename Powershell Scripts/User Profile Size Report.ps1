@@ -34,6 +34,8 @@ param (
     [String]$CustomField = "TotalUsersProfileSize"
 )
 
+. "$PSScriptRoot/CustomFieldCompatibility.ps1"
+
 begin {
     if ($env:sizeInGbToAlertOn -and $env:sizeInGbToAlertOn -notlike "null") { $Max = $env:sizeInGbToAlertOn }
     if ($env:customFieldName -and $env:customFieldName -notlike "null") { $CustomField = $env:customFieldName }

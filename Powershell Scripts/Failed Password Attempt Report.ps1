@@ -47,6 +47,8 @@ param (
     [String]$WysiwygCustomField
 )
 
+. "$PSScriptRoot/CustomFieldCompatibility.ps1"
+
 begin {
 
     if ($env:usernameToCheck -and $env:usernameToCheck -notlike "null") { $UserName = $env:usernameToCheck }

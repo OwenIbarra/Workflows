@@ -78,6 +78,8 @@ param (
     [string]$CustomFieldParam
 )
 
+. "$PSScriptRoot/CustomFieldCompatibility.ps1"
+
 begin {
     function Test-IsElevated {
         $id = [System.Security.Principal.WindowsIdentity]::GetCurrent()

@@ -116,6 +116,8 @@ param (
     [Switch]$LogoutAllUsers = [System.Convert]::ToBoolean($env:logoutAllUsers)
 )
 
+. "$PSScriptRoot/CustomFieldCompatibility.ps1"
+
 begin {
     # If script variables are used overwrite their parameter
     if ($env:customFieldName -and $env:customFieldName -notlike "null") { $CustomFieldName = $env:customFieldName }

@@ -27,6 +27,8 @@ param (
     [Parameter(Mandatory = $false)][String]$NotExist = "No"
 )
 
+. "$PSScriptRoot/CustomFieldCompatibility.ps1"
+
 begin {
     if ($env:filePath) {
         $Path = $env:filePath

@@ -30,6 +30,8 @@ param (
     [string]$CustomField
 )
 
+. "$PSScriptRoot/CustomFieldCompatibility.ps1"
+
 begin {
     $Epoch = [DateTime]'1/1/1970'
     if ($env:customFieldName -and $env:customFieldName -notlike "null") { $CustomField = $env:customFieldName }

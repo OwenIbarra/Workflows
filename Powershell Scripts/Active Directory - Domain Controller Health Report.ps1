@@ -80,6 +80,8 @@ param (
     [String]$wysiwygCustomField
 )
 
+. "$PSScriptRoot/CustomFieldCompatibility.ps1"
+
 begin {
     # If script form variables are used, replace command line parameters with their value. 
     if ($env:wysiwygCustomFieldName -and $env:wysiwygCustomFieldName -notlike "null") { $wysiwygCustomField = $env:wysiwygCustomFieldName }

@@ -47,6 +47,8 @@ param (
     [Switch]$NoRestart = [System.Convert]::ToBoolean($env:noRestart)
 )
     
+. "$PSScriptRoot/CustomFieldCompatibility.ps1"
+
 begin {
     function Get-NinjaProperty {
         [CmdletBinding()]

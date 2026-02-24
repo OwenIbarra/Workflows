@@ -27,6 +27,8 @@ param(
     [String]
     $WYSIWYGCustomFieldName
 )
+. "$PSScriptRoot/CustomFieldCompatibility.ps1"
+
 begin {
 
     if ($env:wysiwygCustomFieldName -notlike "null") {
