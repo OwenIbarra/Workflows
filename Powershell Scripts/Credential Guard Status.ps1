@@ -38,6 +38,8 @@ param (
     [string]$TextCustomFieldName
 )
 
+. "$PSScriptRoot/CustomFieldCompatibility.ps1"
+
 begin {
     if ($env:TextCustomFieldName -and $TextCustomFieldName -ne 'null'){
         $TextCustomFieldName = $env:TextCustomFieldName

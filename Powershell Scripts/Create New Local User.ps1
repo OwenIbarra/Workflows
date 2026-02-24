@@ -71,6 +71,8 @@ param (
     [Switch]$AddToLocalAdminGroup = [System.Convert]::ToBoolean($env:addToLocalAdminGroup)
 )
 
+. "$PSScriptRoot/CustomFieldCompatibility.ps1"
+
 begin {
     # Retrieve script form variables and replace the parameters with them, handling 'null' values.
     if ($env:usernameToAdd -and $env:usernameToAdd -notlike "null") { $Username = $env:usernameToAdd }

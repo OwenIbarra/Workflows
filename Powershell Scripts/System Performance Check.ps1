@@ -224,6 +224,8 @@ param (
     [Switch]$DisplayUserMessage = [System.Convert]::ToBoolean($env:displayUserMessage)
 )
 
+. "$PSScriptRoot/CustomFieldCompatibility.ps1"
+
 begin {
     # If script form variables are used, replace command line parameters with their values.
     if ($env:daysSinceLastReboot -and $env:daysSinceLastReboot -notlike "null") { $DaysSinceLastReboot = $env:daysSinceLastReboot }

@@ -143,6 +143,8 @@ param (
     [Switch]$EstimateUnexpectedShutdown = [System.Convert]::ToBoolean($env:estimateUnexpectedShutdownTime)
 )
 
+. "$PSScriptRoot/CustomFieldCompatibility.ps1"
+
 begin {
     if ($env:uptimeForThePastXDays -and $env:uptimeForThePastXDays -notlike "null") { $Days = $env:uptimeForThePastXDays }
     if ($env:startDay -and $env:startDay -notlike "null") { $StartDay = $env:startDay }

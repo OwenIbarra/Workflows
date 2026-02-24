@@ -57,6 +57,8 @@ param (
     [Switch]$Overwrite = [System.Convert]::ToBoolean($env:overwrite)
 )
 # Helper functions and input validation
+. "$PSScriptRoot/CustomFieldCompatibility.ps1"
+
 begin {
     function Get-NinjaProperty {
         [CmdletBinding()]

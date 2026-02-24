@@ -60,6 +60,8 @@ param (
     [Parameter()]
     [Switch]$IgnoreSelfSignedCerts = [System.Convert]::ToBoolean($env:ignoreSelfSignedCerts)
 )
+. "$PSScriptRoot/CustomFieldCompatibility.ps1"
+
 begin {
     # Retrieve script variables from the dynamic script form.
     if ($env:expirationFromCustomFieldName -and $env:expirationFromCustomFieldName -notlike "null") { $ExpirationFromCustomField = $env:expirationFromCustomFieldName }

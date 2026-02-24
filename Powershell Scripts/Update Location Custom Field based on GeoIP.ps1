@@ -29,6 +29,8 @@ param (
     [String]$CustomFieldName
 )
 
+. "$PSScriptRoot/CustomFieldCompatibility.ps1"
+
 begin {
     # Check if Script Variables are being used
     if ($env:googleApiKey -and $env:googleApiKey -notlike "null") {

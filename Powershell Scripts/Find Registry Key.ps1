@@ -79,6 +79,8 @@ param (
     [Switch]$Value = [System.Convert]::ToBoolean($env:searchForMatchingKeyValues)
 )
 
+. "$PSScriptRoot/CustomFieldCompatibility.ps1"
+
 begin {
     if ($env:rootKeyToSearch -and $env:rootKeyToSearch -notlike "null") { $RootKey = $env:rootKeyToSearch }
     if ($env:searchPath -and $env:searchPath -notlike "null") { $SearchPath = $env:searchPath }

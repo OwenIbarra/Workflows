@@ -51,6 +51,8 @@ param (
     [String]$BootCustomField
 )
 
+. "$PSScriptRoot/CustomFieldCompatibility.ps1"
+
 begin {
     if ($env:bootCustomField -and $env:bootCustomField -notlike "null") {
         $BootCustomField = $env:bootCustomField

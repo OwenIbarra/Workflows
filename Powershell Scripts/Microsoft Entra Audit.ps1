@@ -36,6 +36,8 @@ param (
     [String]$TenantInfoCustomFieldName
 )
 
+. "$PSScriptRoot/CustomFieldCompatibility.ps1"
+
 begin {
     # Retrieve custom field name from dynamic script form
     if ($env:joinTypeCustomFieldName -and $env:joinTypeCustomFieldName -notlike "null") { $DeviceStateCustomFieldName = $env:joinTypeCustomFieldName }

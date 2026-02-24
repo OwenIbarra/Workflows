@@ -71,6 +71,8 @@ param (
     [String]$CustomField
 )
 
+. "$PSScriptRoot/CustomFieldCompatibility.ps1"
+
 begin {
     # If script variables are used replace the parameters
     if ($env:usernames -and $env:usernames -notlike "null") {

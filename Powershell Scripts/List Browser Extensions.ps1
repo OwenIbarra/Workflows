@@ -65,6 +65,8 @@ param (
     [String]$WysiwygCustomField
 )
 
+. "$PSScriptRoot/CustomFieldCompatibility.ps1"
+
 begin {
     # Replace parameters with the dynamic script variables.
     if ($env:multilineCustomFieldName -and $env:multilineCustomFieldName -notlike "null") { $MultilineCustomField = $env:multilineCustomFieldName }

@@ -37,6 +37,8 @@ param (
     [string]$ResultsCustomField
 )
 
+. "$PSScriptRoot/CustomFieldCompatibility.ps1"
+
 begin {
     if ($env:Days) {
         $Days = $env:Days

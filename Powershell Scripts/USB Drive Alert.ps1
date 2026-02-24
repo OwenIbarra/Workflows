@@ -39,6 +39,8 @@ param (
     [String]$CustomFieldName
 )
 
+. "$PSScriptRoot/CustomFieldCompatibility.ps1"
+
 begin {
     # Grab CustomFieldName from dynamic script form
     if ($env:customFieldName -and $env:customFieldName -notlike "null") { $CustomFieldName = $env:customFieldName }

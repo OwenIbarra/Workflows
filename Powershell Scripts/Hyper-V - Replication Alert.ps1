@@ -77,6 +77,8 @@ param (
     [Parameter()]
     [Switch]$IncludePaused = [System.Convert]::ToBoolean($env:includePausedReplications)
 )
+. "$PSScriptRoot/CustomFieldCompatibility.ps1"
+
 begin {
 
     if ($env:allowedToFailForXMinutes -and $env:allowedToFailForXMinutes -notlike "null") { $FailedFor = $env:allowedToFailForXMinutes }

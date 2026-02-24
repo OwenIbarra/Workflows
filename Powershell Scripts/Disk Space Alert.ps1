@@ -124,6 +124,8 @@ param (
     [String]$AlertOnlyCustomField
 )
 
+. "$PSScriptRoot/CustomFieldCompatibility.ps1"
+
 begin {
     # If script form variables are used, replace the command line parameters with their value.
     if ($env:systemVolumeMinimumPercentageFree) { $SystemVolumeMinFreePercent = $env:systemVolumeMinimumPercentageFree }

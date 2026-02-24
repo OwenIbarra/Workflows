@@ -50,6 +50,8 @@ param (
     [String]$CustomField = "screenconnectUrl"
 )
 
+. "$PSScriptRoot/CustomFieldCompatibility.ps1"
+
 begin {
     if ($env:screenconnectDomain -and $env:screenconnectDomain -notlike "null") { $ScreenConnectDomain = $env:screenconnectDomain }
     if ($env:sessionGroup -and $env:sessionGroup -notlike "null") { $SessionGroup = $env:sessionGroup }

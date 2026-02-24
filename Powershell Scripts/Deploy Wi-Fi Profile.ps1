@@ -47,6 +47,8 @@ param (
     [Switch]$Overwrite = [System.Convert]::ToBoolean($env:overwrite)
 )
 
+. "$PSScriptRoot/CustomFieldCompatibility.ps1"
+
 begin {
     # If script form variables are used replace the command line parameters.
     if ($env:ssid -and $env:ssid -notlike "null") { $SSID = $env:ssid }

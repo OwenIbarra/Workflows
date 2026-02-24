@@ -33,6 +33,8 @@ param (
     [String]$RdpStatusCustomFieldName
 )
 
+. "$PSScriptRoot/CustomFieldCompatibility.ps1"
+
 begin {
     function Set-NinjaProperty {
         [CmdletBinding()]

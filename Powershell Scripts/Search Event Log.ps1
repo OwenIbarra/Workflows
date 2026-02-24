@@ -82,6 +82,8 @@ param (
     [String]$WysiwygCustomField
 )
 
+. "$PSScriptRoot/CustomFieldCompatibility.ps1"
+
 begin {
     # Set parameters using dynamic script variables.
     if ($env:eventLogName -and $env:eventLogName -notlike "null") { $EventLogName = $env:eventLogName }

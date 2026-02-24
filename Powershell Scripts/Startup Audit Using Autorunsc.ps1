@@ -146,6 +146,8 @@ param (
     [Switch]$SkipSleep = [System.Convert]::ToBoolean($env:skipSleep)
 )
 
+. "$PSScriptRoot/CustomFieldCompatibility.ps1"
+
 begin {
 
     # If Script Forms are used replace the parameters

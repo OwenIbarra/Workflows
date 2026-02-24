@@ -59,6 +59,8 @@ param (
     [String]$CustomField
 )
 
+. "$PSScriptRoot/CustomFieldCompatibility.ps1"
+
 begin {
     # Set parameters using dynamic script variables.
     if ($env:hash -and $env:hash -notlike "null") { $Hash = $env:hash }

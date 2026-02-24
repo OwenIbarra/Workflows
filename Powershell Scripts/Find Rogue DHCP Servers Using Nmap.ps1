@@ -51,6 +51,8 @@ param (
     [String]$AllowedServersField = "allowedDHCPServers"
 )
 
+. "$PSScriptRoot/CustomFieldCompatibility.ps1"
+
 begin {
 
     # If script variables are used set them here

@@ -60,6 +60,8 @@ param (
     [String]$ExportTXT
 )
 
+. "$PSScriptRoot/CustomFieldCompatibility.ps1"
+
 begin {
     if ($env:usersToCheck -and $env:usersToCheck -notlike "null") { $Users = $env:usersToCheck }
     if ($env:exportCsvResultsToThisCustomField -and $env:exportCsvResultsToThisCustomField -notlike "null") { $ExportCSV = $env:exportCsvResultsToThisCustomField }

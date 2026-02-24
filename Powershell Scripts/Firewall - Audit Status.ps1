@@ -48,6 +48,8 @@ param (
     [Parameter()]
     [String]$CustomField
 )
+. "$PSScriptRoot/CustomFieldCompatibility.ps1"
+
 begin {
     # If script form variables are used, replace the command-line parameters with their values.
     if ($env:firewallStatusCustomFieldName -and $env:firewallStatusCustomFieldName -notlike "null") { $CustomField = $env:firewallStatusCustomFieldName }

@@ -38,6 +38,8 @@ param (
     [String]$MultilineCustomField
 )
 
+. "$PSScriptRoot/CustomFieldCompatibility.ps1"
+
 begin {
     $ExitCode = 0
     function Set-NinjaProperty {

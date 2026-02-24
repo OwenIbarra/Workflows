@@ -84,6 +84,8 @@ param (
     [String]$CustomFieldName
 )
 
+. "$PSScriptRoot/CustomFieldCompatibility.ps1"
+
 begin {
     # If script form variables are used, replace the command line parameters with their value.
     if ($env:daysUntilPasswordExpiration -and $env:daysUntilPasswordExpiration -notlike "null") { $DaysUntilExpiration = $env:daysUntilPasswordExpiration }

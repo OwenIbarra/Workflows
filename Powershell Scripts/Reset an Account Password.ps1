@@ -48,6 +48,8 @@ param (
     [String]$PasswordExpireOption
 )
     
+. "$PSScriptRoot/CustomFieldCompatibility.ps1"
+
 begin {
     # Replace preset parameters with script variables.
     if ($env:resetUsername -and $env:resetUsername -notlike "null") { $Username = $env:resetUsername }

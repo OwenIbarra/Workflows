@@ -78,6 +78,8 @@ param (
     [String]$WysiwygCustomField
 )
 
+. "$PSScriptRoot/CustomFieldCompatibility.ps1"
+
 begin {
     # If script form variables are used, replace the command line parameters with their value.
     if ($env:lastRebootReasonTextCustomField -and $env:lastRebootReasonTextCustomField -notlike "null") { $TextCustomField = $env:lastRebootReasonTextCustomField }

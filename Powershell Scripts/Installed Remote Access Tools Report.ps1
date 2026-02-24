@@ -92,6 +92,8 @@ param (
     [Switch]$ShowNotFound = [System.Convert]::ToBoolean($env:includeToolsThatWereNotFound)
 )
 
+. "$PSScriptRoot/CustomFieldCompatibility.ps1"
+
 begin {
     #DISCLAIMER: This script is provided as a best effort for detecting remote access software installed on an agent, but it is not guaranteed to be 100% accurate. 
     #Some remote access software may not be detected, or false positives may be reported. Use this script at your own risk and verify its results with other methods where possible.

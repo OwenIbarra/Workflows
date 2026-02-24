@@ -38,6 +38,8 @@ param (
     [String]$CustomFieldName
 )
 
+. "$PSScriptRoot/CustomFieldCompatibility.ps1"
+
 begin {
     # If using script form variables, replace command line parameters with the form variables.
     if ($env:customFieldName -and $env:customFieldName -notlike "null") { $CustomFieldName = $env:customFieldName }

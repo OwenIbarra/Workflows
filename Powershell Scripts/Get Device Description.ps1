@@ -26,6 +26,8 @@ param (
     [String]$CustomField
 )
 
+. "$PSScriptRoot/CustomFieldCompatibility.ps1"
+
 begin {
     if ($env:nameOfCustomField -and $env:nameOfCustomField -notlike "null") { $CustomField = $env:nameOfCustomField }
 

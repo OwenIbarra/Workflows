@@ -55,6 +55,8 @@ param (
     [Switch]$Reboot = [System.Convert]::ToBoolean($env:reboot)
 )
 
+. "$PSScriptRoot/CustomFieldCompatibility.ps1"
+
 begin {
     # If script forms are used overwrite the params with those values.
     if ($env:newComputerName -and $env:newComputerName -notlike "null") { $NewName = $env:newComputerName }

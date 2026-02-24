@@ -75,6 +75,8 @@ param (
     [String]$DownloadURL = "https://go.microsoft.com/fwlink/?LinkId=212732"
 )
 
+. "$PSScriptRoot/CustomFieldCompatibility.ps1"
+
 begin {
     # Set parameters using dynamic script variables.
     if($env:scanType -and $env:scanType -notlike "null"){ $ScanType = $env:scanType }

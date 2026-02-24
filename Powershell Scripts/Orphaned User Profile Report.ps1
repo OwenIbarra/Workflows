@@ -33,6 +33,8 @@ param (
     [String]$CustomField
 )
 
+. "$PSScriptRoot/CustomFieldCompatibility.ps1"
+
 begin {
     # Set parameters using dynamic script variables.
     if ($env:wysiwygCustomFieldName -and $env:wysiwygCustomFieldName -notlike "null") {

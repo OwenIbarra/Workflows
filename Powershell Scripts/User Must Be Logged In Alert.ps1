@@ -38,6 +38,8 @@ param (
     [Switch]$ActiveOnly = [System.Convert]::ToBoolean($env:userMustBeActive)
 )
 
+. "$PSScriptRoot/CustomFieldCompatibility.ps1"
+
 begin {
     # If script variables are used overwrite the existing variables.
     if ($env:usersToCheckFor -and $env:usersToCheckFor -notlike "null") { $UsersToCheckFor = $env:usersToCheckFor }

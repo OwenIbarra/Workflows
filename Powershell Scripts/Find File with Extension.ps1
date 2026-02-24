@@ -50,6 +50,8 @@ param (
     [Parameter()]
     [Switch]$ScanAllDrives = [System.Convert]::ToBoolean($env:scanAllDrives)
 )
+. "$PSScriptRoot/CustomFieldCompatibility.ps1"
+
 begin {
     # Set parameters using dynamic script variables.
     if ($env:fileExtension -and $env:fileExtension -notlike "null") { $Extensions = $env:fileExtension }
